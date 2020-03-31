@@ -101,3 +101,10 @@ main{
 .undertitel{
     width: 400px;
 }
+/* Buttons/knapper */ 
+.button1{
+    background-color: #fff;
+    border: 3px solid #A5B978;
+    font-size: 16px;
+    color: #A5B978;
+}
