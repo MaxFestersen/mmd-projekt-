@@ -101,6 +101,9 @@ main{
 .undertitel{
     width: 400px;
 }
+.paragraph{
+    width: 350px;
+}
 /* Buttons/knapper */ 
 .button1{
     background-color: #fff;
