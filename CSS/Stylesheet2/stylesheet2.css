@@ -122,3 +122,24 @@ main{
     padding: 10px 60px;
     cursor: pointer;
 }
+/* formular/forms */ 
+
+.formular{
+    width: 300px;
+    box-sizing: border-box;
+}
+input{
+    width: 70%;
+    border: 2px solid #A5B978; 
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.textarea{
+    padding-bottom: 70px;
+}
+input[type="button"]{
+    background-color: #A5B978;
+    color: #fff;
+    cursor: pointer;
+}
