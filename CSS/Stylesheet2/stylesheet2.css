@@ -107,4 +107,15 @@ main{
     border: 3px solid #A5B978;
     font-size: 16px;
     color: #A5B978;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+.button2{
+    background-color: #A5B978;
+    border: none;
+    color: white;
+    font-size: 18px;
+    margin: 4px ;
+    padding: 10px 60px;
+    cursor: pointer;
 }
