@@ -51,48 +51,58 @@ main{
 .box{
     display: flex;
     flex-direction: row;
+    
 }
 .farvekode1{
     background-color: #D7A461;
     width: 120px;
     padding: 30px;
     margin-top: 10px;
+    margin-right: 10px;
 }
 .farvekode2{
     background-color: #CC6E76;
     width: 120px;
     padding: 30px;
-    margin-top: 10px
+    margin-top: 10px;
+    margin-right: 10px;
+        
 }
 .farvekode3{
     background-color: #6896AC;
     width: 120px;
     padding: 30px;
-    margin-top: 10px
+    margin-top: 10px;
+     margin-right: 10px;
 }
 .farvekode4{
     background-color: #A5B978;
     width: 120px;
     padding: 30px;
-    margin-top: 10px
+    margin-top: 10px;
+    margin-right: 10px;
 }
 .farvekode5{
     background-color: #A782AA;
     width: 120px;
     padding: 30px;
-    margin-top: 10px
+    margin-top: 10px;
+    margin-right: 10px;
 }
 .farvekode6{
     background-color: #BFBCBA;
     width: 120px;
     padding: 30px;
-    margin-top: 10px
+    margin-top: 10px;
+    margin-right: 10px;
 }
 .farvekode7{
     background-color: #505E6B;
     width: 120px;
     padding: 30px;
-    margin-top: 10px
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #bfbcba;
 }
 /* typografi */ 
 .titel {
