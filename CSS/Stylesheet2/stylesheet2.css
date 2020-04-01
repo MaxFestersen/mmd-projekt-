@@ -153,3 +153,28 @@ input[type="button"]{
     color: #fff;
     cursor: pointer;
 }
+/* Ikoner/icons */
+.box2{
+    display: flex;
+    flex-direction:row; 
+}
+.icon1{
+    width: 200px;
+    margin-right: 5px;
+}
+.icon2{
+    width:200px;
+    margin-right: 5px;
+}
+.icon3{
+    width:200px;
+    margin-left: 10px;
+}
+.icon4{
+    width:200px;
+    margin-left: 5px;
+    padding-left: 25px;
+}
+.icon5{
+    margin-top: 30px
+}
