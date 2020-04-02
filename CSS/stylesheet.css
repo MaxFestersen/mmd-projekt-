@@ -1,3 +1,5 @@
+/* Main Css */
+/* Slider & logo */
 .single-slider:after {
      display: table;
      clear: both;
@@ -19,6 +21,7 @@
      left: 0;
      content: "" 
 }
+/* Preloader */
  #hoc-preloader {
      width: 100%;
      height: 100%;
@@ -70,6 +73,7 @@
      transition-duration: 800ms;
      transition-delay: 200ms 
 }
+/* Inview */
  .inview {
      -webkit-transform: translateY(100px) translateZ(0);
      -moz-transform: translateY(100px) translateZ(0);
@@ -92,6 +96,7 @@
      transform: none;
      opacity: 1 
 }
+/* Text formatting */
  html {
      font-family: sans-serif;
      -ms-text-size-adjust: 100%;
@@ -126,6 +131,7 @@
  a:hover, a:active {
      outline-width: 0 
 }
+/* Buttons */
  button {
      overflow: visible;
      border: 0;
@@ -142,6 +148,7 @@
  :focus {
      outline: 0 
 }
+/* Images */
  img {
      max-width: 100%;
      height: auto;
@@ -150,6 +157,7 @@
  svg:not(:root) {
      overflow: hidden 
 }
+/* Semantics */
  article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
      display: block 
 }
@@ -166,6 +174,7 @@
  template, [hidden] {
      display: none 
 }
+/* Buttons */
  button, input, select, textarea {
      margin: 0 
 }
@@ -188,6 +197,7 @@
  button:-moz-focusring, input:-moz-focusring {
      outline: 1px dotted ButtonText 
 }
+/* Semantics */
  fieldset {
      border: 1px solid #c0c0c0;
      margin: 0 2px;
