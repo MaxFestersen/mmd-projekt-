@@ -1,3 +1,4 @@
+/* Keyframe animations and animation classes */
 @-webkit-keyframes bounce{
     0%,20%,50%,80%,to{
         -webkit-transform:translateY(0);
@@ -1106,6 +1107,7 @@
     -webkit-animation-name:wobble;
     animation-name:wobble
 }
+/* Content lock */
 .om-content-lock{
     color:transparent!important;
     text-shadow:rgba(0,0,0,.5) 0 0 10px;
