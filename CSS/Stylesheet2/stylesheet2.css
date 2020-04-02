@@ -132,6 +132,11 @@ main{
     padding: 10px 60px;
     cursor: pointer;
 }
+.listekode{
+    margin-left: 40px;
+    opacity: 70%;
+}
+
 /* formular/forms */ 
 
 .formular{
