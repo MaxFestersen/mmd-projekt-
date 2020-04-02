@@ -1,17 +1,15 @@
-
-			.two_pics {
-	display: grid;
-	grid-template-columns: 50% 50%;
-	width: 100%;
-	grid-gap: 0;
+ .two_pics {
+     display: grid;
+     grid-template-columns: 50% 50%;
+     width: 100%;
+     grid-gap: 0;
 }
-
-.two_pics br {
-	display: none;
+ .two_pics br {
+     display: none;
 }
-
-@media screen and (max-width: 782px) {
-	.two_pics {
-		grid-template-columns: 100%;
-	}
-}		
+ @media screen and (max-width: 782px) {
+     .two_pics {
+         grid-template-columns: 100%;
+    }
+}
+ 

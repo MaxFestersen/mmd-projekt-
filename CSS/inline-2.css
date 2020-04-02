@@ -1,11 +1,68 @@
-
-body .cf7-style.cf7-style-1977 input {border-bottom-width: 3px;border-color: #a6bb75;border-left-width: 3px;border-right-width: 3px;border-style: solid;border-top-width: 3px;font-size: 17px;margin-bottom: 30px;padding-bottom: 15px;padding-left: 15px;padding-right: 15px;padding-top: 15px;width: 100%;}body .cf7-style.cf7-style-1977 input[type='submit'] {background-color: #a6bb75;border-style: none;color: #ffffff;font-size: 17px;font-weight: bold;margin-bottom: 0;padding-bottom: 15px;padding-left: 15px;padding-right: 15px;padding-top: 15px;width: 100%;}body .cf7-style.cf7-style-1977 textarea {border-bottom-width: 3px;border-color: #a6bb75;border-left-width: 3px;border-right-width: 3px;border-top-width: 3px;font-size: 17px;height: 300px;margin-bottom: 30px;padding-bottom: 15px;padding-left: 15px;padding-right: 15px;padding-top: 15px;width: 100%;}body .cf7-style.cf7-style-1977 .wpcf7-mail-sent-ok {border-color: #a6bb75;color: #a6bb75;}body .cf7-style.cf7-style-1977 .wpcf7-not-valid-tip {color: #d36d75;margin-top: -20px;}body .cf7-style.cf7-style-1977 .wpcf7-validation-errors {border-color: #d36d75;color: #d36d75;}body .cf7-style.cf7-style-1977,body .cf7-style.cf7-style-1977 input[type='submit'] {font-family: 'Roboto Mono',sans-serif;} 
-input, textarea{
-    font-family: 'Roboto Mono',sans-serif;
-  max-width:100%;
-  max-height:500px;
-  min-width:100%;
+ body .cf7-style.cf7-style-1977 input {
+    border-bottom-width: 3px;
+    border-color: #a6bb75;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-style: solid;
+    border-top-width: 3px;
+    font-size: 17px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    width: 100%;
 }
-
-textarea{min-height:200px}
-
+body .cf7-style.cf7-style-1977 input[type='submit'] {
+    background-color: #a6bb75;
+    border-style: none;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    width: 100%;
+}
+body .cf7-style.cf7-style-1977 textarea {
+    border-bottom-width: 3px;
+    border-color: #a6bb75;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    font-size: 17px;
+    height: 300px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    width: 100%;
+}
+body .cf7-style.cf7-style-1977 .wpcf7-mail-sent-ok {
+    border-color: #a6bb75;
+    color: #a6bb75;
+}
+body .cf7-style.cf7-style-1977 .wpcf7-not-valid-tip {
+    color: #d36d75;
+    margin-top: -20px;
+}
+body .cf7-style.cf7-style-1977 .wpcf7-validation-errors {
+    border-color: #d36d75;
+    color: #d36d75;
+}
+body .cf7-style.cf7-style-1977,body .cf7-style.cf7-style-1977 input[type='submit'] {
+    font-family: 'Roboto Mono',sans-serif;
+}
+ input, textarea{
+     font-family: 'Roboto Mono',sans-serif;
+     max-width:100%;
+     max-height:500px;
+     min-width:100%;
+}
+ textarea{
+    min-height:200px
+}
+ 
