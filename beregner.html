@@ -36,36 +36,62 @@
 		<label class="overskrift">Platform</label>
 		<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
 		<label>
-			<input type="radio" name="platform" value="iOS">
-			<label for="iOS">iOS</label>
+			<input type="radio" name="platform" value="ios">
+			<span for="ios">iOS</span>
 		</label>
 		<label>
-			<input type="radio" name="platform" value="Android">
-			<label for="Android">Android</label>
+			<input type="radio" name="platform" value="android">
+			<span for="android">Android</span>
 		</label>
 		<label>
-			<input type="radio" name="platform" value="Begge">
-			<label for="Begge">Begge</label>
+			<input type="radio" name="platform" value="begge">
+			<span for="begge">Begge</span>
 		</label>
 		
 		<label class="overskrift">Integrationer</label>
 		<img class="ikon" src="ikon" alt="API IKON">
 		<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
-		<input type="radio" name="API" value="apier">
-		<label for="Ja">Ja</label>
-		<input type="radio" name="API" value="apier">
-		<label for="Nej">Nej</label>
-		<input type="radio" name="API" value="apier">
-		<label for="Ved ikke">Ved ikke</label>
-		<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
-		<input type="text" placeholder="Vælg ønskede APIer...">
+		<label>
+			<input type="radio" name="API" value="ja">
+			<span for="jaa">Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="API" value="nej">
+			<span for=" ej">Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="API" value="vedikke">
+			<span for="vedikke">Ved ikke</span>
+		</label>
+		<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>		<input type="text" placeholder="Vælg ønskede APIer...">
 		<img class="ikon" src="ikon" alt="BACK END IKON">
-		<input type="radio" name="backend" value="backend">
-		<label for="Ja">Ja</label>
-		<input type="radio" name="backend" value="backend">
-		<label for="Nej">Nej</label>
-		<input type="radio" name="backend" value="backend">
-		<label for="Ved ikke">Ved ikke</label>
+		<label class="spoergsmaal">Skal der bygges backend til appen?</label>
+		<label>
+			<input type="radio" name="backend" value="ja">
+			<span for="ja">Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="backend" value="nej">
+			<span for="nej">Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="backend" value="vedikke">
+			<span for="vedikke">Ved ikke</span>
+		</label>
+		<img class="ikon" src="ikon" alt="SERVICE IKON">
+		<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
+		<label>
+			<input type="radio" name="service" value="ja">
+			<span for="ja">Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="service" value="nej">
+			<span for="nej">Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="service" value="vedikke">
+			<span for="vedikke">Ved ikke</span>
+		</label>
 		
 		
 		<!-- 04 Resultat -->
