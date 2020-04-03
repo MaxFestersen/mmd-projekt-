@@ -22,20 +22,20 @@
 		<!-- 01 Start -->
 		<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
 		<label>
-			<input type="checkbox" name="app" value="app">
+			<input type="checkbox" name="app" value="app" required>
 			<span>App</span>
 		</label>
-		<label>
-			<input type="checkbox" name="hjemmeside" value="hjemmeside">
+		<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
+			<input type="checkbox" name="hjemmeside" value="hjemmeside" disabled>
 			<span>Hjemmeside</span>
 		</label>
 		<button type="button">tilbage</button>
 		<button type="button">fortsæt</button>
 		<!-- 02 Egenskaber -->
 		<label class="overskrift">Hvad skal din app kunne?</label>
-		<label>Beskrive gerne formålet og egenskaberne med dine egne ord</label>
-		<textarea name="message" cols="40" rows="10" placeholder="Min app skal..."></textarea>
-		<button type="button">Kontakt mig med tilbud nu</button>
+		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
+		<textarea name="funktionalitet" cols="40" rows="10" placeholder="Min app skal.."></textarea>
+		<input type="submit" value="Kontakt mig med tilbud nu">
 		<button type="button">Gå videre i beregner</button>
 		<button type="button">tilbage</button>
 		<!-- 03 Overvejelser -->
@@ -153,12 +153,11 @@
 		<!-- afslutning/Formualr -->
 		<label>
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
-			<input type="text" placeholder="Navn" name="dis">
+			<input type="text" placeholder="Navn" name="name">
 		</label>
-		<input type="text" placeholder="Telefonnummer">
-		<input type="text" placeholder="E-mail">
-		<input class="textarea" type="text" placeholder="Besked">
-		<textarea name="message" cols="40" rows="10" placeholder="Besked"></textarea>
+		<input type="text" placeholder="Telefonnummer" name="tlf">
+		<input type="text" placeholder="E-mail" name="email">
+		<textarea name="message" cols="40" rows="10" placeholder="Besked" name="message"></textarea>
 		<input type="submit" Value="Kontakt mig">
 	</form>
 </body>
