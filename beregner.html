@@ -6,9 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		input, textarea, label{
+		input, textarea, label, button, img{
 			float:left;
 			clear:both;
+		}
+		label span {
+			float:left;
+			clear: right;
 		}
 	</style>
 </head>
@@ -16,12 +20,141 @@
 	<form>
 		<!-- form indhold her -->
 		<!-- 01 Start -->
+		<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
+		<label>
+			<input type="checkbox" name="app" value="app">
+			<span>App</span>
+		</label>
+		<label>
+			<input type="checkbox" name="hjemmeside" value="hjemmeside">
+			<span>Hjemmeside</span>
+		</label>
+		<button type="button">tilbage</button>
+		<button type="button">fortsæt</button>
 		<!-- 02 Egenskaber -->
+		<label class="overskrift">Hvad skal din app kunne?</label>
+		<label>Beskrive gerne formålet og egenskaberne med dine egne ord</label>
+		<textarea name="message" cols="40" rows="10" placeholder="Min app skal..."></textarea>
+		<button type="button">Kontakt mig med tilbud nu</button>
+		<button type="button">Gå videre i beregner</button>
+		<button type="button">tilbage</button>
 		<!-- 03 Overvejelser -->
+			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
+		<label class="overskrift">Platform</label>
+		<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
+		<label>
+			<input type="radio" name="platform" value="ios">
+			<span>iOS</span>
+		</label>
+		<label>
+			<input type="radio" name="platform" value="android">
+			<span>Android</span>
+		</label>
+		<label>
+			<input type="radio" name="platform" value="begge">
+			<span>Begge</span>
+		</label>
+		
+		<label class="overskrift">Integrationer</label>
+		<img class="ikon" src="ikon" alt="API IKON">
+		<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
+		<label>
+			<input type="radio" name="API" value="ja">
+			<span>Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="API" value="nej">
+			<span>Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="API" value="vedikke">
+			<span>Ved ikke</span>
+		</label>
+		<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>		<input type="text" placeholder="Vælg ønskede APIer...">
+		<img class="ikon" src="ikon" alt="BACK END IKON">
+		<label class="spoergsmaal">Skal der bygges backend til appen?</label>
+		<label>
+			<input type="radio" name="backend" value="ja">
+			<span>Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="backend" value="nej">
+			<span>Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="backend" value="vedikke">
+			<span>Ved ikke</span>
+		</label>
+		<img class="ikon" src="ikon" alt="SERVICE IKON">
+		<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
+		<label>
+			<input type="radio" name="service" value="ja">
+			<span>Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="service" value="nej">
+			<span>Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="service" value="vedikke">
+			<span>Ved ikke</span>
+		</label>
+		
+		<label class="overskrift">Design</label>
+		<img class="ikon" src="ikon" alt="DESIGN IKON">
+		<label class="spoergsmaal">Skal House of Code stå for design?</label>
+		<label>
+			<input type="radio" name="design" value="ja">
+			<span>Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="design" value="nej">
+			<span>Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="design" value="vedikke">
+			<span>Ved ikke</span>
+		</label>
+		
+		<label class="overskrift">Features</label>
+		<img class="ikon" src="ikon" alt="SPROG IKON">
+		<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
+		<input type="text" placeholder="Vælg sprog...">
+		<img class="ikon" src="ikon" alt="LOGIN IKON">
+		<label class="spoergsmaal">Skal der være mulighed for login?</label>
+		<label>
+			<input type="radio" name="login" value="ja">
+			<span>Ja</span>
+		</label>
+		<label>
+			<input type="radio" name="login" value="nej">
+			<span>Nej</span>
+		</label>
+		<label>
+			<input type="radio" name="login" value="vedikke">
+			<span>Ved ikke</span>
+		</label>
+		
+		<button type="button">tilbage</button>
+		<button type="button">fortsæt</button>
 		<!-- 04 Resultat -->
-		<!-- afslutning -->
-		<label>Hvordan må vi kontakte dig om vores tilbud?</label>
-		<input type="text" placeholder="Navn">
+		<!-- Din app er -->
+		<label class="overskrift">Din app er</label>
+		<label class="dinapper">1 kop kaffe</label>
+		<label class="dinapper">2 kopper kaffe</label>
+		<label class="dinapper">3 kopper kaffe</label>
+		
+		<label>Tusind tak for din tid! <br>
+				Tryk på kmnappen "Indsend" for at få et tilbud fra os!
+		</label>
+		
+		<button type="button">Indsend</button>
+		<button type="button">tilbage</button>
+		<!-- afslutning/Formualr -->
+		<label>
+			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
+			<input type="text" placeholder="Navn" name="dis">
+		</label>
 		<input type="text" placeholder="Telefonnummer">
 		<input type="text" placeholder="E-mail">
 		<input class="textarea" type="text" placeholder="Besked">
