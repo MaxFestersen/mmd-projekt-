@@ -1,3 +1,32 @@
 body{
   background-color: #000000;
 }
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+h1{
+  font-family: roboto mono;
+  color: #ffffff;
+}
+
+h2{
+  font-family: roboto mono;
+  color: #ffffff;
+}
+
+
+.footer{
+grid-column: 1/-1;
+grid-row: auto;
+margin: 0 auto;
+border: red;
+}
+
+img{
+  width: 100%;
+}
