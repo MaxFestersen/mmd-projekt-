@@ -3,11 +3,14 @@
 
 * {
     box-sizing: border-box;
-    font-family: Roboto mono;
+   
 }
 
 body {
     margin:0;
+    font-family: Roboto mono, monospace;
+    letter-spacing: -0.013em;
+    font-weight: 400;
 }
 nav {
     position: fixed;
@@ -105,15 +108,29 @@ main{
     color: #bfbcba;
 }
 /* typografi */
-.titel {
-    width: 600px;
-}
+
 .undertitel{
     width: 400px;
 }
-.paragraph{
+.paragraphpic{
     width: 350px;
 }
+
+.robotoh1{
+    font-family: Roboto mono,bold ;
+    font-size: 40px;
+}
+.robotop1{
+    font-family: Roboto mono, regular;
+    font-size: 30px;
+}
+.robotop2{
+    font-family: "Roboto mono", monospace;
+    font-size: 15px;
+    margin-bottom: 1.7em;
+    line-height: 1.7;
+}
+
 /* Buttons/knapper */
 .button1{
     background-color: #fff;
