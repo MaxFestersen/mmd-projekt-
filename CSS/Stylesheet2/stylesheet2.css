@@ -216,8 +216,14 @@ input{
     margin-bottom: 15px;
     font-size: 15px;
 }
-.textarea{
+textarea{
     padding-bottom: 70px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 70%;
+    border: 2px solid #A5B978;
+    margin-bottom: 15px;
+    font-size: 15px;
 }
 input[type="button"]{
     background-color: #A5B978;
