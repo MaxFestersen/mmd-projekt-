@@ -198,7 +198,7 @@ main{
 }
 
 /* Lister */
-.listekode,h1kode,p1kode,p2kode{
+.listekode,h1kode,p1kode,p2kode, formularkode{
     margin-left: 40px;
     opacity: 70%;
 }
