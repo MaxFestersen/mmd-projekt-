@@ -3,14 +3,15 @@
 
 * {
     box-sizing: border-box;
+    font-family: Roboto mono, monospace;
+    letter-spacing: -0.013em;
+    font-weight: 400;
    
 }
 
 body {
     margin:0;
-    font-family: Roboto mono, monospace;
-    letter-spacing: -0.013em;
-    font-weight: 400;
+   
 }
 nav {
     position: fixed;
@@ -197,7 +198,7 @@ main{
 }
 
 /* Lister */
-.listekode{
+.listekode,h1kode,p1kode,p2kode{
     margin-left: 40px;
     opacity: 70%;
 }
