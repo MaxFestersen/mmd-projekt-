@@ -6,9 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		input, textarea, label{
+		input, textarea, label, button{
 			float:left;
 			clear:both;
+		}
+		label span {
+			float:left;
+			clear: right;
 		}
 	</style>
 </head>
@@ -16,6 +20,17 @@
 	<form>
 		<!-- form indhold her -->
 		<!-- 01 Start -->
+		<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
+		<label>
+			<input type="checkbox" name="app" value="app">
+			<span>App</span>
+		</label>
+		<label>
+			<input type="checkbox" name="hjemmeside" value="hjemmeside">
+			<span>Hjemmeside</span>
+		</label>
+		<button type="button">tilbage</button>
+		<button type="button">fortsæt</button>
 		<!-- 02 Egenskaber -->
 		<!-- 03 Overvejelser -->
 		<label class="overskrift">Platform</label>
@@ -49,8 +64,10 @@
 		
 		<!-- 04 Resultat -->
 		<!-- afslutning -->
-		<label>Hvordan må vi kontakte dig om vores tilbud?</label>
-		<input type="text" placeholder="Navn">
+		<label>
+			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
+			<input type="text" placeholder="Navn" name="dis">
+		</label>
 		<input type="text" placeholder="Telefonnummer">
 		<input type="text" placeholder="E-mail">
 		<input class="textarea" type="text" placeholder="Besked">
