@@ -197,8 +197,8 @@ main{
     text-align: center;
 }
 
-/* Lister */
-.listekode,h1kode,p1kode,p2kode, formularkode{
+/* Listeopsætning */
+.listekode,h1kode,p1kode,p2kode, formularkode, effektkode{
     margin-left: 40px;
     opacity: 70%;
 }
