@@ -89,7 +89,7 @@
 			</section>
 			<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
 			<script>
-				//I dette Js bruger vi events. 
+				//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
 				document.getElementById("hvisja").addEventListener("change", function(){
 					document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
 				}); 
@@ -206,7 +206,7 @@
 		<textarea name="message" cols="40" rows="10" placeholder="Besked" ></textarea>
 		<input type="submit" Value="Kontakt mig">
 		<button type="button" onClick="showform()">tilbage</button>
-		<!--Er knappen "forstær" her nødvendig?-->
+		<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
 		<button type="button">fortsæt</button>
 	</form>
 </body>
