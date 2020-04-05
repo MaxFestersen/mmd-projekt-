@@ -23,6 +23,9 @@
 			border: solid black 1px;
 			float: left;
 		}
+		#apivalg{
+			display: none;
+		}
 	</style>
 </head>
 <body>
@@ -65,24 +68,37 @@
 			<input type="radio" name="platform" value="begge">
 			<span>Begge</span>
 		</label>
-		
 		<label class="overskrift">Integrationer</label>
 		<img class="ikon" src="ikon" alt="API IKON">
-		<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
+			<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
 		<label>
-			<input type="radio" name="API" value="ja">
+			<input type="radio" id="hvisja" name="API" value="ja">
 			<span>Ja</span>
 		</label>
 		<label>
-			<input type="radio" name="API" value="nej">
+			<input type="radio" id="hvisnej" name="API" value="nej">
 			<span>Nej</span>
 		</label>
 		<label>
-			<input type="radio" name="API" value="vedikke">
+			<input type="radio" id="hvisvedikke" name="API" value="vedikke">
 			<span>Ved ikke</span>
 		</label>
-		<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
-		<input type="text" placeholder="Vælg ønskede APIer...">
+			<section id="apivalg">
+				<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
+				<input type="text" placeholder="Vælg ønskede APIer...">
+			</section>
+			<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
+			<script>
+				document.getElementById("hvisja").addEventListener("change", function(){
+					document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
+				}); 
+				document.getElementById("hvisnej").addEventListener("change", function(){
+					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+				});
+				document.getElementById("hvisvedikke").addEventListener("change", function(){
+					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+				});
+			</script>
 		<img class="ikon" src="ikon" alt="BACK END IKON">
 		<label class="spoergsmaal">Skal der bygges backend til appen?</label>
 		<label>
@@ -148,8 +164,8 @@
 			<span>Ved ikke</span>
 		</label>
 		
-		<button type="button" onClick="hideform()">tilbage</button>
-		<button type="button" onClick="hideform()">fortsæt</button>
+		<button type="button" onClick="showform()">tilbage</button>
+		<button type="button" onClick="showform()">fortsæt</button>
 		</section>
 		<!--Js for show/hide section-->
 		<script>
