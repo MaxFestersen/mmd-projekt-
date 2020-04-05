@@ -6,13 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		input, textarea, label, button, img{
+		input, textarea, label, button, img, section{
 			float:left;
 			clear:both;
 		}
 		label span {
 			float:left;
 			clear: right;
+		}
+		#beregner{
+			display: block;
+			margin: 0 auto;
+			width: 75%;
+			background-color: aqua;
+			border: solid black 1px;
+			float: left;
 		}
 	</style>
 </head>
@@ -36,11 +44,11 @@
 		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
 		<textarea name="funktionalitet" cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 		<button type="button">Kontakt mig med tilbud nu</button>
-		<button type="button">Gå videre i beregner</button>
+		<button type="button" onClick="showform()">Gå videre i beregner</button>
 		<button type="button">tilbage</button>
 		<!-- 03 Overvejelser/Beregner -->
 			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
-		<section class="beregner">
+		<section id="beregner">
 		<label class="overskrift">Platform</label>
 		<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
 		<label>
@@ -140,6 +148,18 @@
 		<button type="button">tilbage</button>
 		<button type="button">fortsæt</button>
 		</section>
+		<!--Js for show/hide section-->
+		<script>
+		function showform(){
+			var showformbutton = document.getElementById("beregner");
+			if (showformbutton.style.display === "none"){
+				showformbutton.style.display = "block";
+			}
+			else {
+				showformbutton.style.display = "none";
+			}
+		}
+	</script>
 		<!-- 04 Resultat -->
 		<!-- Din app er -->
 		<label class="overskrift">Din app er</label>
@@ -148,7 +168,7 @@
 		<label class="dinapper">3 kopper kaffe</label>
 		
 		<label>Tusind tak for din tid! <br>
-				Tryk på kmnappen "Indsend" for at få et tilbud fra os!
+				Tryk på knappen "Indsend" for at få et tilbud fra os!
 		</label>
 		
 		<button type="button">Indsend</button>
