@@ -45,6 +45,7 @@
 		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
 		<textarea name="funktionalitet" cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 		<button type="button">Kontakt mig med tilbud nu</button>
+		<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
 		<button type="button" onClick="showform()">Gå videre i beregner</button>
 		<button type="button">tilbage</button>
 		<!-- 03 Overvejelser/Beregner -->
@@ -129,6 +130,7 @@
 		
 		<label class="overskrift">Features</label>
 		<img class="ikon" src="ikon" alt="SPROG IKON">
+			<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
 		<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
 		<input type="text" placeholder="Vælg sprog...">
 		<img class="ikon" src="ikon" alt="LOGIN IKON">
@@ -151,8 +153,11 @@
 		</section>
 		<!--Js for show/hide section-->
 		<script>
+			//Her er funktionen og dens navn. Denne funktion er en if-else funktion.
 		function showform(){
+			//Her bestemmer vi variablen, som JavaScripten skal hente via id. Variablen navn, som er unikt for den selv. 
 			var showformbutton = document.getElementById("beregner");
+			//if skal udføres, hvis et bestemt kriterium er opnået. Når man trykker på knappen medd onClick funktionen, som er koblet til denne funktion, vil Js ændre CSS koden for <section id="beregner"> fra display="none" til "block". Det omvendte vil ske, når knappen trykkes igen. 
 			if (showformbutton.style.display === "block"){
 				showformbutton.style.display = "none";
 			}
