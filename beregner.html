@@ -15,7 +15,7 @@
 			clear: right;
 		}
 		#beregner{
-			display: block;
+			display: none;
 			margin: 0 auto;
 			width: 75%;
 			background-color: aqua;
@@ -152,11 +152,11 @@
 		<script>
 		function showform(){
 			var showformbutton = document.getElementById("beregner");
-			if (showformbutton.style.display === "none"){
-				showformbutton.style.display = "block";
+			if (showformbutton.style.display === "block"){
+				showformbutton.style.display = "none";
 			}
 			else {
-				showformbutton.style.display = "none";
+				showformbutton.style.display = "block";
 			}
 		}
 	</script>
