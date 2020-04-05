@@ -145,8 +145,8 @@
 			<span>Ved ikke</span>
 		</label>
 		
-		<button type="button">tilbage</button>
-		<button type="button">fortsæt</button>
+		<button type="button" onClick="hideform()">tilbage</button>
+		<button type="button" onClick="hideform()">fortsæt</button>
 		</section>
 		<!--Js for show/hide section-->
 		<script>
@@ -157,6 +157,15 @@
 			}
 			else {
 				showformbutton.style.display = "block";
+			}
+		}
+		function hideform(){
+			var hideformbutton = document.getElementById("beregner");
+			if (hideformbutton.style.display === "none") {
+				hideformbutton.style.display = "block";
+			} 
+			else {
+				hideformbutton.style.display = "none";
 			}
 		}
 	</script>
