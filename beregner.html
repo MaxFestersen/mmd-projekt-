@@ -207,13 +207,6 @@
 		<button type="button" onclick="myFunction()">Indsend</button>
 		<button type="button">tilbage</button>
         <div id="myDIV" >Tak! din besked er afsendt</div>
-        <script>
-          // ved hjælp af DOM token list er jeg kommet frem til denne kode som kan bruges til at tilføje og fjerne classes i og med at der står add inden slutparentesen, kan man her også skrive remove for at modsætte effekten og fjerne en class   
-         function myFunction() {
-           document.getElementById("myDIV").classList.add("beskedafsendt");
-           }
-          //jeg kan få funktionen til at fungere på min browser, men den ser ikke ud til at virke på vores beregner??
-        </script>
 		<!-- afslutning/Formualr -->
 		<label>
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
@@ -231,6 +224,13 @@
 	</form>
 	<button class="emailReplyButton" onClick="sendEmail('æøå')">Reply</button>
 
+	<script>
+	  // ved hjælp af DOM token list er jeg kommet frem til denne kode som kan bruges til at tilføje og fjerne classes i og med at der står add inden slutparentesen, kan man her også skrive remove for at modsætte effekten og fjerne en class   
+	 function myFunction() {
+	   document.getElementById("myDIV").classList.add("beskedafsendt");
+	   }
+	  //jeg kan få funktionen til at fungere på min browser, men den ser ikke ud til at virke på vores beregner??
+	</script>
 	<script>
 	//Proof of concept for at åbne email med JavaScript
 	function sendEmail(message) {
