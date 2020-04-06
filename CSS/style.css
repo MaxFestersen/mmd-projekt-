@@ -113,5 +113,15 @@ font-family: roboto mono;
 }
 
 .footer{
+display: grid;
+grid-template-columns: 7vw 1fr 7vw;
+grid-template-rows: auto auto;
+}
 
+.col331{
+  grid-column: 2 / 3;
+}
+
+.col333{
+grid-column: 3;
 }
