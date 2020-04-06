@@ -79,6 +79,8 @@ font-family: roboto mono;
 
 .orange {
     color: #d7734a;
+    display: flex;
+  
 }
 
 .blue {
