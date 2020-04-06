@@ -26,6 +26,14 @@
 		#apivalg{
 			display: none;
 		}
+        
+        .beskedsendt {
+        width: 300px;
+        height: 30px;
+        background-color: green;
+        color: white;
+        font-size: 20px;
+        }
 	</style>
 </head>
 <body>
@@ -196,8 +204,16 @@
 				Tryk på knappen "Indsend" for at få et tilbud fra os!
 		</label>
 		
-		<button type="button">Indsend</button>
+		<button type="button" onclick="myFunction()">Indsend</button>
 		<button type="button">tilbage</button>
+        <div id="myDIV" >Tak! din besked er afsendt</div>
+        <script>
+          // ved hjælp af DOM token list er jeg kommet frem til denne kode som kan bruges til at tilføje og fjerne classes i og med at der står add inden slutparentesen, kan man her også skrive remove for at modsætte effekten og fjerne en class   
+         function myFunction() {
+           document.getElementById("myDIV").classList.add("beskedafsendt");
+           }
+          //jeg kan få funktionen til at fungere på min browser, men den ser ikke ud til at virke på vores beregner??
+        </script>
 		<!-- afslutning/Formualr -->
 		<label>
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
