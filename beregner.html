@@ -5,14 +5,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>beregner</title>
 	<style>
-		input, textarea, label, button, img{
+		input, textarea, label, button, img, section{
 			float:left;
 			clear:both;
 		}
 		label span {
 			float:left;
 			clear: right;
+		}
+		#beregner{
+			display: none;
+			margin: 0 auto;
+			width: 75%;
+			background-color: #BFBCBA;
+			border: solid #505E6B 1px;
+			float: left;
+		}
+		#apivalg{
+			display: none;
 		}
 	</style>
 </head>
@@ -36,11 +48,12 @@
 		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
 		<textarea name="funktionalitet" cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 		<button type="button">Kontakt mig med tilbud nu</button>
-		<button type="button">Gå videre i beregner</button>
+		<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
+		<button type="button" onClick="showform()">Gå videre i beregner</button>
 		<button type="button">tilbage</button>
 		<!-- 03 Overvejelser/Beregner -->
 			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
-		<section class="beregner">
+		<section id="beregner">
 		<label class="overskrift">Platform</label>
 		<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
 		<label>
@@ -55,24 +68,39 @@
 			<input type="radio" name="platform" value="begge">
 			<span>Begge</span>
 		</label>
-		
 		<label class="overskrift">Integrationer</label>
 		<img class="ikon" src="ikon" alt="API IKON">
-		<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
+			<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
 		<label>
-			<input type="radio" name="API" value="ja">
+			<input type="radio" id="hvisja" name="API" value="ja">
 			<span>Ja</span>
 		</label>
 		<label>
-			<input type="radio" name="API" value="nej">
+			<input type="radio" id="hvisnej" name="API" value="nej">
 			<span>Nej</span>
 		</label>
 		<label>
-			<input type="radio" name="API" value="vedikke">
+			<input type="radio" id="hvisvedikke" name="API" value="vedikke">
 			<span>Ved ikke</span>
 		</label>
-		<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
-		<input type="text" placeholder="Vælg ønskede APIer...">
+			<section id="apivalg">
+				<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
+				<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
+				<input type="text" placeholder="Vælg ønskede APIer...">
+			</section>
+			<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
+			<script>
+				//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
+				document.getElementById("hvisja").addEventListener("change", function(){
+					document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
+				}); 
+				document.getElementById("hvisnej").addEventListener("change", function(){
+					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+				});
+				document.getElementById("hvisvedikke").addEventListener("change", function(){
+					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+				});
+			</script>
 		<img class="ikon" src="ikon" alt="BACK END IKON">
 		<label class="spoergsmaal">Skal der bygges backend til appen?</label>
 		<label>
@@ -120,6 +148,7 @@
 		
 		<label class="overskrift">Features</label>
 		<img class="ikon" src="ikon" alt="SPROG IKON">
+			<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
 		<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
 		<input type="text" placeholder="Vælg sprog...">
 		<img class="ikon" src="ikon" alt="LOGIN IKON">
@@ -137,9 +166,24 @@
 			<span>Ved ikke</span>
 		</label>
 		
-		<button type="button">tilbage</button>
-		<button type="button">fortsæt</button>
+		<button type="button" onClick="showform()">tilbage</button>
+		<button type="button" onClick="showform()">fortsæt</button>
 		</section>
+		<!--Js for show/hide section-->
+		<script>
+			//Her er funktionen og dens navn. Denne funktion er en if-else funktion.
+		function showform(){
+			//Her bestemmer vi variablen, som JavaScripten skal hente via id. Variablen navn, som er unikt for den selv. 
+			var showformbutton = document.getElementById("beregner");
+			//if skal udføres, hvis et bestemt kriterium er opnået. Når man trykker på knappen medd onClick funktionen, som er koblet til denne funktion, vil Js ændre CSS koden for <section id="beregner"> fra display="none" til "block". Det omvendte vil ske, når knappen trykkes igen. 
+			if (showformbutton.style.display === "block"){
+				showformbutton.style.display = "none";
+			}
+			else {
+				showformbutton.style.display = "block";
+			}
+		}
+		</script>
 		<!-- 04 Resultat -->
 		<!-- Din app er -->
 		<label class="overskrift">Din app er</label>
@@ -148,7 +192,7 @@
 		<label class="dinapper">3 kopper kaffe</label>
 		
 		<label>Tusind tak for din tid! <br>
-				Tryk på kmnappen "Indsend" for at få et tilbud fra os!
+				Tryk på knappen "Indsend" for at få et tilbud fra os!
 		</label>
 		
 		<button type="button">Indsend</button>
@@ -162,7 +206,8 @@
 		<input type="email" placeholder="E-mail" name="email" required>
 		<textarea name="message" cols="40" rows="10" placeholder="Besked" ></textarea>
 		<input type="submit" Value="Kontakt mig">
-		<button type="button">tilbage</button>
+		<button type="button" onClick="showform()">tilbage</button>
+		<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
 		<button type="button">fortsæt</button>
 	</form>
 </body>
