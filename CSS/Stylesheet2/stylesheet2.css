@@ -6,12 +6,12 @@
     font-family: Roboto mono, monospace;
     letter-spacing: -0.013em;
     font-weight: 400;
-   
+
 }
 
 body {
     margin:0;
-   
+
 }
 nav {
     position: fixed;
