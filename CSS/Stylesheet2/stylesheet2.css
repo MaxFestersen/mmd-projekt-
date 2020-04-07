@@ -33,6 +33,10 @@ body {
     top: -17px;
     float: right !important;
 }
+
+.HOC-preview li{
+    display: inline-block;
+}
  
 .screen-preview{
     list-style-type:none;
@@ -40,9 +44,7 @@ body {
     padding: 0;
     position: static;
 }
-.preview-item{
-    float: right;
-}
+
 .preview-item-link{
     position: relative;
     display: block;
