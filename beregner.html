@@ -26,11 +26,20 @@
 		#apivalg{
 			display: none;
 		}
+        
+        .beskedsendt {
+        width: 300px;
+        height: 30px;
+        background-color: green;
+        color: white;
+        font-size: 20px;
+        }
 	</style>
 </head>
 <body>
-	<form action="mailto:minmailmax@gmail.com" method="post" enctype="text/plain" target="_blank">
-		<!-- form indhold her -->
+	<form action="mailto:minmailmax@gmail.com" method="post" enctype="multipart/form-data" target="_blank" accept-charset="UTF-8">
+		<!-- Skjuldt form indhold -->
+		<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregeren, og ønsker at f&aring; et tilbud. Det har jeg gjort " value="">
 		<!-- 01 Start -->
 		<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
 		<label>
@@ -195,8 +204,9 @@
 				Tryk på knappen "Indsend" for at få et tilbud fra os!
 		</label>
 		
-		<button type="button">Indsend</button>
+		<button type="button" onclick="myFunction()">Indsend</button>
 		<button type="button">tilbage</button>
+        <div id="myDIV" >Tak! din besked er afsendt</div>
 		<!-- afslutning/Formualr -->
 		<label>
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
@@ -205,10 +215,68 @@
 		<input type="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" placeholder="Telefonnummer" name="tlf"> <!-- Virker ikke i chrome -->
 		<input type="email" placeholder="E-mail" name="email" required>
 		<textarea name="message" cols="40" rows="10" placeholder="Besked" ></textarea>
-		<input type="submit" Value="Kontakt mig">
+		<input type="submit" Value="Kontakt mig" disabled>
+		<input type="submit" Value="Lad mig sende en e-mail med mine resultater." disabled>
 		<button type="button" onClick="showform()">tilbage</button>
 		<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
 		<button type="button">fortsæt</button>
+		<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
 	</form>
+	<button class="emailReplyButton" onClick="sendEmail('æøå')">Reply</button>
+
+	<script>
+	  // ved hjælp af DOM token list er jeg kommet frem til denne kode som kan bruges til at tilføje og fjerne classes i og med at der står add inden slutparentesen, kan man her også skrive remove for at modsætte effekten og fjerne en class   
+	 function myFunction() {
+	   document.getElementById("myDIV").classList.add("beskedafsendt");
+	   }
+	  //jeg kan få funktionen til at fungere på min browser, men den ser ikke ud til at virke på vores beregner??
+	</script>
+	<script>
+	//Proof of concept for at åbne email med JavaScript
+	function sendEmail(message) {
+		var email = message.emailId;
+		var subject = message.subject;
+		var emailBody = 'Hi øå'+message.from;
+		document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
+	}
+	// Formål: Find datoen i dag.
+	// Definer navne i ugen.
+	var hverdage = new Array(7);
+	hverdage[0] = "S&oslash;ndag";
+	hverdage[1] = "Mandag";
+	hverdage[2] = "Tirsdag";
+	hverdage[3] = "Onsdag";
+	hverdage[4] = "Torsdag";
+	hverdage[5] = "Fredag";
+	hverdage[6] = "Lørdag";
+	// Definer navne i ugen.
+	var maanedsdage = new Array(7);
+	maanedsdage[0] = "Januar";
+	maanedsdage[1] = "Februar";
+	maanedsdage[2] = "Marts";
+	maanedsdage[3] = "April";
+	maanedsdage[4] = "Maj";
+	maanedsdage[5] = "Juni";
+	maanedsdage[6] = "Juli";
+	maanedsdage[7] = "August";
+	maanedsdage[8] = "September";
+	maanedsdage[9] = "Oktober";
+	maanedsdage[10] = "November";
+	maanedsdage[11] = "December";
+	// Definer ny tidsberegning
+	var dagensDato = new Date();
+	// Definer hvilken ugedag er i dag.
+	var dagensHverdag = hverdage[dagensDato.getDay()];
+	// Definer dagens dato med 2 cifre.
+	var dd = String(dagensDato.getDate()).padStart(2, '0');
+	// Definer dagens måned
+	//var mm = String(dagensDato.getMonth() + 1).padStart(2, '0'); // Formateret som 01-12
+	var mm = maanedsdage[dagensDato.getMonth()]; // Formateret Januar-December
+	// Definer dagens år
+	var yyyy = dagensDato.getFullYear();
+	// Sammensæt oplysningerne til en streng
+	dagensDato = " " + dagensHverdag + ", " + dd + '. ' + mm + ' ' + yyyy + "."; //&nbsp; er mellemrum
+	document.getElementById("formIntroduktion").value = dagensDato;
+	</script>
 </body>
 </html>
