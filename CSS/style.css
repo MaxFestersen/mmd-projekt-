@@ -88,17 +88,11 @@ font-family: roboto mono;
 }
 
 #tocontent{
-      display: block;
-      width: 13px;
-      height: 13px;
-      border-right: 3px solid currentColor;
-      border-bottom: 3px solid currentColor;
-      position: absolute;
-      bottom: 0;
-      left: 42px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 550px;
 }
-
 
 
 .center{
