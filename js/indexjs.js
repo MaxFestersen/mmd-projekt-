@@ -1,5 +1,4 @@
-funktion scrollToElement() {
+function scrollToElement() {
   Document.querySelector('#tocontent').scrollIntoView({
-    behavior:'smooth'
+    behavior: 'smooth'
   });
-};
