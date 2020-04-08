@@ -49,7 +49,7 @@
 		<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregeren. Jeg anmoder om et tilbud. Pris beregeren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
 		<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
 		<!-- 01 Start -->
-		<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
+		<label id="start">Ønsker du at udvikle en app og/eller en hjemmeside?</label>
 		<label>
 			<input type="checkbox" name="App" value=" tilvalgt." required>
 			<span>App</span>
@@ -61,7 +61,7 @@
 		<button type="button">tilbage</button>
 		<button type="button">fortsæt</button>
 		<!-- 02 Egenskaber -->
-		<label class="overskrift">Hvad skal din app kunne?</label>
+		<label id="egenskaber" class="overskrift">Hvad skal din app kunne?</label>
 		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
 		<textarea name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 		<button type="button">Kontakt mig med tilbud nu</button>
@@ -203,7 +203,7 @@
 		</script>
 		<!-- 04 Resultat -->
 		<!-- Din app er -->
-		<label class="overskrift">Din app er</label>
+		<label  id="resultat" class="overskrift">Din app er</label>
 		<label class="dinapper">1 kop kaffe</label>
 		<label class="dinapper">2 kopper kaffe</label>
 		<label class="dinapper">3 kopper kaffe</label>
@@ -215,8 +215,8 @@
 		<button type="button" onclick="myFunction()">Indsend</button>
 		<button type="button">tilbage</button>
         <div id="myDIV" >Tak! din besked er afsendt</div>
-		<!-- afslutning/Formualr -->
-		<label>
+		<!-- Afslutning/Formualr -->
+		<label id="afslutning">
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
 			<input type="text" placeholder="Navn" name="Mit navn " required>
 		</label>
