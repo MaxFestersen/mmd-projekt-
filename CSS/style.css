@@ -19,6 +19,10 @@ body{
     overflow-y: auto;
 }
 
+ul {
+    list-style-type: none;
+}
+
 nav img {
     width: 80%;
     display: block;
