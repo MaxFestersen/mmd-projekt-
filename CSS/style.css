@@ -7,6 +7,7 @@ body{
   height: 100%;
   min-height: 100%;
   float: left;
+  width: 100%;
 }
 
 .header-nav, .single-nav {
@@ -21,7 +22,9 @@ body{
 
 ul {
     list-style-type: none;
+
 }
+/* denne ul fjernede prikker i menu */
 
 nav img {
     width: 80%;
@@ -38,6 +41,7 @@ a {
     font-family: roboto mono;
     padding: 0 10px;
     letter-spacing: inherit;
+
 
   }
 .hero{
@@ -95,7 +99,7 @@ font-family: roboto mono;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 550px;
+  margin-left: auto;
 }
 
 i {
@@ -109,7 +113,7 @@ i {
 .arrowDown {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  margin-left: 600px;
+  margin-left: 620px;
 
 }
 
@@ -125,6 +129,10 @@ i {
   max-width: 800px;
 }
 
+.main{
+  width: 100%;
+  float: left;
+}
 #footer{
 display: grid;
 grid-template-columns: 7vw 1fr 7vw;
