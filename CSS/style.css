@@ -57,7 +57,7 @@ justify-content: center;
 
 
 h1{
-  float: right;
+  float: left;
   font-family: roboto mono;
   font-size: 40px;
   color: #515f6d;
@@ -94,6 +94,21 @@ font-family: roboto mono;
   margin-left: 550px;
 }
 
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+
+}
+
+.arrowDown {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left: 600px;
+
+}
+
 
 .center{
   margin: 0 auto;
@@ -106,7 +121,7 @@ font-family: roboto mono;
   max-width: 800px;
 }
 
-.footer{
+#footer{
 display: grid;
 grid-template-columns: 7vw 1fr 7vw;
 grid-template-rows: auto auto;
