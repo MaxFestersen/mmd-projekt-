@@ -290,7 +290,6 @@
 		<button type="button">fortsæt</button>
 		<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
 	</form>
-	<button class="emailReplyButton" onClick="sendEmail('æøå')">Reply</button>
 
 	<script>
 	  // ved hjælp af DOM token list er jeg kommet frem til denne kode som kan bruges til at tilføje og fjerne classes i og med at der står add inden slutparentesen, kan man her også skrive remove for at modsætte effekten og fjerne en class   
@@ -300,12 +299,6 @@
 	  //jeg kan få funktionen til at fungere på min browser, men den ser ikke ud til at virke på vores beregner??
 	</script>
 	<script>
-	//Proof of concept for at åbne email med JavaScript
-	function sendEmail(message) {
-		var email = message.emailId;
-		var subject = message.subject;
-		var emailBody = 'Hi øå'+message.from;
-		document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
 	}
 	// Formål: Find datoen i dag.
 	// Definer navne i ugen.
