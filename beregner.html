@@ -51,11 +51,11 @@
 		<!-- 01 Start -->
 		<label id="start">Ønsker du at udvikle en app og/eller en hjemmeside?</label>
 		<label>
-			<input type="checkbox" name="App" value=" tilvalgt." required>
+			<input type="checkbox" name="App " value="tilvalgt." required>
 			<span>App</span>
 		</label>
 		<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
-			<input type="checkbox" name="Hjemmeside" value=" tilvalgt." disabled>
+			<input type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
 			<span>Hjemmeside</span>
 		</label>
 		<button type="button">tilbage</button>
@@ -71,120 +71,120 @@
 		<!-- 03 Overvejelser/Beregner -->
 			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
 		<section id="beregner">
-		<label class="overskrift">Platform</label>
-		<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
-		<label>
-			<input type="radio" name="Platform " value=" IOS.">
-			<span>iOS</span>
-		</label>
-		<label>
-			<input type="radio" name="Platform " value=" Android.">
-			<span>Android</span>
-		</label>
-		<label>
-			<input type="radio" name="Platform " value=" IOS & Android.">
-			<span>Begge</span>
-		</label>
-		<label class="overskrift">Integrationer</label>
-		<img class="ikon" src="ikon" alt="API IKON">
-			<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
-		<label>
-			<input type="radio" id="hvisja" name="API Skal integreres " value=" Ja.">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" id="hvisnej" name="API Skal integreres " value=" Nej.">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" id="hvisvedikke" name="API Skal integreres " value=" Ved ikke.">
-			<span>Ved ikke</span>
-		</label>
-			<section id="apivalg">
-				<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
-				<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
-				<input type="text" placeholder="Vælg ønskede APIer..." name="Valgte API ">
-			</section>
-			<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
-			<script>
-				//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
-				document.getElementById("hvisja").addEventListener("change", function(){
-					document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
-				}); 
-				document.getElementById("hvisnej").addEventListener("change", function(){
-					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-				});
-				document.getElementById("hvisvedikke").addEventListener("change", function(){
-					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-				});
-			</script>
-		<img class="ikon" src="ikon" alt="BACK END IKON">
-		<label class="spoergsmaal">Skal der bygges backend til appen?</label>
-		<label>
-			<input type="radio" name="Backend skal bygges " value=" Ja.">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="Backend skal bygges " value=" Nej.">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="Backend skal bygges " value=" Ved ikke.">
-			<span>Ved ikke</span>
-		</label>
-		<img class="ikon" src="ikon" alt="SERVICE IKON">
-		<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
-		<label>
-			<input type="radio" name="Der er behov for service eller vedligeholdelse " value=" Ja.">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="Der er behov for service eller vedligeholdelse " value=" Nej.">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="Der er behov for service eller vedligeholdelse " value=" Ved ikke.">
-			<span>Ved ikke</span>
-		</label>
-		
-		<label class="overskrift">Design</label>
-		<img class="ikon" src="ikon" alt="DESIGN IKON">
-		<label class="spoergsmaal">Skal House of Code stå for design?</label>
-		<label>
-			<input type="radio" name="House of Code skal designe app " value=" Ja.">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="House of Code skal designe app " value=" Nej.">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="House of Code skal designe app " value=" Ved ikke.">
-			<span>Ved ikke</span>
-		</label>
-		
-		<label class="overskrift">Features</label>
-		<img class="ikon" src="ikon" alt="SPROG IKON">
-			<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
-		<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
-		<input type="text" placeholder="Vælg sprog..." name="Sprog ">
-		<img class="ikon" src="ikon" alt="LOGIN IKON">
-		<label class="spoergsmaal">Skal der være mulighed for login?</label>
-		<label>
-			<input type="radio" name="Login skal implementeres " value=" Ja.">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="Login skal implementeres " value=" Nej.">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="Login skal implementeres " value=" Ved ikke.">
-			<span>Ved ikke</span>
-		</label>
-		
-		<button type="button" onClick="showform()">tilbage</button>
-		<button type="button" onClick="showform()">fortsæt</button>
+			<label class="overskrift">Platform</label>
+			<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
+			<label>
+				<input type="radio" name="Platform " value="IOS.">
+				<span>iOS</span>
+			</label>
+			<label>
+				<input type="radio" name="Platform " value="Android.">
+				<span>Android</span>
+			</label>
+			<label>
+				<input type="radio" name="Platform " value="IOS & Android.">
+				<span>Begge</span>
+			</label>
+			<label class="overskrift">Integrationer</label>
+			<img class="ikon" src="ikon" alt="API IKON">
+				<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
+			<label>
+				<input type="radio" id="hvisja" name="API Skal integreres " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" id="hvisnej" name="API Skal integreres " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" id="hvisvedikke" name="API Skal integreres " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+				<section id="apivalg">
+					<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
+					<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
+					<input type="text" placeholder="Vælg ønskede APIer..." name="Valgte API ">
+				</section>
+				<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
+				<script>
+					//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
+					document.getElementById("hvisja").addEventListener("change", function(){
+						document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
+					}); 
+					document.getElementById("hvisnej").addEventListener("change", function(){
+						document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+					});
+					document.getElementById("hvisvedikke").addEventListener("change", function(){
+						document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+					});
+				</script>
+			<img class="ikon" src="ikon" alt="BACK END IKON">
+			<label class="spoergsmaal">Skal der bygges backend til appen?</label>
+			<label>
+				<input type="radio" name="Backend skal bygges " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="Backend skal bygges " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="Backend skal bygges " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			<img class="ikon" src="ikon" alt="SERVICE IKON">
+			<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
+			<label>
+				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			
+			<label class="overskrift">Design</label>
+			<img class="ikon" src="ikon" alt="DESIGN IKON">
+			<label class="spoergsmaal">Skal House of Code stå for design?</label>
+			<label>
+				<input type="radio" name="House of Code skal designe app " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="House of Code skal designe app " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="House of Code skal designe app " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			
+			<label class="overskrift">Features</label>
+			<img class="ikon" src="ikon" alt="SPROG IKON">
+				<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
+			<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
+			<input type="text" placeholder="Vælg sprog..." name="Sprog ">
+			<img class="ikon" src="ikon" alt="LOGIN IKON">
+			<label class="spoergsmaal">Skal der være mulighed for login?</label>
+			<label>
+				<input type="radio" name="Login skal implementeres " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="Login skal implementeres " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="Login skal implementeres " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			
+			<button type="button" id="back03" onClick="showform()">tilbage</button>
+			<button type="button" id="next03" onClick="showform()">fortsæt</button>
 		</section>
 		<!--Js for show/hide section-->
 		<script>
@@ -241,9 +241,8 @@
 		-->
 		<input type="email" placeholder="E-mail" name="Min e-mail " required>
 		<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
-		<input type="submit" Value="Kontakt mig" disabled>
-		<input type="submit" Value="Lad mig sende en e-mail med mine resultater.">
-		<button type="button" onClick="showform()">tilbage</button>
+		<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
+		<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
 		<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
 		<button type="button">fortsæt</button>
 		<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
