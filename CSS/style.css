@@ -7,6 +7,7 @@ body{
   height: 100%;
   min-height: 100%;
   float: left;
+  width: 100%;
 }
 
 .header-nav, .single-nav {
@@ -18,6 +19,12 @@ body{
     z-index: 3;
     overflow-y: auto;
 }
+
+ul {
+    list-style-type: none;
+
+}
+/* denne ul fjernede prikker i menu */
 
 nav img {
     width: 80%;
@@ -34,6 +41,7 @@ a {
     font-family: roboto mono;
     padding: 0 10px;
     letter-spacing: inherit;
+
 
   }
 .hero{
@@ -57,7 +65,7 @@ justify-content: center;
 
 
 h1{
-  float: right;
+  float: left;
   font-family: roboto mono;
   font-size: 40px;
   color: #515f6d;
@@ -88,18 +96,26 @@ font-family: roboto mono;
 }
 
 #tocontent{
-      display: block;
-      width: 13px;
-      height: 13px;
-      border-right: 3px solid currentColor;
-      border-bottom: 3px solid currentColor;
-      position: absolute;
-      bottom: 0;
-      left: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
 
 }
 
+.arrowDown {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-left: 620px;
 
+}
 
 .center{
   margin: 0 auto;
@@ -112,7 +128,11 @@ font-family: roboto mono;
   max-width: 800px;
 }
 
-.footer{
+.main{
+  width: 100%;
+  float: left;
+}
+#footer{
 display: grid;
 grid-template-columns: 7vw 1fr 7vw;
 grid-template-rows: auto auto;
