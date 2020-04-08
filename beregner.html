@@ -58,12 +58,14 @@
 			<input type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
 			<span>Hjemmeside</span>
 		</label>
+		<span id="appHjemmesideError" class="formErrorTxt hidden">App og/eller hjemmeside skal være valgt.</span>
 		<button type="button" id="back01">tilbage</button>
 		<button type="button" id="next01">fortsæt</button>
 		<!-- 02 Egenskaber -->
 		<label id="egenskaber" class="overskrift">Hvad skal din app kunne?</label>
 		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
 		<textarea name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
+		<span id="beskrivelseError" class="formErrorTxt hidden">Der skal tilføjes en beskrivelse af løsningen.</span>		
 		<button type="button">Kontakt mig med tilbud nu</button>
 		<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
 		<button type="button" id="next02" onClick="showform()">Gå videre i beregner</button>
@@ -220,6 +222,8 @@
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
 			<input type="text" placeholder="Navn" name="Mit navn " required>
 		</label>
+		<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>		
+		<span id="navnWarning" class="formWarningTxt hidden">Der blev ikke registreret et efernavn.</span>
 		<input type="tel" 
 		pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
 		placeholder="Telefonnummer"
@@ -239,7 +243,10 @@
 				|	[0-0]{2}[0-9]{10}
 				"
 		-->
+		<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>		
 		<input type="email" placeholder="E-mail" name="Min e-mail " required>
+		<span id="emailErrorMissing" class="formErrorTxt hidden">E-mail skal indtastes.</span>		
+		<span id="emailErrorWrong" class="formErrorTxt hidden">E-mail skal indstastes i et korrekt format.</span>		
 		<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
 		<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
 		<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
