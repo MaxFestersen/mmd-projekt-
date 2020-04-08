@@ -58,16 +58,16 @@
 			<input type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
 			<span>Hjemmeside</span>
 		</label>
-		<button type="button">tilbage</button>
-		<button type="button">fortsæt</button>
+		<button type="button" id="back01">tilbage</button>
+		<button type="button" id="next01">fortsæt</button>
 		<!-- 02 Egenskaber -->
 		<label id="egenskaber" class="overskrift">Hvad skal din app kunne?</label>
 		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
 		<textarea name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 		<button type="button">Kontakt mig med tilbud nu</button>
 		<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
-		<button type="button" onClick="showform()">Gå videre i beregner</button>
-		<button type="button">tilbage</button>
+		<button type="button" id="next02" onClick="showform()">Gå videre i beregner</button>
+		<button type="button" id="back02">tilbage</button>
 		<!-- 03 Overvejelser/Beregner -->
 			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
 		<section id="beregner">
@@ -243,6 +243,7 @@
 		<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
 		<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
 		<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
+		<button type="button" id="back04" onClick="showform()">tilbage</button>
 		<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
 		<button type="button">fortsæt</button>
 		<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
