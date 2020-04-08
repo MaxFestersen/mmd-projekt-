@@ -117,10 +117,6 @@ i {
 
 }
 
-.smoothscrool {
-  scroll-behavior: smooth;
-}
-
 .center{
   margin: 0 auto;
   width: 100%;
