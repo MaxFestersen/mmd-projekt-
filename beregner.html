@@ -256,23 +256,27 @@
 		<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>		
 		<span id="navnWarning" class="formWarningTxt hidden">Der blev ikke registreret et efernavn.</span>
 		<input type="tel" 
-		pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
 		placeholder="Telefonnummer"
 		title="Telefonnummer 8 cifre. F.eks. 12 34 56 78. Landekoder accepteres."
 		name="Mit telefon nummer ">
 		<!-- 
 		pattern definerer hvilket format telefonnummeret skal stå i. Jeg har opsat det således at der forventes et dansk telefon nummer med eller uden landekode, og med bindestreg, mellemrum eller uden tegnsætning.
+		
+		Pattern var for aggarsivt, og er en forhindring, især for numre der ikke er danske. Derfor er det som udgangspunkt ikke implementeret.
+		
 		Se pattern overskueligt her. Bemærk at pattern vil læse linjeskift og tab, så disse skal fjernes inden implementation.
-				pattern="	[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
-				| 	[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
-				| 	[0-9]{8}
-				|	+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
-				|	+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
-				|	+[0-9]{10}
-				|	[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
-				|	[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
-				|	[0-0]{2}[0-9]{10}
-				"
+			pattern="	[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+			| 	[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+			| 	[0-9]{8}
+			|	+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+			|	+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+			|	+[0-9]{10}
+			|	[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+			|	[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+			|	[0-0]{2}[0-9]{10}
+			"
+		Pattern på en linje:
+			pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
 		-->
 		<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>		
 		<input type="email" placeholder="E-mail" name="Min e-mail " required>
