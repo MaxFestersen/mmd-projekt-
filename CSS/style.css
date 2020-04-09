@@ -277,3 +277,23 @@ i {
   display: list-item;
   text-align: -webkit-match-parent;
 }
+
+/* Her stopper indexsiden */
+/* Her begynder kode til tooltip knappen */
+
+#buttonID1 p{
+  font-family: roboto mono;
+  font-weight: 400;
+}
+#buttonID2 p{
+  font-family: roboto mono;
+  font-weight: 400;
+}
+#buttonID3 p{
+  font-family: roboto mono;
+  font-weight: 400;
+}
+#buttonID4 p{
+  font-family: roboto mono;
+  font-weight: 400;
+}
