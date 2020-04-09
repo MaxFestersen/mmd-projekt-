@@ -95,6 +95,11 @@ font-family: roboto mono;
     color: #6696ac;
 }
 
+/* .scrool{
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+} */
+
 #tocontent{
   display: flex;
   justify-content: center;
