@@ -32,6 +32,8 @@ ul {
 /* et par tilføjelser herunder - KIA */
 .nav-item{
     padding: 30px 0px 10px 0px;
+    font-size: 17px;
+    opacity: 60%;
 }
 
 .nav-item a{
