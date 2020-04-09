@@ -18,10 +18,15 @@ body{
     right: 20px;
     z-index: 3;
     overflow-y: auto;
+    margin: 10px;
 }
 
 ul {
     list-style-type: none;
+    margin: 10px;
+    margin-top: 10px;
+    margin-right: 0px;
+    padding: 5px;
 
 }
 /* denne ul fjernede prikker i menu */
@@ -41,7 +46,7 @@ a {
     font-family: roboto mono;
     padding: 0 10px;
     letter-spacing: inherit;
-
+    line-height: 10px;
 
   }
 .hero{
@@ -145,12 +150,4 @@ display: grid;
 grid-template-columns: 7vw 1fr 7vw;
 grid-template-rows: auto auto;
 float: left;
-}
-
-.col331{
-  grid-column: 2 / 3;
-}
-
-.col333{
-grid-column: 3;
 }
