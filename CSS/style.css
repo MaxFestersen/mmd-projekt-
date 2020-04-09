@@ -143,11 +143,40 @@ i {
   float: left;
 
 }
-
-
-#footer{
-display: grid;
-grid-template-columns: 7vw 1fr 7vw;
-grid-template-rows: auto auto;
-float: left;
+.rowfootercontent{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #515f6d;
+  padding: 10px;
 }
+
+
+ /* #footer{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+} */
+
+.col331{
+  background-color: #515f6d;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.col332{
+  background-color: #515f6d;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.col333{
+  background-color: #515f6d;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
