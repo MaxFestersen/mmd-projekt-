@@ -272,3 +272,8 @@ i {
   line-height: 1.7;
   font-size: 15px;
 }
+
+.col333 li{
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
