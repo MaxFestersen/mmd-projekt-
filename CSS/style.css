@@ -136,11 +136,15 @@ i {
 .main{
   width: 100%;
   float: left;
+
 }
+
+
 #footer{
 display: grid;
 grid-template-columns: 7vw 1fr 7vw;
 grid-template-rows: auto auto;
+float: left;
 }
 
 .col331{
