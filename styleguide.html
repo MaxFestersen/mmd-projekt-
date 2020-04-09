@@ -43,6 +43,7 @@
      <a href="#Lists">Lister</a>
      <a href="#Forms">Formularer</a>
      <a href="#Ikoner">Ikoner</a>
+     <a href="#Sideopsætning">Sideopsætning</a>
    </nav>   
    <main>
     <h1 id="Introduktion">Introduktion</h1>
@@ -107,13 +108,17 @@
        </code></pre>
 
         <script>
+         document.getElementsByTagName("p")[0].style.fontSize="16px";
+        
+         var farver = ["farvebokse",];
+         farver[1] = "Hex koder";
+         document.getElementById("array1").innerHTML = farver;
+            
          function myFunction(){
          document.getElementById("knap2").innerHTML="Tak for din besked.";
          }
             
-         var farver = ["farvebokse",];
-         farver[1] = "Hex koder";
-         document.getElementById("array1").innerHTML = farver;
+         
         </script>
        
      <h2>Effekter</h2> 
@@ -202,6 +207,11 @@
       &lt;img class="icon4" src="Assets/Icons/Asset%206.png" alt="icon1">
       &lt;img class="icon5" src="Assets/HOC_logo.png" alt="icon5">
      </code></pre>
+       <hr>
+       <h1 id="Sideopsætning">Sideopsætning</h1>
+       <h3>Navigation</h3>
+       <h3>Body</h3>
+       <h3>Footer</h3>
    </main>
 </body>
 </html>
