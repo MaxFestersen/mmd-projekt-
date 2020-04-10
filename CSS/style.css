@@ -1,3 +1,10 @@
+* {margin: 0; padding: 0;}
+
+input, textarea, label, button, img, div, section, main, span {
+			float:left;
+			clear:both;
+		}
+
 body{
   background-color: #ffffff;
 
@@ -73,7 +80,7 @@ a {
 
 .sectionWrapper{
 display: flex;
-height: 100%;
+height: 90%;
 flex-direction: column;
 justify-content: center;
 
@@ -121,6 +128,10 @@ font-family: roboto mono;
   scroll-behavior: smooth;
 } */
 
+.scrool{
+	width: 100%;
+}
+
 #tocontent{
   display: flex;
   justify-content: center;
@@ -139,14 +150,12 @@ i {
 .arrowDown {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  margin-left: 620px;
-
+	margin-left: 50%;
 }
 
 .center{
   margin: 0 auto;
   width: 100%;
-  max-width: 1200px;
 }
 
 .code-content{
@@ -166,7 +175,7 @@ i {
   grid-template-columns: 1fr 1fr 1fr;
   background-color: #515f6d;
   padding: 0px;
-
+	width: 100%;
 }
 
 
@@ -178,31 +187,32 @@ i {
 } */
 
 .col331{
-  background-color: #515f6d;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  width: 50%;
+	background-color: #515f6d;
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	padding: 20px;
+	font-size: 30px;
+	width: 50%;
+	display: grid;
 }
 
 .col331 h4{
-  color: #fff;
-  margin-bottom: 1.7em;
-  font-weight: 700;
-  font-size: 15px;
-  font-family: roboto mono;
+ 	color: #fff;
+	margin-bottom: 1.7em;
+	font-weight: 700;
+ 	font-size: 15px;
+ 	font-family: roboto mono;
 }
 
 .col331 p{
-  padding-left: 0;
-  margin-bottom: 1.7em;
-  line-height: 1.7;
-  font-size: 15px;
-  font-family: roboto mono light;
-  color: #fff;
-  display: block;
-  float: left;
-  margin: 10px;
+	padding-left: 0;
+	margin-bottom: 1.7em;
+	line-height: 1.7;
+	font-size: 15px;
+	font-family: roboto mono light;
+	color: #fff;
+	display: block;
+	float: left;
+	margin: 10px;
 }
 
 .col331 a{
@@ -218,6 +228,7 @@ i {
   font-size: 15px;
   text-align: center;
   width: 50%;
+	display: grid;
 }
 
 .col332 h4{
@@ -255,6 +266,7 @@ i {
   font-size: 15px;
   text-align: center;
   width: 33.3333%;
+	display: grid;
 }
 
 .col333 h4{
