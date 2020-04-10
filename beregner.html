@@ -245,9 +245,14 @@
 				Tryk på knappen "Indsend" for at få et tilbud fra os!
 		</label>
 		
-		<button type="button" onclick="myFunction()">Indsend</button>
+		<button  id="indsend" type="button" onclick="myFunction()">Indsend</button>
 		<button type="button">tilbage</button>
-        <div id="myDIV" >Tak! din besked er afsendt</div>
+    <script>
+	  // ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.  
+       function myFunction(){
+        document.getElementById("indsend").innerHTML="Tak for din besked.";
+         }
+	</script>
 		<!-- Afslutning/Formualr -->
 		<label id="afslutning">
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
@@ -290,14 +295,6 @@
 		<button type="button">fortsæt</button>
 		<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
 	</form>
-
-	<script>
-	  // ved hjælp af DOM token list er jeg kommet frem til denne kode som kan bruges til at tilføje og fjerne classes i og med at der står add inden slutparentesen, kan man her også skrive remove for at modsætte effekten og fjerne en class   
-	 function myFunction() {
-	   document.getElementById("myDIV").classList.add("beskedafsendt");
-	   }
-	  //jeg kan få funktionen til at fungere på min browser, men den ser ikke ud til at virke på vores beregner??
-	</script>
 	<script>
 	/* Send e-mail med JavaScript
 	Formål: At åbne e-mail client, med bedre formatering og med specielle karakterer tilladt (især: æøå).
