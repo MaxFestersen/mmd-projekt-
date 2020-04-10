@@ -6,7 +6,9 @@ input, textarea, label, button, img, div, section, main {
 		}
 
 body{
-  background-color: #ffffff;
+	background-color: #ffffff;
+	letter-spacing: -0.013em;
+	font-family: "roboto mono", monospace;
 
 }
 
@@ -98,7 +100,7 @@ a {
 
 h1{
 	float: left;
-	font-family: roboto mono;
+	font-family: "roboto mono", monospace;
 	font-size: 40px;
 	font-weight: 700;
 	color: #515f6d;
@@ -106,7 +108,7 @@ h1{
 }
 
 p{
-	font-family: roboto mono;
+	font-family: "roboto mono", monospace;
 	font-size: 40px;
 }
 
