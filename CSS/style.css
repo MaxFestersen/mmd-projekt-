@@ -1,6 +1,6 @@
 * {margin: 0; padding: 0;}
 
-input, textarea, label, button, img, div, section, main, span {
+input, textarea, label, button, img, div, section, main {
 			float:left;
 			clear:both;
 		}
@@ -79,11 +79,11 @@ a {
 }
 
 .sectionWrapper{
-display: flex;
-height: 90%;
-flex-direction: column;
-justify-content: center;
-
+	display: flex;
+	height: 90%;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 240px 0 100px;
 }
 
 .sectionWrapper p {
@@ -91,16 +91,24 @@ justify-content: center;
     line-height: 1.3;
   }
 
+.center-hero{
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	
+}
 
 h1{
   float: left;
   font-family: roboto mono;
   font-size: 40px;
+	font-weight: 700;
   color: #515f6d;
 }
 
 p{
-font-family: roboto mono;
+	font-family: roboto mono;
+	font-size: 40px;
 }
 
 .indent {
@@ -159,8 +167,9 @@ i {
 }
 
 .code-content{
-  width: 100%;
-  max-width: 800px;
+	width: 100%;
+	max-width: 800px;
+	display: flex;
 }
 
 .main{
