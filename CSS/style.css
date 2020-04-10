@@ -93,17 +93,16 @@ a {
 
 .center-hero{
 	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	
+	margin: 0 auto;	
 }
 
 h1{
-  float: left;
-  font-family: roboto mono;
-  font-size: 40px;
+	float: left;
+	font-family: roboto mono;
+	font-size: 40px;
 	font-weight: 700;
-  color: #515f6d;
+	color: #515f6d;
+	display: flex;
 }
 
 p{
@@ -113,6 +112,8 @@ p{
 
 .indent {
     margin-left: 40px;
+	float: left;
+	display: flex;
 }
 
 .purple {
@@ -169,7 +170,6 @@ i {
 .code-content{
 	width: 100%;
 	max-width: 800px;
-	display: flex;
 }
 
 .main{
