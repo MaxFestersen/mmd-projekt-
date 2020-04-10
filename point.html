@@ -1,36 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>point</title>
+
+<title>point sytsem test</title>
+<style>
+#start01 {
+  visibility: hidden;
+}
+
+#egenskaber02 {
+  visibility: hidden;
+}
+
+#overvejelser03 {
+  visibility: hidden;
+}
+
+#resultat04 {
+  visibility: hidden;
+}
+</style>
+
 </head>
 
 <body>
+<div id="demonstrationsknap">
+  <input id="button" type="button" value="Gå til beregner" onclick = "start01();">
+</div>
 
-<div id="quiz"></div>
-<button id="submit">Get Results</button>
-<div id="results"></div>
+<!-- her starter pris-beregner -->
+<form id="quiz" name="quiz">
 
-<scipt>
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+  <!-- 01 Start -->
+  <div id="start01">
+  <p> Vil du udvikle en app, en hjemmeside eller begge? </p>
+  <input type="radio" name="svar1" value="app"> App<br>
+  <input type="radio" name="svar1" value="hjemmeside"> Hjemmeside<br>
+  <input type="radio" name="svar1" value="begge"> Begge<br>
+  <!-- fortsætknap -->
+  <input id="button" type="button" value="fortsæt til 02 Egenskaber" onclick = "egenskaber02();">
+  <!-- fortsætknap slut -->
+  </div>
+  <!-- 01 Start - Slut-->
 
-	function showQuestions(questions, quizContainer){
-		// code will go here
-	}
+  <!-- 02 Egenskaber -->
+  <div id="egenskaber02">
+  <p> Hvad skal din app kunne? </p>
+  <p> Beskriv gerne formålet og egenskaberne med dine egne ord </p>
 
-	function showResults(questions, quizContainer, resultsContainer){
-		// code will go here
-	}
+  <!--svarfelt -->
+  <input type="text" id="textbox" name="svar2">
+  <!--svarfelt slut-->
 
-	// show the questions
-	showQuestions(questions, quizContainer);
+  <!-- tilbageknap til 01 Start -->
+  <input id="button" type="button" value="tilbage til 01 start" onclick = "start01();"><br>
+  <!-- tilbageknap slut -->
 
-	// when user clicks submit, show results
-	submitButton.onclick = function(){
-		showResults(questions, quizContainer, resultsContainer);
-	}
+  <!-- kontakt mig med tilbud nu knap-->
+  <button type="button" onclick="kontaktformular();">Kontakt mig med tilbud nu</button><br>
+  <!-- kontakt mig med tilbud nu knap-->
+
+  <!-- gå videre i beregner app knap-->
+  <input id="button" type="button" value="Gå videre i beregner" onclick = "overvejelser03();"><br>
+  <!-- gå videre i beregner app knap slut-->
+  </div>
+  <!-- 02 Egenskaber - Slut -->
+
+  <!--03 Overvejelse -->
+  <div id="overvejelser03">
+  <p> Hvilke platforme skal appen kunne understøttes af? </p>
+  <input type="radio" name="svar3" value="ios"> iOS<br>
+  <input type="radio" name="svar3" value="android"> Android<br>
+  <input type="radio" name="svar3" value="begge"> Begge<br>
+
+  <p> Skal appen integreres medd APIer? </p>
+  <input type="radio" name="svar4" value="ja">Ja<br>
+  <input type="radio" name="svar4" value="nej">Nej<br>
+  <input type="radio" name="svar4" value="vedikke">Ved ikke<br>
+
+  <p> Skal der bygges backend til appen? </p>
+  <input type="radio" name="svar5" value="ja">Ja<br>
+  <input type="radio" name="svar5" value="nej">Nej<br>
+  <input type="radio" name="svar5" value="vedikke">Ved ikke<br>
+
+  <p> Kræver appen service og vedligeholdelse? </p>
+  <input type="radio" name="svar6" value="ja">Ja<br>
+  <input type="radio" name="svar6" value="nej">Nej<br>
+  <input type="radio" name="svar6" value="vedikke">Ved ikke<br>
+
+  <p> Skal House of Code stå for design? </p>
+  <input type="radio" name="svar7" value="ja">Ja<br>
+  <input type="radio" name="svar7" value="nej">Nej<br>
+  <input type="radio" name="svar7" value="vedikke">Ved ikke<br>
+
+  <p> Hvilke sprog skal appen være tilgængelig på? </p>
+  <input type="text" id="textbox" name="svar8">
+
+  <p> Skal der være mulighed for login? </p>
+  <input type="radio" name="svar9" value="ja">Ja<br>
+  <input type="radio" name="svar9" value="nej">Nej<br>
+  <input type="radio" name="svar9" value="vedikke">Ved ikke<br>
+  <br>
+  <br>
+  <!-- tilbageknap til 02 Egenskaber-->
+  <input id="button" type="button" value="tilbage til 02 Egenskaber" onclick = "egenskaber02();">
+  <!-- tilbageknap slut -->
+  <!-- fortsætknap til 04 resultat -->
+  <input id="button" type="button" value="se resultat" onclick = "resultat04();">
+  </div>
+  <!--03 Overvejelse - Slut-->
+
+</form>
+
+<div id="resultat04">
+<p id="svar"></p>
+</div>
+
+<script>
+function resultat04() {
+  var svar1 = document.quiz.svar1.value;
+  var svar4 = document.quiz.svar4.value;
+  var svar5 = document.quiz.svar5.value;
+  var svar6 = document.quiz.svar6.value;
+  var svar7 = document.quiz.svar7.value;
+  var svar9 = document.quiz.svar9.value;
+  var correct = 0;
+
+  if (svar1 == "app") {
+    correct++;
+  }
+
+  if (svar4 == "ja") {
+    correct++;
+  }
+
+  if (svar5 == "ja") {
+    correct++;
+  }
+
+  if (svar6 == "ja") {
+    correct++;
+  }
+
+  if (svar7 == "ja") {
+    correct++;
+  }
+
+  if (svar9 == "ja") {
+    correct++;
+  }
+
+
+document.getElementById("resultat04").style.visibility = "visible";
+document.getElementById("svar").innerHTML = "Din app er " + correct + " kaffer.";
 }
 
+function start01() {
+  document.getElementById("start01").style.visibility = "visible";
+  document.getElementById("egenskaber02").style.visibility = "hidden";
+}
+
+function egenskaber02() {
+  document.getElementById("egenskaber02").style.visibility = "visible";
+  document.getElementById("start01").style.visibility = "hidden";
+  document.getElementById("overvejelser03").style.visibility = "hidden";
+}
+
+function overvejelser03() {
+document.getElementById("overvejelser03").style.visibility = "visible";
+document.getElementById("egenskaber02").style.visibility = "hidden";
+document.getElementById("resultat04").style.visibility = "hidden";
+}
 </script>
 
 </body>
+
 </html>

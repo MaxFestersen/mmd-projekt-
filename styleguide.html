@@ -43,6 +43,7 @@
      <a href="#Lists">Lister</a>
      <a href="#Forms">Formularer</a>
      <a href="#Ikoner">Ikoner</a>
+     <a href="#Sideopsætning">Sideopsætning</a>
    </nav>   
    <main>
     <h1 id="Introduktion">Introduktion</h1>
@@ -50,28 +51,30 @@
      <hr>
        <!-- Farverkoderne-->
      <h1 id="Farver">Farver</h1>
-       <div class="box">
-     <div class="farvekode1">
-        <p>#D7A461</p>
-     </div>
-     <div class="farvekode2">
-        <p>#CC6E76</p>
-     </div>
-     <div class="farvekode3">
-        <p>#6896AC</p>
-     </div>
-     <div class="farvekode4">
-        <p>#A5B978</p>
-     </div>
-     <div class="farvekode5">
-        <p>#A782AA</p>
-     </div>
-     <div class="farvekode6">
-        <p>#BFBCBA</p>
-     </div>
-     <div class="farvekode7">
-        <p>#505E6B</p>
-     </div>
+     <p>websitets farvepalet fremvist herunder i</p>
+     <p id="array1"></p>
+     <div class="box">
+      <div class="farvekode1">
+      <p>#D7A461</p>
+      </div>
+      <div class="farvekode2">
+      <p>#CC6E76</p>
+      </div>
+      <div class="farvekode3">
+      <p>#6896AC</p>
+      </div>
+      <div class="farvekode4">
+      <p>#A5B978</p>
+      </div>
+      <div class="farvekode5">
+      <p>#A782AA</p>
+      </div>
+      <div class="farvekode6">
+      <p>#BFBCBA</p>
+      </div>
+      <div class="farvekode7">
+      <p>#505E6B</p>
+      </div>
     </div>
      <hr>
          <!-- Typografi-->
@@ -99,10 +102,24 @@
        <pre class="buttonkode"><code>
        &lt;button class="button1">&lt;/button>
        </code></pre>
-     <button class="button2">Indsend</button>
+     <button id="knap2" class="button2" type="button" onclick="myFunction()">Indsend</button>
        <pre class="buttonkode2"><code>
        &lt;button class="button2">&lt;/button>
        </code></pre>
+
+        <script>
+         document.getElementsByTagName("p")[0].style.fontSize="16px";
+        
+         var farver = ["farvebokse",];
+         farver[1] = "Hex koder";
+         document.getElementById("array1").innerHTML = farver;
+            
+         function myFunction(){
+         document.getElementById("knap2").innerHTML="Tak for din besked.";
+         }
+            
+         
+        </script>
        
      <h2>Effekter</h2> 
        <!-- effekter-->
@@ -190,6 +207,11 @@
       &lt;img class="icon4" src="Assets/Icons/Asset%206.png" alt="icon1">
       &lt;img class="icon5" src="Assets/HOC_logo.png" alt="icon5">
      </code></pre>
+       <hr>
+       <h1 id="Sideopsætning">Sideopsætning</h1>
+       <h3>Navigation</h3>
+       <h3>Body</h3>
+       <h3>Footer</h3>
    </main>
 </body>
 </html>

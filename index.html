@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/758f05fc43.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/indexjs.js"></script>
-    <title>Hvad koster en app?</title>
 
+    <title>Hvad koster en app?</title>
 </head>
 <body>
 <div class="wrapper">
@@ -16,62 +16,56 @@
     <img src="Assets/HOC_logo.png" alt="logo">
   	<a class="logo internal" href="https://www.houseofcode.io/" rel="home" title="House of Code">House of Code</a>
       <ul>
-       <li class="nav-item"><a title="Projekter" class="nav-link internal" href="https://www.houseofcode.io/projekter/">01 Projekter</a></li>
+       <li class="nav-item"><a title="Projekter" class="nav-link internal" href="https://www.houseofcode.io/projekter/">01 Projekter()</a></li>
        <li class="nav-item"><a title="Det vi tilbyder" class="nav-link internal" href="https://www.houseofcode.io/vi-tilbyder-alt-inden-for-app-og-web/">02 Det vi tilbyder</a></li>
        <li class="nav-item"><a title="Lær os at kende" class="nav-link internal" href="https://www.houseofcode.io/laer-os-at-kende/">03 Lær os at kende</a></li>
        <li class="nav-item"><a title="Jobs i huset" class="nav-link internal" href="https://www.houseofcode.io/jobs-i-huset/">04 Jobs i huset</a></li>
-       <li class="nav-item"><a title="Blog &amp; Nyheder" class="nav-link internal" href="https://www.houseofcode.io/blog-nyheder/"> 05 Blog &amp; Nyheder</a></li>
-       <li class="nav-item"><a title="Kontakt" class="nav-link internal" href="https://www.houseofcode.io/kontakt/">06 Kontakt</a></li>
+       <li class="nav-item"><a title="Blog &amp; Nyheder" class="nav-link internal" href="https://www.houseofcode.io/blog-nyheder/">05 Blog &amp; Nyheder</a></li>
+       <li class="nav-item"><a title="Kontakt" class="nav-link internal" href="https://www.houseofcode.io/kontakt/">06 Kontakt;</a></li>
      </ul>
   </nav>
 <section class="hero">
   <div class="sectionWrapper">
     <div class="center">
       <div class="code-content">
-			  <h1 class="code_heading">Vi tilbyder {</h1>
-        <p class="indent"><span
-        <p class="purple">Alt</span> inden for<span
-           class="orange"> App- </span>&<span
-           class="blue"> web- </p><p></span>udvikling</p>
-        <p class="indent">}</p>
-		  </div>
+       <h1 class="code_heading">Vi tilbyder {</h1>
+         <p class="purple">Alt</p>
+         <span> inden for</span>
+         <span class="orange"> App- </span>
+         <span>&amp;</span>
+         <span class="blue"> web-</span><span>udvikling</span>
+         <p class="indent">}</p>
+      </div>
     </div>
-   </div>
-
+  </div>
 <div class="scrool">
-  <a href="#footer" id="tocontent">scroll<span>View.</span></a>
+  <a href="#mainindex" id="tocontent">scroll<span>View.</span></a>
     <br>
     <i class="arrowDown"></i>
 </div>
 </section>
 
-
- <main>
-   <div class="main">
-
-   </div>
-<h1>Her skal indhold være</h1>
- </main>
+<main id="mainindex">
+<p>Her skal indhold være</p>
+</main>
 
 <footer id="footer" role="contentinfo">
   <div class="center">
-   <div class="row footer-content">
-
+   <div class="rowfootercontent">
     <div class="col331">
       <h4>House of Code</h4>
       <p>Edisonsvej 2<br>5000 Odense C</p>
       <p>Mejlgade 27, 1. t.h.<br>8000 Aarhus C</p>
       <p>CVR: 36030410</p>
      <p><a href="https://houseofcode.io/privatlivspolitik/" title="Privatlivspolitik">Privatlivspolitik</a></p>
-   </div>
-
-  <div class="col332">
+    </div>
+    <div class="col332">
          <h4>Start projekt</h4>
          <p>
            <a href="mailto:info@houseofcode.io" title="Skriv til os">info@houseofcode.io</a><br>
             <a href="tel:72170220" title="Ring til os">+45 72 17 02 20</a>
         </p>
- </div>
+    </div>
      <div class="col333">
          <h4>Socialisér</h4>
          <ul>
@@ -80,7 +74,7 @@
              <li><a href="https://www.facebook.com/houseofcodeaps" target="_blank" title="House of Code - Facebook">Facebook</a></li>
              <li><a href="https://www.instagram.com/houseofcode/" target="_blank" title="House of Code - Instagram">Instagram</a></li>
          </ul>
-     </div>
+      </div>
  </div>
  <!--
  <a href="https://danmarksstaerkestenetvaerk.dk/donate" target="_blank"><img src="https://danmarksstaerkestenetvaerk.dk/media/l5bjd12g/superdysten_badge.png" style="height: 100px;" /></a>-->
@@ -90,3 +84,16 @@
 </div>
 </body>
 </html>
+
+<script>
+  function scroll_to(id) {
+      document.documentElement.style.scrollBehavior = 'smooth'
+      element = document.createElement('a');
+      element.setAttribute('href', id)
+      element.click();
+  }
+
+  document.getElementById("tocontent").addEventListener('click', () => {
+  scroll_to('#7')
+  });
+</script>

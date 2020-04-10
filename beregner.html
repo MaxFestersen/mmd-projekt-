@@ -34,149 +34,190 @@
         color: white;
         font-size: 20px;
         }
+		
+		.formErrorTxt, .formWarningTxt {
+			float: left;
+			clear: both;
+		}
+		.formErrorTxt {
+			color: #F00;
+			font-weight: bold;
+		}
+		
+		.formWarningTxt{
+			color: #ff8c00;
+		}
+		
+		.InputError {
+			border: solid 1px #F00;
+			outline-style: solid;
+			outline-width: 1px;
+			outline-color: #F00;
+		}
+		
+		.InputWarning {
+			border: solid 1px #ff8c00;
+			outline-style: solid;
+			outline-width: 1px;
+			outline-color: #ff8c00;
+		}
+		
+		.hidden{
+			display: none;
+		}
 	</style>
 </head>
 <body>
-	<form action="mailto:minmailmax@gmail.com" method="post" enctype="multipart/form-data" target="_blank" accept-charset="UTF-8">
+	<form id="pris-bereger" action="mailto:minmailmax@gmail.com" method="post" enctype="text/plain" target="_blank" accept-charset="UTF-8">
+	<!-- form forklaringer:
+	action: hvad der skal ske - her fortæller vi at formålet er at sende en email til minmailmax@gmail.com
+	method: metoden til hvordan action udføres. For at vi kan sende e-mail, skal post anvendes.
+	enctype: definerer encoding. https://www.w3schools.com/tags/att_form_enctype.asp
+	target: definerer vinduet der arbejdes i. _blank henviser til et nyt vindue, således at e-mail klienten åbner i et nyt vindue.
+	accept-charset: definerer hvilken encoding der indtastes i formen. Det påvirker pt. ikke funktionaliteten synligt. Det er tilføjet, da jeg havde læst at det ville hjælpe til at indsætte de special tegn i nogen e-mail klienter. Det har ikke virket i mine tests.
+	-->
 		<!-- Skjuldt form indhold -->
-		<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregeren, og ønsker at f&aring; et tilbud. Det har jeg gjort " value="">
+		<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregeren. Jeg anmoder om et tilbud. Pris beregeren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
+		<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
 		<!-- 01 Start -->
-		<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
+		<label id="start">Ønsker du at udvikle en app og/eller en hjemmeside?</label>
 		<label>
-			<input type="checkbox" name="app" value="app" required>
+			<input type="checkbox" name="App " value="tilvalgt." required>
 			<span>App</span>
 		</label>
 		<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
-			<input type="checkbox" name="hjemmeside" value="hjemmeside" disabled>
+			<input type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
 			<span>Hjemmeside</span>
 		</label>
-		<button type="button">tilbage</button>
-		<button type="button">fortsæt</button>
+		<span id="appHjemmesideError" class="formErrorTxt hidden">App og/eller hjemmeside skal være valgt.</span>
+		<button type="button" id="back01">tilbage</button>
+		<button type="button" id="next01">fortsæt</button>
 		<!-- 02 Egenskaber -->
-		<label class="overskrift">Hvad skal din app kunne?</label>
+		<label id="egenskaber" class="overskrift">Hvad skal din app kunne?</label>
 		<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
-		<textarea name="funktionalitet" cols="40" rows="10" placeholder="Min app skal.." required></textarea>
+		<textarea name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
+		<span id="beskrivelseError" class="formErrorTxt hidden">Der skal tilføjes en beskrivelse af løsningen.</span>		
 		<button type="button">Kontakt mig med tilbud nu</button>
 		<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
-		<button type="button" onClick="showform()">Gå videre i beregner</button>
-		<button type="button">tilbage</button>
+		<button type="button" id="next02" onClick="showform()">Gå videre i beregner</button>
+		<button type="button" id="back02">tilbage</button>
 		<!-- 03 Overvejelser/Beregner -->
 			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
 		<section id="beregner">
-		<label class="overskrift">Platform</label>
-		<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
-		<label>
-			<input type="radio" name="platform" value="ios">
-			<span>iOS</span>
-		</label>
-		<label>
-			<input type="radio" name="platform" value="android">
-			<span>Android</span>
-		</label>
-		<label>
-			<input type="radio" name="platform" value="begge">
-			<span>Begge</span>
-		</label>
-		<label class="overskrift">Integrationer</label>
-		<img class="ikon" src="ikon" alt="API IKON">
-			<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
-		<label>
-			<input type="radio" id="hvisja" name="API" value="ja">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" id="hvisnej" name="API" value="nej">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" id="hvisvedikke" name="API" value="vedikke">
-			<span>Ved ikke</span>
-		</label>
-			<section id="apivalg">
-				<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
-				<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
-				<input type="text" placeholder="Vælg ønskede APIer...">
-			</section>
-			<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
-			<script>
-				//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
-				document.getElementById("hvisja").addEventListener("change", function(){
-					document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
-				}); 
-				document.getElementById("hvisnej").addEventListener("change", function(){
-					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-				});
-				document.getElementById("hvisvedikke").addEventListener("change", function(){
-					document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-				});
-			</script>
-		<img class="ikon" src="ikon" alt="BACK END IKON">
-		<label class="spoergsmaal">Skal der bygges backend til appen?</label>
-		<label>
-			<input type="radio" name="backend" value="ja">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="backend" value="nej">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="backend" value="vedikke">
-			<span>Ved ikke</span>
-		</label>
-		<img class="ikon" src="ikon" alt="SERVICE IKON">
-		<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
-		<label>
-			<input type="radio" name="service" value="ja">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="service" value="nej">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="service" value="vedikke">
-			<span>Ved ikke</span>
-		</label>
-		
-		<label class="overskrift">Design</label>
-		<img class="ikon" src="ikon" alt="DESIGN IKON">
-		<label class="spoergsmaal">Skal House of Code stå for design?</label>
-		<label>
-			<input type="radio" name="design" value="ja">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="design" value="nej">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="design" value="vedikke">
-			<span>Ved ikke</span>
-		</label>
-		
-		<label class="overskrift">Features</label>
-		<img class="ikon" src="ikon" alt="SPROG IKON">
-			<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
-		<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
-		<input type="text" placeholder="Vælg sprog...">
-		<img class="ikon" src="ikon" alt="LOGIN IKON">
-		<label class="spoergsmaal">Skal der være mulighed for login?</label>
-		<label>
-			<input type="radio" name="login" value="ja">
-			<span>Ja</span>
-		</label>
-		<label>
-			<input type="radio" name="login" value="nej">
-			<span>Nej</span>
-		</label>
-		<label>
-			<input type="radio" name="login" value="vedikke">
-			<span>Ved ikke</span>
-		</label>
-		
-		<button type="button" onClick="showform()">tilbage</button>
-		<button type="button" onClick="showform()">fortsæt</button>
+			<label class="overskrift">Platform</label>
+			<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
+			<label>
+				<input type="radio" name="Platform " value="IOS.">
+				<span>iOS</span>
+			</label>
+			<label>
+				<input type="radio" name="Platform " value="Android.">
+				<span>Android</span>
+			</label>
+			<label>
+				<input type="radio" name="Platform " value="IOS & Android.">
+				<span>Begge</span>
+			</label>
+			<label class="overskrift">Integrationer</label>
+			<img class="ikon" src="ikon" alt="API IKON">
+				<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
+			<label>
+				<input type="radio" id="hvisja" name="API Skal integreres " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" id="hvisnej" name="API Skal integreres " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" id="hvisvedikke" name="API Skal integreres " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+				<section id="apivalg">
+					<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
+					<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
+					<input type="text" placeholder="Vælg ønskede APIer..." name="Valgte API ">
+				</section>
+				<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
+				<script>
+					//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
+					document.getElementById("hvisja").addEventListener("change", function(){
+						document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
+					}); 
+					document.getElementById("hvisnej").addEventListener("change", function(){
+						document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+					});
+					document.getElementById("hvisvedikke").addEventListener("change", function(){
+						document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+					});
+				</script>
+			<img class="ikon" src="ikon" alt="BACK END IKON">
+			<label class="spoergsmaal">Skal der bygges backend til appen?</label>
+			<label>
+				<input type="radio" name="Backend skal bygges " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="Backend skal bygges " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="Backend skal bygges " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			<img class="ikon" src="ikon" alt="SERVICE IKON">
+			<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
+			<label>
+				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			
+			<label class="overskrift">Design</label>
+			<img class="ikon" src="ikon" alt="DESIGN IKON">
+			<label class="spoergsmaal">Skal House of Code stå for design?</label>
+			<label>
+				<input type="radio" name="House of Code skal designe app " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="House of Code skal designe app " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="House of Code skal designe app " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			
+			<label class="overskrift">Features</label>
+			<img class="ikon" src="ikon" alt="SPROG IKON">
+				<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
+			<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
+			<input type="text" placeholder="Vælg sprog..." name="Sprog ">
+			<img class="ikon" src="ikon" alt="LOGIN IKON">
+			<label class="spoergsmaal">Skal der være mulighed for login?</label>
+			<label>
+				<input type="radio" name="Login skal implementeres " value="Ja.">
+				<span>Ja</span>
+			</label>
+			<label>
+				<input type="radio" name="Login skal implementeres " value="Nej.">
+				<span>Nej</span>
+			</label>
+			<label>
+				<input type="radio" name="Login skal implementeres " value="Ved ikke.">
+				<span>Ved ikke</span>
+			</label>
+			
+			<button type="button" id="back03" onClick="showform()">tilbage</button>
+			<button type="button" id="next03" onClick="showform()">fortsæt</button>
 		</section>
 		<!--Js for show/hide section-->
 		<script>
@@ -195,7 +236,7 @@
 		</script>
 		<!-- 04 Resultat -->
 		<!-- Din app er -->
-		<label class="overskrift">Din app er</label>
+		<label  id="resultat" class="overskrift">Din app er</label>
 		<label class="dinapper">1 kop kaffe</label>
 		<label class="dinapper">2 kopper kaffe</label>
 		<label class="dinapper">3 kopper kaffe</label>
@@ -207,22 +248,48 @@
 		<button type="button" onclick="myFunction()">Indsend</button>
 		<button type="button">tilbage</button>
         <div id="myDIV" >Tak! din besked er afsendt</div>
-		<!-- afslutning/Formualr -->
-		<label>
+		<!-- Afslutning/Formualr -->
+		<label id="afslutning">
 			<span>Hvordan må vi kontakte dig om vores tilbud?</span>
-			<input type="text" placeholder="Navn" name="name" required>
+			<input type="text" placeholder="Navn" name="Mit navn " required>
 		</label>
-		<input type="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" placeholder="Telefonnummer" name="tlf"> <!-- Virker ikke i chrome -->
-		<input type="email" placeholder="E-mail" name="email" required>
-		<textarea name="message" cols="40" rows="10" placeholder="Besked" ></textarea>
-		<input type="submit" Value="Kontakt mig" disabled>
-		<input type="submit" Value="Lad mig sende en e-mail med mine resultater." disabled>
-		<button type="button" onClick="showform()">tilbage</button>
+		<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>		
+		<span id="navnWarning" class="formWarningTxt hidden">Der blev ikke registreret et efernavn.</span>
+		<input type="tel" 
+		placeholder="Telefonnummer"
+		title="Telefonnummer 8 cifre. F.eks. 12 34 56 78. Landekoder accepteres."
+		name="Mit telefon nummer ">
+		<!-- 
+		pattern definerer hvilket format telefonnummeret skal stå i. Jeg har opsat det således at der forventes et dansk telefon nummer med eller uden landekode, og med bindestreg, mellemrum eller uden tegnsætning.
+		
+		Pattern var for aggarsivt, og er en forhindring, især for numre der ikke er danske. Derfor er det som udgangspunkt ikke implementeret.
+		
+		Se pattern overskueligt her. Bemærk at pattern vil læse linjeskift og tab, så disse skal fjernes inden implementation.
+			pattern="	[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+			| 	[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+			| 	[0-9]{8}
+			|	+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+			|	+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+			|	+[0-9]{10}
+			|	[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+			|	[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+			|	[0-0]{2}[0-9]{10}
+			"
+		Pattern på en linje:
+			pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
+		-->
+		<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>		
+		<input type="email" placeholder="E-mail" name="Min e-mail " required>
+		<span id="emailErrorMissing" class="formErrorTxt hidden">E-mail skal indtastes.</span>		
+		<span id="emailErrorWrong" class="formErrorTxt hidden">E-mail skal indstastes i et korrekt format.</span>		
+		<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
+		<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
+		<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
+		<button type="button" id="back04" onClick="showform()">tilbage</button>
 		<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
 		<button type="button">fortsæt</button>
 		<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
 	</form>
-	<button class="emailReplyButton" onClick="sendEmail('æøå')">Reply</button>
 
 	<script>
 	  // ved hjælp af DOM token list er jeg kommet frem til denne kode som kan bruges til at tilføje og fjerne classes i og med at der står add inden slutparentesen, kan man her også skrive remove for at modsætte effekten og fjerne en class   
@@ -232,14 +299,342 @@
 	  //jeg kan få funktionen til at fungere på min browser, men den ser ikke ud til at virke på vores beregner??
 	</script>
 	<script>
-	//Proof of concept for at åbne email med JavaScript
-	function sendEmail(message) {
-		var email = message.emailId;
-		var subject = message.subject;
-		var emailBody = 'Hi øå'+message.from;
-		document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
+	/* Send e-mail med JavaScript
+	Formål: At åbne e-mail client, med bedre formatering og med specielle karakterer tilladt (især: æøå).
+	*/
+	// --- Funktioner til brug ---
+	// Tilføj error info
+	function addError(inputs, txt) {
+		if(Array.isArray(inputs)){
+			let i = 0;
+			while(i < inputs.length ) {
+			   inputs[i].classList.add("InputError");
+			   i++;
+			}
+		} else {
+			inputs.classList.add("InputError");
+		}
+		txt.classList.remove("hidden");
 	}
-	// Formål: Find datoen i dag.
+	
+	// Tilføj warning info
+	function addWarning(inputs, txt) {
+		if(Array.isArray(inputs)){
+			let i = 0;
+			while(i < inputs.length ) {
+			   inputs[i].classList.add("InputWarning");
+			   i++;
+			}
+		} else {
+			inputs.classList.add("InputWarning");
+		}
+		txt.classList.remove("hidden");
+	}
+	
+	// Fjern error info
+	function rmError(inputs, txt) {
+		if(Array.isArray(inputs)){
+			let i = 0;
+			while(i < inputs.length ) {
+			   inputs[i].classList.remove("InputError");
+			   inputs[i].classList.remove("InputWarning");
+			   i++;
+			}
+		} else {
+			inputs.classList.remove("InputError");
+			inputs.classList.remove("InputWarning");
+		}
+		if(Array.isArray(txt)){
+			let i = 0;
+			while(i < txt.length ) {
+			   txt[i].classList.add("hidden");
+			   i++;
+			}
+		} else {
+			txt.classList.add("hidden");
+		}
+	}
+	
+	// Værdier til at blive overskredet
+	var arr = null;
+
+	// --- Form funktionalitet ---
+	// Form
+	var pb = document.getElementById("pris-bereger");
+	
+	// Skjuldte input
+	var formIntroduktion = document.getElementById("formIntroduktion");
+	
+	// -- 01 Start --
+	var startSection = document.getElementById("start");
+	var app = document.getElementsByName("App ");
+	app = app[0];
+	var hjemmeside = document.getElementsByName("Hjemmeside ");
+	hjemmeside = hjemmeside[0];
+	var appHjemmesideError = document.getElementById("appHjemmesideError");
+	// Valider App / Hjemmeside
+	function appHjemmesideValidate() {
+		console.log('App og hjemmeside checkboxer blev valideret.');
+		if(!app.checked & !hjemmeside.checked) {
+			// App eller hjemmeside er ikke blevet tilvalgt;
+			// Informer brugeren om deres fejl.
+			addError([hjemmeside, app], appHjemmesideError);
+			// Lad operationen fejle.
+			return startSection;
+		} else{
+			rmError([hjemmeside, app], appHjemmesideError);
+			return 0;
+		}
+	}
+	// Fjern error når der klickes på en box
+	app.onclick = function(){
+		rmError([hjemmeside, app], appHjemmesideError);
+	}
+	hjemmeside.onclick = function(){
+		rmError([hjemmeside, app], appHjemmesideError);
+	}
+	// Valider når man trykker på næste
+	//todo
+	
+	// -- 02 Egenskaber --
+	var egenskaberSection = document.getElementById("egenskaber");
+	var beskrivelse = document.getElementsByName("Min app skal kunne ");
+	beskrivelse = beskrivelse[0];
+	var beskrivelseError = document.getElementById("beskrivelseError");
+	// Valider beskrivelse
+	function beskrivelseValidate() {
+		console.log('Beskrivelse blev valideret.');
+		if(!beskrivelse.value){
+			addError(beskrivelse, beskrivelseError);
+			return egenskaberSection;
+		} else{
+			rmError(beskrivelse, beskrivelseError);
+			return 0;
+		}
+	}
+	// Fjern error på focus på beskrivelsen (når der trykkes i den)
+	beskrivelse.onfocus = function() {
+		rmError(beskrivelse, beskrivelseError);
+	}
+	// Trim og kør validering når man trykker ud af beskrivelsen. Primær
+	beskrivelse.onblur = function() {
+		beskrivelse.value= beskrivelse.value.trim();
+		beskrivelseValidate();
+	}
+	// Trim og kør validering når man trykker ud af beskrivelsen. Sekundær.
+	beskrivelse.onfocusout = function() {
+		beskrivelse.value= beskrivelse.value.trim();
+		beskrivelseValidate();
+	}
+	// Valider når man trykker på næste
+	//todo
+	
+	// --- 03 Overvejelser/Beregner ---
+	//todo
+	
+	// --- 04 Resultat ---
+	//todo
+	
+	// --- Afslutning/Formualr ---
+	var afslutningSection = document.getElementById("afslutning");
+	var navn = document.getElementsByName("Mit navn ");
+	navn = navn[0];
+	var tel = document.getElementsByName("Mit telefon nummer ");
+	tel = tel[0];
+	var email = document.getElementsByName("Min e-mail ");
+	email = email[0];
+	var besked = document.getElementsByName("Besked ");
+	besked = besked[0];
+	// -- Valider navn --
+	function navnValidate() {
+		console.log('Navn blev valideret.');
+		if(!navn.value){
+			addError(navn, navnError);
+			return afslutningSection;
+		} else if(navn.value.split(' ').filter(function(v){return v!==''}).length <= 1){
+			addWarning(navn, navnWarning);
+			return 0;
+		} else{
+			rmError(navn, [navnError, navnWarning]);
+			return 0;
+		}
+	}
+	// Fjern error på focus på navn (når der trykkes i den)
+	navn.onfocus = function() {
+		rmError(navn, [navnError, navnWarning]);
+	}
+	// Trim og kør validering når man trykker ud af navn. Primær
+	navn.onblur = function() {
+		navn.value = navn.value.trim();
+		navnValidate();
+	}
+	// Trim og kør validering når man trykker ud af navn. Sekundær.
+	navn.onfocusout = function() {
+		navn.value = navn.value.trim();
+		navnValidate();
+	}
+	// -- Valider telefon --
+	function telValidate() {
+		console.log('Telefon blev valideret.');
+		var telTest = tel.value.replace("+", "");
+		telTest = telTest.replace(/ /g, "");
+//		console.log(telTest);
+		if(!/^(\s*[0-9]+\s*)+$/.test(telTest)
+		|| telTest.length > 12
+		|| telTest.length > 8 && telTest.slice(0, 2) != "00"
+		|| telTest.length < 7){
+			addWarning(tel, telWarning);
+			return 0;
+		} else{
+			rmError(tel, telWarning);
+			return 0;
+		}
+	}
+	/*pattern="
+	[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}
+	"*/
+	// Trim og kør validering når man trykker ud af telefon. Primær.
+	tel.onblur = function() {
+		telValidate();
+	}
+	// Trim og kør validering når man trykker ud af telefon. Sekundær.
+	tel.onfocusout = function() {
+		telValidate();
+	}
+	// Stop taster der ikke er numre eller funktionstaster til at virke.
+	tel.onkeydown = function() {
+		//console.log(event.key);
+		if(event.key.length == 1 && event.key.match(/[a-z]/i) || event.key.length == 1 && event.key.match(/[^\w\s]/gi) && event.key != "+" || event.key == " " || event.key.length == 1 && event.key.match(/[^\w\s]/gi) && tel.value.length != 0){
+			event.preventDefault();
+		}
+	}
+	// Valider og trim ved hver gang der bliver trykket på en tast
+	tel.onkeyup = function() {
+		tel.value = tel.value.trim();
+		tel.value = tel.value.replace(/(\d{2})/g, '$1 ').replace(/(^\s+|\s+$)/,'').replace(/ +(?= )/g,'');
+		telValidate();
+	}
+	
+	// -- Valider e-mail --
+	function emailValidate() {
+		console.log('E-mail blev valideret.');
+		if(!email.value){
+			addError(email, emailErrorMissing);
+			return afslutningSection;
+		} else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)){
+			addError(email, emailErrorWrong);
+			return afslutningSection;
+		} else{
+			rmError(email, [emailErrorMissing, emailErrorWrong]);
+			return 0;
+		}
+	}
+	// Fjern error på focus på email (når der trykkes i den)
+	email.onfocus = function() {
+		rmError(email, [emailErrorMissing, emailErrorWrong]);
+	}
+	// Trim og kør validering når man trykker ud af email. Primær
+	email.onblur = function() {
+		email.value = email.value.trim();
+		emailValidate();
+	}
+	// Trim og kør validering når man trykker ud af email. Sekundær.
+	email.onfocusout = function() {
+		email.value = navn.value.trim();
+		emailValidate();
+	}
+	// Valider ved hver gang der bliver trykket på en tast
+	email.onkeyup = function() {
+		emailValidate();
+	}
+	// -- Trim besked --
+	// Trim og kør validering når man trykker ud af beskrivelsen. Primær
+	besked.onblur = function() {
+		besked.value= besked.value.trim();
+	}
+	// Trim og kør validering når man trykker ud af beskrivelsen. Sekundær.
+	besked.onfocusout = function() {
+		besked.value= besked.value.trim();
+	}
+	
+	// -- Submit e-mail --
+	var submitEmail = document.getElementById("submitEmail");
+	submitEmail.onclick = function(){
+		// Disable standard submit
+		event.preventDefault();
+		var errorSection = false; // Error section peger på det første sted der er fejl på siden. Den er som udgangspunkt ikke sand.
+		var errors = 0; // Antal fejl
+		//Definer array af funktioner der skal køres. Dvs. Funktioner til validering der skal køres inden formen kan blive afsendt.
+		var requiredContent = [
+			appHjemmesideValidate,
+			beskrivelseValidate,
+			navnValidate,
+			emailValidate
+		]
+		
+		// Loop alle funktioner, og gem første fejlsektion, hvis der er en.
+		var run = null;
+		for (i = 0; i < requiredContent.length; i++) {
+			run = requiredContent[i]();
+			if(run != 0 & !errorSection){
+				errorSection = run;
+				errors++;
+			} else if(run != 0){
+				errors++;
+			}
+			run = null;
+		}
+		console.log("Der var " + errors + " fejl.");
+		// Log om der var dejl
+		if(errorSection){
+			console.log('Der var fejl i påkrævet indhold.');
+			//Scroll til den øverste fejl
+			errorSection.scrollIntoView({ 
+			  behavior: 'smooth' 
+			});
+		} else {
+			console.log('Der var ingen fejl  påkrævet indhold.');
+			var emailBody = formIntroduktion.name + formIntroduktion.value;
+			/*if(app & hjemmeside){
+			sol = "app og hjemmeside"
+			} else if(app){*/
+			sol = "app"
+			/*} else if(hjemmeside){
+			sol = "hjemmeside"
+			} else{
+				return false;
+			}*/
+			// Definer krav til app.
+			emailBody += '%0D%0AJeg vil gerne have udviklet en ' + sol + '.%0D%0A%0D%0A';
+			emailBody += 'Formålet og meningen med min ' + sol + ' er:%0D%0A' + beskrivelse.value + '%0D%0A%0D%0A';
+			/*if(point>0){
+				emailBody += 'Jeg anvendte pris-beregneren, og fik følgende estimat: ';
+				if(point >= 10){
+					stor
+				} else if(point < 10 & point >= 5){           
+					mellem
+				} else {
+					lille
+				}
+			}*/
+			if(besked.value){
+				emailBody += 'Jeg har vedlagt denne besked:%0D%0A' + besked.value + '%0D%0A%0D%0A';
+			}
+			emailBody += 'Mvh.%0D%0A' + navn.value + '%0D%0A';
+			if(tel.value){
+				emailBody += 'Telefon: ' + tel.value + '%0D%0A';
+			}
+			emailBody += 'E-mail: ' + email.value;
+			console.log(emailBody);
+			var emailAdd = "minmailmax@gmail.com";
+			var subject = "Anmodning om estimat på app.";
+			window.open("mailto:"+emailAdd+"?subject="+subject+"&body="+emailBody, '_blank');
+		}
+	};
+	
+	/* --- Input dato ---
+	Formål: Find datoen i dag, som en værdi i input.
+	*/
 	// Definer navne i ugen.
 	var hverdage = new Array(7);
 	hverdage[0] = "S&oslash;ndag";
@@ -276,6 +671,8 @@
 	var yyyy = dagensDato.getFullYear();
 	// Sammensæt oplysningerne til en streng
 	dagensDato = " " + dagensHverdag + ", " + dd + '. ' + mm + ' ' + yyyy + "."; //&nbsp; er mellemrum
+
+	// Retuner resultatet ved indlæsning.
 	document.getElementById("formIntroduktion").value = dagensDato;
 	</script>
 </body>

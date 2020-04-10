@@ -15,6 +15,7 @@
   display: flex;
   justify-content: left;
   align-items: center;
+  margin-bottom: 1000px;
 }
 
 .menu li {
@@ -38,13 +39,36 @@
 
 <body>
 
+<main id="menu">
   <ul class="menu">
-  <li><a href="#?">01 <br> Start</a></li>
-  <li><a href="#?">02 <br> Egenskaber</a></li>
-  <li><a href="#?">03 <br> Resultat </a></li>
-  <li><a href="#?">03 <br> Overvejelser</a></li>
-  <li><a href="#?">04 <br> Resultat</a></li>
-</ul>
+   <li><a href="#?">01 <br> Start</a></li>
+   <li><a href="#?">02 <br> Egenskaber</a></li>
+   <li><a href="#?">03 <br> Resultat </a></li>
+   <li><a href="#?">03 <br> Overvejelser</a></li>
+   <li><a href="#?">04 <br> Resultat</a></li>
+ </ul>
+</main>
+<br>
+<br>
+
+<div class="knapper">
+  <button>tilbage</button>
+  <a href="#menu" id="knap1"><button>fortsæt</button>
+</div>
+
 
 </body>
 </html>
+
+<script>
+  function scroll_to(id) {
+      document.documentElement.style.scrollBehavior = 'smooth'
+      element = document.createElement('a');
+      element.setAttribute('href', id)
+      element.click();
+  }
+
+  document.getElementById("knap1").addEventListener('click', () => {
+  scroll_to('#7')
+  });
+</script>
