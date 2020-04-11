@@ -13,26 +13,26 @@
     <ul class="screen-preview">
      <li class="preview-item">
       <a id="small"  data-size="420px" data-size-label="small" class="preview-item-link">
-       <span>Small Screen</span>
+       <button class="button_small" onclick="smallWin()">Device Screen</button>
       </a>
      </li>
      <li class="preview-item">
       <a id="medium" data-size="720px" data-size-label="medium" class="preview-item-link">
-        <span>Medium Screen</span>
-      </a>
-     </li>
-     <li class="preview-item">
-      <a id="large" data-size="1280px" data-size-label="large" class="preview-item-link">
-        <span>Large Screen</span>
-      </a>
-     </li>
-     <li class="preview-item">
-      <a id="full" data-size="100%" data-size-label="full" class="preview-item-link">
-        <span>Full-Screen</span>
+      <button class="button_medium" onclick="mediumWin()">Tablet Screen</button>
       </a>
      </li>
     </ul>    
    </nav>
+  <script>
+    var myWindow;
+     function smallWin(){
+         myWindow = window.open("http://127.0.0.1:58801/styleguide.html","","width=375, height=812");
+     }
+     function mediumWin(){
+         myWindow = window.open("http://127.0.0.1:58801/styleguide.html","","width=768, height=1024")
+     }
+  </script>  
+    
   </header>
    <nav>
     <img src="Assets/HOC_logo.png" alt="logo">

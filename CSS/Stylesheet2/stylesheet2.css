@@ -50,8 +50,22 @@ body {
     display: block;
     padding: 0;
     text-decoration: none;
+    margin-right: 0px;
+    cursor: pointer;
+}
+/* resize knapperne */
+.button_small{
+    border: none;
+    color: #000;
+    background-color: #fff;
     font-size: 13px;
-    margin-right: 20px;
+    cursor: pointer;
+}
+.button_medium{
+    border: none;
+    color: #000;
+    background-color: #fff;
+    font-size: 13px;
     cursor: pointer;
 }
 
