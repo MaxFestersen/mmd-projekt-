@@ -84,7 +84,7 @@
 			display: flex;
 			justify-content: left;
 			align-items: center;
-			margin-bottom: 1000px;
+			float: left;
 		}
 		.breadcrumbs li {
 			display: inline-block;
@@ -102,7 +102,15 @@
 	</style>
 </head>
 <body>
-	
+	<section id="breadcrumbs">
+				<ul class="breadcrumbs">
+					<li><a onclick="showHideSection('start');">01 <br> Start</a></li>
+					<li><a onclick="showHideSection('egenskaber');">02 <br> Egenskaber</a></li>
+					<li><a onclick="showHideSection('beregner');">03 <br> Beregner </a></li>
+					<li><a onclick="showHideSection('resultat');">03 <br> Resultat</a></li>
+					<li><a onclick="showHideSection('afslutning');">04 <br> Afslutning</a></li>
+				</ul>
+			</section>
 	<section id="pris-beregner-section">
 		<div id="pris-beregner-knap-section" class="hidden">
 			<button id="demonstrationsknap" type="button" onclick="showHideSection('start');">Start pris-beregner</button>
@@ -327,15 +335,7 @@
 				<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
 				<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
 			</section>
-			<section id="breadcrumbs">
-				<ul class="breadcrumbs">
-					<li><a onclick="showHideSection('start');">01 <br> Start</a></li>
-					<li><a onclick="showHideSection('egenskaber');">02 <br> Egenskaber</a></li>
-					<li><a onclick="showHideSection('beregner');">03 <br> Beregner </a></li>
-					<li><a onclick="showHideSection('resultat');">03 <br> Resultat</a></li>
-					<li><a onclick="showHideSection('afslutning');">04 <br> Afslutning</a></li>
-				</ul>
-			</section>
+			
 		</form>
 	</section>
 	<script type="text/javascript" src="js/indholsvisning.js"></script>
