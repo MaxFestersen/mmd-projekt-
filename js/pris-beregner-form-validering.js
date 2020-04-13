@@ -169,6 +169,13 @@ next02alt.onclick = function(){
 
 // --- 03 Overvejelser/Beregner ---
 //Nothing required to validate
+/* Påbegyndt noget kode der ville formatere api'er i valgte api.
+var integrationer = document.getElementsByName("Valgte API ");
+integrationer.onkeyup = function(){
+	if(event.key == ";"){
+		integrationer.value;
+	}
+}*/
 
 // --- 04 Resultat ---
 //Nothing to validate
