@@ -99,7 +99,7 @@
 			</label>
 			<span id="appHjemmesideError" class="formErrorTxt hidden">App og/eller hjemmeside skal være valgt.</span>
 			<button type="button" id="back01">tilbage</button>
-			<button type="button" id="next01">fortsæt</button>
+			<button type="button" id="next01" onClick="showHideSection('egenskaber');">fortsæt</button>
 		</section>
 		<!-- 02 Egenskaber -->
 		<section class="hidden" id="egenskaber">
@@ -324,8 +324,8 @@
 	<script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>
 	<script type="text/javascript" src="js/input-dato.js"></script>
 	<script>
-		function showHideSection(sectionToBeShown){			
-			var ids = ["start", "egenskaber", "resultat", "afslutning"]
+		function showHideSection(sectionToBeShown){	
+			var ids = ["start", "egenskaber", "beregner", "resultat", "afslutning"]
 			
 			for(i = 0, i > ids.length, i++){
 				if(sectionToBeShown == ids[i]){
