@@ -69,7 +69,6 @@ a {
     text-decoration: underline;
     transition: color 200ms;
     font-family: roboto mono;
-    padding: 0 10px;
     letter-spacing: inherit;
     line-height: 10px;
 
@@ -203,8 +202,7 @@ i {
 	background-color: #515f6d;
 	padding: 20px;
 	font-size: 30px;
-	width: 100%;
-	display: block;
+	display: grid;
 }
 
 .col331 h4{
@@ -237,7 +235,7 @@ i {
 	background-color: #515f6d;
 	padding: 20px;
 	font-size: 15px;
-	text-align: center;
+	text-align: left;
 	display: block;
 }
 
@@ -272,7 +270,7 @@ i {
 	background-color: #515f6d;
 	padding: 20px;
 	font-size: 15px;
-	text-align: center;
+	text-align: left;
 	display: block;
 }
 
