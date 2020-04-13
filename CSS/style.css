@@ -19,6 +19,18 @@ body{
   width: 100%;
 }
 
+.header-nav ul .nav-item::before, .single-nav ul .nav-item::before {
+    content: "0" counter(item);
+    counter-increment: item;
+}
+.header-nav .nav-item::before, .single-nav .nav-item::before {
+    width: 2em;
+    float: left;
+    font-weight: 400;
+    font-size: inherit;
+    opacity: 0.6;
+}
+
 .header-nav, .single-nav {
     padding: 50px 0px;
     width: 240px;
@@ -30,9 +42,14 @@ body{
     margin: 10px;
 }
 
+.header-nav a{
+    padding: 0 10px;
+
+}
+
 ul {
     list-style-type: none;
-    margin: 0px;
+    margin-left: 0px;
     margin-top: 10px;
     margin-right: 0px;
     padding: 5px;
@@ -48,7 +65,7 @@ ul {
 .nav-item a{
     color: inherit;
     text-decoration: none;
-
+    padding: 0 10px;
 }
 .nav-item a:hover{
     color: #6896AC;
@@ -336,6 +353,11 @@ i {
 	display: flex;
 }
 
+button{
+	border: 1px solid #a5b978;
+	font-family: roboto mono;
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -344,11 +366,10 @@ i {
 
 }
 
-
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #555;
+  background-color: #515f6d;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -370,7 +391,7 @@ i {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: #515f6d transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
