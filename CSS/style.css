@@ -69,7 +69,6 @@ a {
     text-decoration: underline;
     transition: color 200ms;
     font-family: roboto mono;
-    padding: 0 10px;
     letter-spacing: inherit;
     line-height: 10px;
 
@@ -164,9 +163,11 @@ i {
 	margin-left: 50%;
 }
 
-.center{
-  margin: 0 auto;
-  width: 100%;
+.centerfooter{
+	margin: 50px auto 0;
+	width: 100%;
+	position: relative;
+	background-color: #515f6d;
 }
 
 .code-content{
@@ -183,10 +184,10 @@ i {
 .rowfootercontent{
   margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   background-color: #515f6d;
-  padding: 0px;
-	width: 100%;
+  padding: 150px 100px;
+	width: 660px;
 }
 
 
@@ -199,10 +200,8 @@ i {
 
 .col331{
 	background-color: #515f6d;
-	border: 1px solid rgba(0, 0, 0, 0.8);
 	padding: 20px;
 	font-size: 30px;
-	width: 50%;
 	display: grid;
 }
 
@@ -223,7 +222,6 @@ i {
 	color: #fff;
 	display: block;
 	float: left;
-	margin: 10px;
 }
 
 .col331 a{
@@ -234,12 +232,11 @@ i {
 }
 
 .col332{
-  background-color: #515f6d;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  font-size: 15px;
-  text-align: center;
-  width: 50%;
-	display: grid;
+	background-color: #515f6d;
+	padding: 20px;
+	font-size: 15px;
+	text-align: left;
+	display: block;
 }
 
 .col332 h4{
@@ -259,7 +256,6 @@ i {
   color: #fff;
   display: block;
   float: left;
-  margin: 10px;
 }
 
 .col332 a{
@@ -271,13 +267,11 @@ i {
 }
 
 .col333{
-  background-color: #515f6d;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 15px;
-  text-align: center;
-  width: 33.3333%;
-	display: grid;
+	background-color: #515f6d;
+	padding: 20px;
+	font-size: 15px;
+	text-align: left;
+	display: block;
 }
 
 .col333 h4{
@@ -296,7 +290,6 @@ i {
   font-family: roboto mono light;
   color: #fff;
   float: left;
-  margin: 10px;
 }
 
 .col333 a{
