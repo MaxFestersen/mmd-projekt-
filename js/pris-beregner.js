@@ -135,14 +135,24 @@ next03.onclick = function(){
 		dinAppEr[0].classList.remove("hidden");
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.add("hidden");
+		dinAppEr[3].classList.add("hidden");
 	} else if(point > 5 && point < 10){
 		dinAppEr[0].classList.add("hidden");
 		dinAppEr[1].classList.remove("hidden");
 		dinAppEr[2].classList.add("hidden");
+		dinAppEr[3].classList.add("hidden");
 	} else if(point >= 10){
 		dinAppEr[0].classList.add("hidden");
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.remove("hidden");
+		dinAppEr[3].classList.add("hidden");
+	} else{
+		// Umuligt tilfælde
+		console.log("Dette bør aldrig kunne ske.")
+		dinAppEr[0].classList.add("hidden");
+		dinAppEr[1].classList.add("hidden");
+		dinAppEr[2].classList.add("hidden");
+		dinAppEr[3].classList.remove("hidden");
 	}
 	
 	// -- Navigering --
