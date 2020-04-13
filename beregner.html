@@ -74,242 +74,245 @@
 	</style>
 </head>
 <body>
-	<form id="pris-bereger" action="mailto:minmailmax@gmail.com" method="post" enctype="text/plain" target="_blank" accept-charset="UTF-8">
-	<!-- form forklaringer:
-	action: hvad der skal ske - her fortæller vi at formålet er at sende en email til minmailmax@gmail.com
-	method: metoden til hvordan action udføres. For at vi kan sende e-mail, skal post anvendes.
-	enctype: definerer encoding. https://www.w3schools.com/tags/att_form_enctype.asp
-	target: definerer vinduet der arbejdes i. _blank henviser til et nyt vindue, således at e-mail klienten åbner i et nyt vindue.
-	accept-charset: definerer hvilken encoding der indtastes i formen. Det påvirker pt. ikke funktionaliteten synligt. Det er tilføjet, da jeg havde læst at det ville hjælpe til at indsætte de special tegn i nogen e-mail klienter. Det har ikke virket i mine tests.
-	-->
-		<!-- Skjuldt form indhold -->
-		<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregeren. Jeg anmoder om et tilbud. Pris beregeren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
-		<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
-		<!-- 01 Start -->
-		<section id="start">
-			<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
-			<label>
-				<input type="checkbox" name="App " value="tilvalgt." required>
-				<span>App</span>
-			</label>
-			<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
-				<input type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
-				<span>Hjemmeside</span>
-			</label>
-			<span id="appHjemmesideError" class="formErrorTxt hidden">App og/eller hjemmeside skal være valgt.</span>
-			<button type="button" id="back01">tilbage</button>
-			<button type="button" id="next01" onClick="showHideSection('egenskaber');">fortsæt</button>
-		</section>
-		<!-- 02 Egenskaber -->
-		<section class="hidden" id="egenskaber">
-			<label class="overskrift">Hvad skal din app kunne?</label>
-			<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
-			<textarea id="minApp" name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
-			<span id="beskrivelseError" class="formErrorTxt hidden">Der skal tilføjes en beskrivelse af løsningen.</span>
-    	    <p id="Caps">BEMÆRK! Caps lock er slået til.</p>
-			<script>
-			var input = document.getElementById("minApp");
-			var text = document.getElementById("Caps");
-			input.addEventListener("keyup", function(event) {
-
-			if (event.getModifierState("CapsLock")) {
-			  Caps.style.display = "block";} 
-			  else {
-			  Caps.style.display = "none" }
-			});
-			</script>
-			<button type="button">Kontakt mig med tilbud nu</button>
-			<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
-			<button type="button" id="next02" onClick="showHideSection('beregner');">Gå videre i beregner</button>
-			<button type="button" id="back02" onClick="showHideSection('start');">tilbage</button>
-		</section>
-		<!-- 03 Overvejelser/Beregner -->
-			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
-		<section class="hidden" id="beregner">
-			<label class="overskrift">Platform</label>
-			<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
-			<label>
-				<input type="radio" name="Platform " value="IOS.">
-				<span>iOS</span>
-			</label>
-			<label>
-				<input type="radio" name="Platform " value="Android.">
-				<span>Android</span>
-			</label>
-			<label>
-				<input type="radio" name="Platform " value="IOS & Android.">
-				<span>Begge</span>
-			</label>
-			<label class="overskrift">Integrationer</label>
-			<img class="ikon" src="ikon" alt="API IKON">
-				<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
-			<label>
-				<input type="radio" id="hvisja" name="API Skal integreres " value="Ja.">
-				<span>Ja</span>
-			</label>
-			<label>
-				<input type="radio" id="hvisnej" name="API Skal integreres " value="Nej.">
-				<span>Nej</span>
-			</label>
-			<label>
-				<input type="radio" id="hvisvedikke" name="API Skal integreres " value="Ved ikke.">
-				<span>Ved ikke</span>
-			</label>
-				<section id="apivalg">
-					<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
-					<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
-					<input type="text" placeholder="Vælg ønskede APIer..." name="Valgte API ">
-				</section>
-				<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
-				<script>
-					//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
-					document.getElementById("hvisja").addEventListener("change", function(){
-						document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
-					}); 
-					document.getElementById("hvisnej").addEventListener("change", function(){
-						document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-					});
-					document.getElementById("hvisvedikke").addEventListener("change", function(){
-						document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-					});
-				</script>
-			<img class="ikon" src="ikon" alt="BACK END IKON">
-			<label class="spoergsmaal">Skal der bygges backend til appen?</label>
-			<label>
-				<input type="radio" name="Backend skal bygges " value="Ja.">
-				<span>Ja</span>
-			</label>
-			<label>
-				<input type="radio" name="Backend skal bygges " value="Nej.">
-				<span>Nej</span>
-			</label>
-			<label>
-				<input type="radio" name="Backend skal bygges " value="Ved ikke.">
-				<span>Ved ikke</span>
-			</label>
-			<img class="ikon" src="ikon" alt="SERVICE IKON">
-			<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
-			<label>
-				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ja.">
-				<span>Ja</span>
-			</label>
-			<label>
-				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Nej.">
-				<span>Nej</span>
-			</label>
-			<label>
-				<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
-				<span>Ved ikke</span>
-			</label>
-			
-			<label class="overskrift">Design</label>
-			<img class="ikon" src="ikon" alt="DESIGN IKON">
-			<label class="spoergsmaal">Skal House of Code stå for design?</label>
-			<label>
-				<input type="radio" name="House of Code skal designe app " value="Ja.">
-				<span>Ja</span>
-			</label>
-			<label>
-				<input type="radio" name="House of Code skal designe app " value="Nej.">
-				<span>Nej</span>
-			</label>
-			<label>
-				<input type="radio" name="House of Code skal designe app " value="Ved ikke.">
-				<span>Ved ikke</span>
-			</label>
-			
-			<label class="overskrift">Features</label>
-			<img class="ikon" src="ikon" alt="SPROG IKON">
-				<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
-			<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
-			<input type="text" placeholder="Vælg sprog..." name="Sprog ">
-			<img class="ikon" src="ikon" alt="LOGIN IKON">
-			<label class="spoergsmaal">Skal der være mulighed for login?</label>
-			<label>
-				<input type="radio" name="Login skal implementeres " value="Ja.">
-				<span>Ja</span>
-			</label>
-			<label>
-				<input type="radio" name="Login skal implementeres " value="Nej.">
-				<span>Nej</span>
-			</label>
-			<label>
-				<input type="radio" name="Login skal implementeres " value="Ved ikke.">
-				<span>Ved ikke</span>
-			</label>
-			
-			<button type="button" id="back03" onClick="showHideSection('egenskaber');">tilbage</button>
-			<button type="button" id="next03" onClick="showHideSection('resultat');">fortsæt</button>
-		</section>
-		<!-- 04 Resultat -->
-		<!-- Din app er -->
-		<section class="hidden" id="resultat">
-			<label class="overskrift">Din app er</label>
-			<label class="dinapper">1 kop kaffe</label>
-			<label class="dinapper">2 kopper kaffe</label>
-			<label class="dinapper">3 kopper kaffe</label>		
-			<label>Tusind tak for din tid! <br>
-				Tryk på knappen "Indsend" for at få et tilbud fra os!
-			</label>
-			<button  id="indsend" type="button" onClick="showHideSection('afslutning');">Indsend</button>
-			<button type="button" onClick="showHideSection('beregner');">tilbage</button>
-		
- 			<script>
-				// ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.  
-				function myFunction(){
-        document.getElementById("indsend").innerHTML="Tak for din besked.";
-         }
-			</script>
-			</section>
-		<!-- Afslutning/Formualr -->
-		<section class="hidden" id="afslutning">
-			<label>
-				<span>Hvordan må vi kontakte dig om vores tilbud?</span>
-				<input type="text" placeholder="Navn" name="Mit navn " required>
-			</label>
-			<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>		
-			<span id="navnWarning" class="formWarningTxt hidden">Der blev ikke registreret et efernavn.</span>
-			<input type="tel" 
-		placeholder="Telefonnummer"
-		title="Telefonnummer 8 cifre. F.eks. 12 34 56 78. Landekoder accepteres."
-		name="Mit telefon nummer ">
-			<!-- 
-		pattern definerer hvilket format telefonnummeret skal stå i. Jeg har opsat det således at der forventes et dansk telefon nummer med eller uden landekode, og med bindestreg, mellemrum eller uden tegnsætning.
-		
-		Pattern var for aggarsivt, og er en forhindring, især for numre der ikke er danske. Derfor er det som udgangspunkt ikke implementeret.
-		
-		Se pattern overskueligt her. Bemærk at pattern vil læse linjeskift og tab, så disse skal fjernes inden implementation.
-			pattern="	[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
-			| 	[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
-			| 	[0-9]{8}
-			|	+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
-			|	+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
-			|	+[0-9]{10}
-			|	[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
-			|	[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
-			|	[0-0]{2}[0-9]{10}
-			"
-		Pattern på en linje:
-			pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
+	<section id="pris-beregner">
+		<div id="pris-beregner-knap-section" class="hidden">
+			<button id="demonstrationsknap" type="button" onclick="showHideSection('start');">Start pris-bereger</button>
+		</div>
+		<form id="pris-bereger" action="mailto:minmailmax@gmail.com" method="post" enctype="text/plain" target="_blank" accept-charset="UTF-8">
+		<!-- form forklaringer:
+		action: hvad der skal ske - her fortæller vi at formålet er at sende en email til minmailmax@gmail.com
+		method: metoden til hvordan action udføres. For at vi kan sende e-mail, skal post anvendes.
+		enctype: definerer encoding. https://www.w3schools.com/tags/att_form_enctype.asp
+		target: definerer vinduet der arbejdes i. _blank henviser til et nyt vindue, således at e-mail klienten åbner i et nyt vindue.
+		accept-charset: definerer hvilken encoding der indtastes i formen. Det påvirker pt. ikke funktionaliteten synligt. Det er tilføjet, da jeg havde læst at det ville hjælpe til at indsætte de special tegn i nogen e-mail klienter. Det har ikke virket i mine tests.
 		-->
-			<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>		
-			<input type="email" placeholder="E-mail" name="Min e-mail " required>
-			<span id="emailErrorMissing" class="formErrorTxt hidden">E-mail skal indtastes.</span>		
-			<span id="emailErrorWrong" class="formErrorTxt hidden">E-mail skal indstastes i et korrekt format.</span>		
-			<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
-			<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
-			<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
-			<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
-			<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
-			<button type="button">fortsæt</button>
-			<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
-		</section>
-	</form>
+			<!-- Skjuldt form indhold -->
+			<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregeren. Jeg anmoder om et tilbud. Pris beregeren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
+			<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
+			<!-- 01 Start -->
+			<section id="start">
+				<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
+				<label>
+					<input type="checkbox" name="App " value="tilvalgt." required>
+					<span>App</span>
+				</label>
+				<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
+					<input type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
+					<span>Hjemmeside</span>
+				</label>
+				<span id="appHjemmesideError" class="formErrorTxt hidden">App og/eller hjemmeside skal være valgt.</span>
+				<button type="button" id="back01" onClick="showHideSection('pris-beregner-knap-section');">tilbage</button>
+				<button type="button" id="next01" onClick="showHideSection('egenskaber');">fortsæt</button>
+			</section>
+			<!-- 02 Egenskaber -->
+			<section id="egenskaber">
+				<label class="overskrift">Hvad skal din app kunne?</label>
+				<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
+				<textarea id="minApp" name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
+				<span id="beskrivelseError" class="formErrorTxt hidden">Der skal tilføjes en beskrivelse af løsningen.</span>
+				<p id="Caps">BEMÆRK! Caps lock er slået til.</p>
+				<script>
+				var input = document.getElementById("minApp");
+				var text = document.getElementById("Caps");
+				input.addEventListener("keyup", function(event) {
+
+				if (event.getModifierState("CapsLock")) {
+				  Caps.style.display = "block";} 
+				  else {
+				  Caps.style.display = "none" }
+				});
+				</script>
+				<button type="button">Kontakt mig med tilbud nu</button>
+				<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
+				<button type="button" id="next02" onClick="showHideSection('beregner');">Gå videre i beregner</button>
+				<button type="button" id="back02" onClick="showHideSection('start');">tilbage</button>
+			</section>
+			<!-- 03 Overvejelser/Beregner -->
+				<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
+			<section id="beregner">
+				<label class="overskrift">Platform</label>
+				<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
+				<label>
+					<input type="radio" name="Platform " value="IOS.">
+					<span>iOS</span>
+				</label>
+				<label>
+					<input type="radio" name="Platform " value="Android.">
+					<span>Android</span>
+				</label>
+				<label>
+					<input type="radio" name="Platform " value="IOS & Android.">
+					<span>Begge</span>
+				</label>
+				<label class="overskrift">Integrationer</label>
+				<img class="ikon" src="ikon" alt="API IKON">
+					<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
+				<label>
+					<input type="radio" id="hvisja" name="API Skal integreres " value="Ja.">
+					<span>Ja</span>
+				</label>
+				<label>
+					<input type="radio" id="hvisnej" name="API Skal integreres " value="Nej.">
+					<span>Nej</span>
+				</label>
+				<label>
+					<input type="radio" id="hvisvedikke" name="API Skal integreres " value="Ved ikke.">
+					<span>Ved ikke</span>
+				</label>
+					<section id="apivalg">
+						<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
+						<label class="svar">Hvileke APIer ønsker du at integrere i din app?</label>
+						<input type="text" placeholder="Vælg ønskede APIer..." name="Valgte API ">
+					</section>
+					<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
+					<script>
+						//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
+						document.getElementById("hvisja").addEventListener("change", function(){
+							document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
+						}); 
+						document.getElementById("hvisnej").addEventListener("change", function(){
+							document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+						});
+						document.getElementById("hvisvedikke").addEventListener("change", function(){
+							document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+						});
+					</script>
+				<img class="ikon" src="ikon" alt="BACK END IKON">
+				<label class="spoergsmaal">Skal der bygges backend til appen?</label>
+				<label>
+					<input type="radio" name="Backend skal bygges " value="Ja.">
+					<span>Ja</span>
+				</label>
+				<label>
+					<input type="radio" name="Backend skal bygges " value="Nej.">
+					<span>Nej</span>
+				</label>
+				<label>
+					<input type="radio" name="Backend skal bygges " value="Ved ikke.">
+					<span>Ved ikke</span>
+				</label>
+				<img class="ikon" src="ikon" alt="SERVICE IKON">
+				<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
+				<label>
+					<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ja.">
+					<span>Ja</span>
+				</label>
+				<label>
+					<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Nej.">
+					<span>Nej</span>
+				</label>
+				<label>
+					<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
+					<span>Ved ikke</span>
+				</label>
+				
+				<label class="overskrift">Design</label>
+				<img class="ikon" src="ikon" alt="DESIGN IKON">
+				<label class="spoergsmaal">Skal House of Code stå for design?</label>
+				<label>
+					<input type="radio" name="House of Code skal designe app " value="Ja.">
+					<span>Ja</span>
+				</label>
+				<label>
+					<input type="radio" name="House of Code skal designe app " value="Nej.">
+					<span>Nej</span>
+				</label>
+				<label>
+					<input type="radio" name="House of Code skal designe app " value="Ved ikke.">
+					<span>Ved ikke</span>
+				</label>
+				
+				<label class="overskrift">Features</label>
+				<img class="ikon" src="ikon" alt="SPROG IKON">
+					<!--Forslag: Hvilke sprog skal appe være tilgængelig i?-->
+				<label class="spoergsmaal">Skal appen være tilgængelig på mere end ét sprog?</label>
+				<input type="text" placeholder="Vælg sprog..." name="Sprog ">
+				<img class="ikon" src="ikon" alt="LOGIN IKON">
+				<label class="spoergsmaal">Skal der være mulighed for login?</label>
+				<label>
+					<input type="radio" name="Login skal implementeres " value="Ja.">
+					<span>Ja</span>
+				</label>
+				<label>
+					<input type="radio" name="Login skal implementeres " value="Nej.">
+					<span>Nej</span>
+				</label>
+				<label>
+					<input type="radio" name="Login skal implementeres " value="Ved ikke.">
+					<span>Ved ikke</span>
+				</label>
+				
+				<button type="button" id="back03" onClick="showHideSection('egenskaber');">tilbage</button>
+				<button type="button" id="next03" onClick="showHideSection('resultat');">fortsæt</button>
+			</section>
+			<!-- 04 Resultat -->
+			<!-- Din app er -->
+			<section class="hidden" id="resultat">
+				<label class="overskrift">Din app er</label>
+				<label class="dinapper">1 kop kaffe</label>
+				<label class="dinapper">2 kopper kaffe</label>
+				<label class="dinapper">3 kopper kaffe</label>		
+				<label>Tusind tak for din tid! <br>
+					Tryk på knappen "Indsend" for at få et tilbud fra os!
+				</label>
+				<button  id="indsend" type="button" onClick="showHideSection('afslutning');">Indsend</button>
+				<button type="button" onClick="showHideSection('beregner');">tilbage</button>
+			
+				<script>
+					// ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.  
+					function myFunction(){
+			document.getElementById("indsend").innerHTML="Tak for din besked.";
+			 }
+				</script>
+			</section>
+			<!-- Afslutning/Formualr -->
+			<section id="afslutning">
+				<label>
+					<span>Hvordan må vi kontakte dig om vores tilbud?</span>
+					<input type="text" placeholder="Navn" name="Mit navn " required>
+				</label>
+				<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>		
+				<span id="navnWarning" class="formWarningTxt hidden">Der blev ikke registreret et efernavn.</span>
+				<input type="tel" 
+			placeholder="Telefonnummer"
+			title="Telefonnummer 8 cifre. F.eks. 12 34 56 78. Landekoder accepteres."
+			name="Mit telefon nummer ">
+				<!-- 
+			pattern definerer hvilket format telefonnummeret skal stå i. Jeg har opsat det således at der forventes et dansk telefon nummer med eller uden landekode, og med bindestreg, mellemrum eller uden tegnsætning.
+			
+			Pattern var for aggarsivt, og er en forhindring, især for numre der ikke er danske. Derfor er det som udgangspunkt ikke implementeret.
+			
+			Se pattern overskueligt her. Bemærk at pattern vil læse linjeskift og tab, så disse skal fjernes inden implementation.
+				pattern="	[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+				| 	[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+				| 	[0-9]{8}
+				|	+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+				|	+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+				|	+[0-9]{10}
+				|	[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
+				|	[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
+				|	[0-0]{2}[0-9]{10}
+				"
+			Pattern på en linje:
+				pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
+			-->
+				<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>		
+				<input type="email" placeholder="E-mail" name="Min e-mail " required>
+				<span id="emailErrorMissing" class="formErrorTxt hidden">E-mail skal indtastes.</span>		
+				<span id="emailErrorWrong" class="formErrorTxt hidden">E-mail skal indstastes i et korrekt format.</span>		
+				<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
+				<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
+				<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
+				<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
+			</section>
+		</form>
+	</section>
+	<script type="text/javascript" src="js/indholsvisning.js"></script>
 	<script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>
 	<script type="text/javascript" src="js/input-dato.js"></script>
 	<script>
 		function showHideSection(sectionToBeShown){	
-			var ids = ["start", "egenskaber", "beregner", "resultat", "afslutning"]
+			var ids = ["pris-beregner-knap-section", "start", "egenskaber", "beregner", "resultat", "afslutning"]
 			
 			for(i = 0; i < ids.length; i++){
 				if(sectionToBeShown == ids[i]){
