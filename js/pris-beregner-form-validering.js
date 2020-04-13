@@ -80,7 +80,7 @@ var arr = null;
 
 // --- Form funktionalitet ---
 // Form
-var pb = document.getElementById("pris-bereger");
+var pb = document.getElementById("pris-beregner");
 
 // Skjuldte input
 var formIntroduktion = document.getElementById("formIntroduktion");
@@ -92,6 +92,7 @@ app = app[0];
 var hjemmeside = document.getElementsByName("Hjemmeside ");
 hjemmeside = hjemmeside[0];
 var appHjemmesideError = document.getElementById("appHjemmesideError");
+var next01 = document.getElementById("next01");
 // Valider App / Hjemmeside
 function appHjemmesideValidate() {
 	console.log('App og hjemmeside checkboxer blev valideret.');
@@ -114,13 +115,19 @@ hjemmeside.onclick = function(){
 	rmError([hjemmeside, app], appHjemmesideError);
 }
 // Valider når man trykker på næste
-//todo
+next01.onclick = function(){
+	var err = loopFunktioner([appHjemmesideValidate]);
+	if(err[1] == 0) {
+		showHideSection('egenskaber');
+	}
+}
 
 // -- 02 Egenskaber --
 var egenskaberSection = document.getElementById("egenskaber");
 var beskrivelse = document.getElementsByName("Min app skal kunne ");
 beskrivelse = beskrivelse[0];
 var beskrivelseError = document.getElementById("beskrivelseError");
+var next02 = document.getElementById("next02");
 // Valider beskrivelse
 function beskrivelseValidate() {
 	console.log('Beskrivelse blev valideret.');
@@ -147,13 +154,31 @@ beskrivelse.onfocusout = function() {
 	beskrivelseValidate();
 }
 // Valider når man trykker på næste
-//todo
+next02.onclick = function(){
+	var err = loopFunktioner([beskrivelseValidate]);
+	if(err[1] == 0) {
+		showHideSection('beregner');
+	}
+}
+next02alt.onclick = function(){
+	var err = loopFunktioner([beskrivelseValidate]);
+	if(err[1] == 0) {
+		showHideSection('afslutning');
+	}
+}
 
 // --- 03 Overvejelser/Beregner ---
-//todo
+//Nothing required to validate
+/* Påbegyndt noget kode der ville formatere api'er i valgte api.
+var integrationer = document.getElementsByName("Valgte API ");
+integrationer.onkeyup = function(){
+	if(event.key == ";"){
+		integrationer.value;
+	}
+}*/
 
 // --- 04 Resultat ---
-//todo
+//Nothing to validate
 
 // --- Afslutning/Formualr ---
 var afslutningSection = document.getElementById("afslutning");
