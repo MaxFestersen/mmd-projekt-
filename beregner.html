@@ -87,8 +87,8 @@
 		<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregeren. Jeg anmoder om et tilbud. Pris beregeren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
 		<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
 		<!-- 01 Start -->
-		<section>
-			<label id="start">Ønsker du at udvikle en app og/eller en hjemmeside?</label>
+		<section id="start">
+			<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
 			<label>
 				<input type="checkbox" name="App " value="tilvalgt." required>
 				<span>App</span>
@@ -102,8 +102,8 @@
 			<button type="button" id="next01">fortsæt</button>
 		</section>
 		<!-- 02 Egenskaber -->
-		<section class="hidden" id="">
-			<label id="egenskaber" class="overskrift">Hvad skal din app kunne?</label>
+		<section class="hidden" id="egenskaber">
+			<label class="overskrift">Hvad skal din app kunne?</label>
 			<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
 			<textarea id="minApp" name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 			<span id="beskrivelseError" class="formErrorTxt hidden">Der skal tilføjes en beskrivelse af løsningen.</span>
@@ -259,8 +259,8 @@
 		</script>
 		<!-- 04 Resultat -->
 		<!-- Din app er -->
-		<section class="hidden">
-			<label  id="resultat" class="overskrift">Din app er</label>
+		<section class="hidden" id="resultat">
+			<label class="overskrift">Din app er</label>
 			<label class="dinapper">1 kop kaffe</label>
 			<label class="dinapper">2 kopper kaffe</label>
 			<label class="dinapper">3 kopper kaffe</label>		
