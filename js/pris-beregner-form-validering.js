@@ -72,9 +72,7 @@ function loopFunktioner(arrayfuncions){
 	}
 	console.log("Der var " + errors + " fejl.");
 
-	return({
-		errorSection, errors
-	})
+	return([errorSection, errors]);
 }
 
 // Værdier til at blive overskredet
