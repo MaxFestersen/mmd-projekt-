@@ -16,7 +16,6 @@
 			clear: right;
 		}
 		#beregner{
-			display: none;
 			margin: 0 auto;
 			width: 75%;
 			background-color: #BFBCBA;
@@ -121,12 +120,12 @@
 			</script>
 			<button type="button">Kontakt mig med tilbud nu</button>
 			<!--onClick vier her, at funktionen "showform", skal udføres, når brugeren trykker på knappen "gå videre i beregner"-->
-			<button type="button" id="next02" onClick="showform()">Gå videre i beregner</button>
-			<button type="button" id="back02">tilbage</button>
+			<button type="button" id="next02" onClick="showHideSection('beregner');">Gå videre i beregner</button>
+			<button type="button" id="back02" onClick="showHideSection('start');">tilbage</button>
 		</section>
 		<!-- 03 Overvejelser/Beregner -->
 			<!--- Der mangler spørgsmålstegn/boksen med forklaringer til, hvad nogle spørgsmål er og hvad nogle ting er. --->
-		<section id="beregner">
+		<section class="hidden" id="beregner">
 			<label class="overskrift">Platform</label>
 			<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
 			<label>
@@ -239,24 +238,9 @@
 				<span>Ved ikke</span>
 			</label>
 			
-			<button type="button" id="back03" onClick="showform()">tilbage</button>
-			<button type="button" id="next03" onClick="showform()">fortsæt</button>
+			<button type="button" id="back03" onClick="showHideSection('egenskaber');">tilbage</button>
+			<button type="button" id="next03" onClick="showHideSection('resultat');">fortsæt</button>
 		</section>
-		<!--Js for show/hide section-->
-		<script>
-			//Her er funktionen og dens navn. Denne funktion er en if-else funktion.
-		function showform(){
-			//Her bestemmer vi variablen, som JavaScripten skal hente via id. Variablen navn, som er unikt for den selv. 
-			var showformbutton = document.getElementById("beregner");
-			//if skal udføres, hvis et bestemt kriterium er opnået. Når man trykker på knappen medd onClick funktionen, som er koblet til denne funktion, vil Js ændre CSS koden for <section id="beregner"> fra display="none" til "block". Det omvendte vil ske, når knappen trykkes igen. 
-			if (showformbutton.style.display === "block"){
-				showformbutton.style.display = "none";
-			}
-			else {
-				showformbutton.style.display = "block";
-			}
-		}
-		</script>
 		<!-- 04 Resultat -->
 		<!-- Din app er -->
 		<section class="hidden" id="resultat">
@@ -267,8 +251,8 @@
 			<label>Tusind tak for din tid! <br>
 				Tryk på knappen "Indsend" for at få et tilbud fra os!
 			</label>
-			<button  id="indsend" type="button" onclick="myFunction()">Indsend</button>
-			<button type="button">tilbage</button>
+			<button  id="indsend" type="button" onClick="showHideSection('afslutning');">Indsend</button>
+			<button type="button" onClick="showHideSection('beregner');">tilbage</button>
 		
  			<script>
 				// ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.  
@@ -315,7 +299,7 @@
 			<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
 			<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
 			<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
-			<button type="button" id="back04" onClick="showform()">tilbage</button>
+			<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
 			<!--Er knappen "forstær" her nødvendig? Herfra kan man kun kontaktes eller gå tilbage til beregneren.-->
 			<button type="button">fortsæt</button>
 			<!-- Nej den er ikke nødvendig. Ikke engang brugbar. -->
@@ -327,12 +311,12 @@
 		function showHideSection(sectionToBeShown){	
 			var ids = ["start", "egenskaber", "beregner", "resultat", "afslutning"]
 			
-			for(i = 0, i > ids.length, i++){
+			for(i = 0; i < ids.length; i++){
 				if(sectionToBeShown == ids[i]){
-					document.getElementById(ids[i]).classList.remove = "hidden";
+					document.getElementById(ids[i]).classList.remove("hidden");
 				} 
 				else {
-					document.getElementById(ids[i]).classList.add = "hidden";
+					document.getElementById(ids[i]).classList.add("hidden");
 				}
 			}
 
