@@ -3,35 +3,33 @@
 <head>
 <title>breadcrumps</title>
 <style>
-.menu {
-  width: 100%;
-  height: 15px;
-  padding: 15px 0;
-  margin: auto;
-  text-align: left;
-  line-height: 0px;
-  background-color: white;
-  text-transform: normal;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin-bottom: 1000px;
-}
+.breadcrumbs {
+			width: 100%;
+			height: 15px;
+			padding: 15px 0;
+			margin: auto;
+			text-align: left;
+			line-height: 0px;
+			background-color: white;
+			text-transform: normal;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			margin-bottom: 1000px;
+		}
+		.breadcrumbs li {
+			display: inline-block;
+			margin: 1px 21px;
+		}
 
-.menu li {
-  display: inline-block;
-  margin: 1px 21px;
-}
-
-.menu li a {
-  text-decoration: none;
-  color: #505E6B;
-  padding: 5
-  5px 10px 10px 5px;
-  font-family: roboto mono;
-  letter-spacing: 2px;
-  line-height: normal;
-}
+		.breadcrumbs li a {
+			text-decoration: none;
+			color: #505E6B;
+			padding: 5px 10px 10px 5px;
+			font-family: roboto mono;
+			letter-spacing: 2px;
+			line-height: normal;
+		}
 </style>
 </head>
 
@@ -39,21 +37,21 @@
 
 <body>
 
-<main id="menu">
-  <ul class="menu">
+<section id="breadcrumbs">
+  <ul class="breadcrumbs">
    <li><a href="#?">01 <br> Start</a></li>
    <li><a href="#?">02 <br> Egenskaber</a></li>
    <li><a href="#?">03 <br> Resultat </a></li>
    <li><a href="#?">03 <br> Overvejelser</a></li>
    <li><a href="#?">04 <br> Resultat</a></li>
  </ul>
-</main>
+</section>
 <br>
 <br>
 
 <div class="knapper">
   <button>tilbage</button>
-  <a href="#menu" id="knap1"><button>fortsæt</button>
+	<a href="#breadcrumbs" id="knap1"></a><button>fortsæt</button>
 </div>
 
 
