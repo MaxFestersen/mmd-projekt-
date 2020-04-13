@@ -73,6 +73,12 @@ ul {
 	text-decoration: none;
 	overflow: hidden;
 }
+
+.nav-item:after {
+    color: rgb(0, 255, 255); 
+    mix-blend-mode: difference;
+}
+
 .nav-item a:hover{
     color: #6896AC;
 }
