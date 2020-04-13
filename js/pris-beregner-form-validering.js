@@ -330,6 +330,7 @@ submitEmail.onclick = function(){
 	if(errorSection){
 		console.log('Der var fejl i påkrævet indhold.');
 		//Scroll til den øverste fejl
+		showHideSection(errorSection.id);
 		errorSection.scrollIntoView({
 		  behavior: 'smooth'
 		});
