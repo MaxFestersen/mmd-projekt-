@@ -185,7 +185,7 @@ i {
 .rowfootercontent{
   margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   background-color: #515f6d;
   padding: 150px 100px;
 	width: 660px;
@@ -203,8 +203,8 @@ i {
 	background-color: #515f6d;
 	padding: 20px;
 	font-size: 30px;
-	width: 50%;
-	display: grid;
+	width: 100%;
+	display: block;
 }
 
 .col331 h4{
@@ -224,7 +224,6 @@ i {
 	color: #fff;
 	display: block;
 	float: left;
-	margin: 10px;
 }
 
 .col331 a{
@@ -235,12 +234,11 @@ i {
 }
 
 .col332{
-  background-color: #515f6d;
+	background-color: #515f6d;
 	padding: 20px;
-  font-size: 15px;
-  text-align: center;
-  width: 50%;
-	display: grid;
+	font-size: 15px;
+	text-align: center;
+	display: block;
 }
 
 .col332 h4{
@@ -260,7 +258,6 @@ i {
   color: #fff;
   display: block;
   float: left;
-  margin: 10px;
 }
 
 .col332 a{
@@ -272,12 +269,11 @@ i {
 }
 
 .col333{
-  background-color: #515f6d;
-  padding: 20px;
-  font-size: 15px;
-  text-align: center;
-  width: 33.3333%;
-	display: grid;
+	background-color: #515f6d;
+	padding: 20px;
+	font-size: 15px;
+	text-align: center;
+	display: block;
 }
 
 .col333 h4{
@@ -296,7 +292,6 @@ i {
   font-family: roboto mono light;
   color: #fff;
   float: left;
-  margin: 10px;
 }
 
 .col333 a{
