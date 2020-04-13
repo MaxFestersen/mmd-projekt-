@@ -291,8 +291,8 @@ submitEmail.onclick = function(){
 		emailValidate
 	]
 
-	var arrayreturn = loopFunktioner(requiredContent);
-	var errorSection = arrayreturn[0];
+var arrayreturn = loopFunktioner(requiredContent);
+var errorSection = arrayreturn [0];
 	// Log om der var dejl
 	if(errorSection){
 		console.log('Der var fejl i påkrævet indhold.');
