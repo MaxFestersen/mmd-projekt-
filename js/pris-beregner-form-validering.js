@@ -334,7 +334,7 @@ submitEmail.onclick = function(){
 		  behavior: 'smooth'
 		});
 	} else {
-		console.log('Der var ingen fejl  påkrævet indhold.');
+		console.log('Der var ingen fejl i påkrævet indhold.');
 		var emailBody = formIntroduktion.name + formIntroduktion.value;
 		/*if(app & hjemmeside){
 		sol = "app og hjemmeside"
