@@ -85,6 +85,14 @@ var pb = document.getElementById("pris-beregner");
 // Skjuldte input
 var formIntroduktion = document.getElementById("formIntroduktion");
 
+// -- pris-beregner-knap-section --
+var breadcrumbs = document.getElementById("breadcrumbs");
+var demonstrationsknap = document.getElementById("demonstrationsknap");
+demonstrationsknap.onclick = function(){
+	breadcrumbs.classList.remove("hidden");
+	showHideSection('start');
+}
+
 // -- 01 Start --
 var startSection = document.getElementById("start");
 var app = document.getElementsByName("App ");
