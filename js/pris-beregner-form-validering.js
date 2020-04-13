@@ -54,6 +54,29 @@ function rmError(inputs, txt) {
 	}
 }
 
+// validering af kodestykker
+function loopFunktioner(arrayfuncions){
+	var errorSection = false; // Error section peger på det første sted der er fejl på siden. Den er som udgangspunkt ikke sand.
+	var errors = 0; // Antal fejl
+	// Loop alle funktioner, og gem første fejlsektion, hvis der er en.
+	var run = null;
+	for (i = 0; i < arrayfuncions.length; i++) {
+		run = arrayfuncions[i]();
+		if(run != 0 & !errorSection){
+			errorSection = run;
+			errors++;
+		} else if(run != 0){
+			errors++;
+		}
+		run = null;
+	}
+	console.log("Der var " + errors + " fejl.");
+
+	return({
+		errorSection, errors
+	})
+}
+
 // Værdier til at blive overskredet
 var arr = null;
 
@@ -261,8 +284,7 @@ var submitEmail = document.getElementById("submitEmail");
 submitEmail.onclick = function(){
 	// Disable standard submit
 	event.preventDefault();
-	var errorSection = false; // Error section peger på det første sted der er fejl på siden. Den er som udgangspunkt ikke sand.
-	var errors = 0; // Antal fejl
+
 	//Definer array af funktioner der skal køres. Dvs. Funktioner til validering der skal køres inden formen kan blive afsendt.
 	var requiredContent = [
 		appHjemmesideValidate,
@@ -270,26 +292,15 @@ submitEmail.onclick = function(){
 		navnValidate,
 		emailValidate
 	]
-	
-	// Loop alle funktioner, og gem første fejlsektion, hvis der er en.
-	var run = null;
-	for (i = 0; i < requiredContent.length; i++) {
-		run = requiredContent[i]();
-		if(run != 0 & !errorSection){
-			errorSection = run;
-			errors++;
-		} else if(run != 0){
-			errors++;
-		}
-		run = null;
-	}
-	console.log("Der var " + errors + " fejl.");
+
+var arrayreturn = arrayfuncions(requiredContent);
+var errorSection = arrayreturn [0];
 	// Log om der var dejl
 	if(errorSection){
 		console.log('Der var fejl i påkrævet indhold.');
 		//Scroll til den øverste fejl
-		errorSection.scrollIntoView({ 
-		  behavior: 'smooth' 
+		errorSection.scrollIntoView({
+		  behavior: 'smooth'
 		});
 	} else {
 		console.log('Der var ingen fejl  påkrævet indhold.');
@@ -310,7 +321,7 @@ submitEmail.onclick = function(){
 			emailBody += 'Jeg anvendte pris-beregneren, og fik følgende estimat: ';
 			if(point >= 10){
 				stor
-			} else if(point < 10 & point >= 5){           
+			} else if(point < 10 & point >= 5){
 				mellem
 			} else {
 				lille
