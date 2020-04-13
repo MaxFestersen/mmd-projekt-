@@ -119,6 +119,7 @@
 <script>
 function resultat04() {
   var svar1 = document.quiz.svar1.value;
+  var svar3 = document.quiz.svar3.value;
   var svar4 = document.quiz.svar4.value;
   var svar5 = document.quiz.svar5.value;
   var svar6 = document.quiz.svar6.value;
@@ -127,6 +128,18 @@ function resultat04() {
   var correct = 0;
 
   if (svar1 == "app") {
+    correct++;
+  }
+
+  if (svar3 == "ios") {
+    correct++;
+  }
+
+  if (svar3 == "android") {
+    correct++;
+  }
+
+  if (svar3 == "begge") {
     correct++;
   }
 
