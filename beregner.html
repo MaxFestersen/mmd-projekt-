@@ -278,8 +278,8 @@
 			</script>
 			</section>
 		<!-- Afslutning/Formualr -->
-		<section class="hidden">
-			<label id="afslutning">
+		<section class="hidden" id="afslutning">
+			<label>
 				<span>Hvordan må vi kontakte dig om vores tilbud?</span>
 				<input type="text" placeholder="Navn" name="Mit navn " required>
 			</label>
@@ -323,6 +323,20 @@
 	</form>
 	<script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>
 	<script type="text/javascript" src="js/input-dato.js"></script>
-	<script></script>
+	<script>
+		function showHideSection(sectionToBeShown){			
+			var ids = ["start", "egenskaber", "resultat", "afslutning"]
+			
+			for(i = 0, i > ids.length, i++){
+				if(sectionToBeShown == ids[i]){
+					document.getElementById(ids[i]).classList.remove = "hidden";
+				} 
+				else {
+					document.getElementById(ids[i]).classList.add = "hidden";
+				}
+			}
+
+		}
+	</script>
 </body>
 </html>
