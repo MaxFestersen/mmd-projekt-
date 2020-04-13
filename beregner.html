@@ -71,9 +71,38 @@
         width: 300px;
         padding-top: 300px; /*Skal ændres inden endelige prototype er oppe*/ 
         }
+		
+		.breadcrumbs {
+			width: 100%;
+			height: 15px;
+			padding: 15px 0;
+			margin: auto;
+			text-align: left;
+			line-height: 0px;
+			background-color: white;
+			text-transform: normal;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			margin-bottom: 1000px;
+		}
+		.breadcrumbs li {
+			display: inline-block;
+			margin: 1px 21px;
+		}
+
+		.breadcrumbs li a {
+			text-decoration: none;
+			color: #505E6B;
+			padding: 5px 10px 10px 5px;
+			font-family: roboto mono;
+			letter-spacing: 2px;
+			line-height: normal;
+		}
 	</style>
 </head>
 <body>
+	
 	<section id="pris-beregner-section">
 		<div id="pris-beregner-knap-section" class="hidden">
 			<button id="demonstrationsknap" type="button" onclick="showHideSection('start');">Start pris-beregner</button>
@@ -90,6 +119,7 @@
 			<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregneren. Jeg anmoder om et tilbud. Pris beregneren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
 			<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
 			<!-- 01 Start -->
+			
 			<section id="start">
 				<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
 				<label>
@@ -297,6 +327,15 @@
 				<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
 				<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
 			</section>
+			<section id="breadcrumbs">
+				<ul class="breadcrumbs">
+					<li><a onclick="showHideSection('start');">01 <br> Start</a></li>
+					<li><a onclick="showHideSection('egenskaber');">02 <br> Egenskaber</a></li>
+					<li><a onclick="showHideSection('beregner');">03 <br> Beregner </a></li>
+					<li><a onclick="showHideSection('resultat');">03 <br> Resultat</a></li>
+					<li><a onclick="showHideSection('afslutning');">04 <br> Afslutning</a></li>
+				</ul>
+			</section>
 		</form>
 	</section>
 	<script type="text/javascript" src="js/indholsvisning.js"></script>
@@ -323,5 +362,18 @@
 		document.getElementById("indsend").innerHTML="Tak for din besked.";
 	}
 	</script>
+
+	<script>
+  function scroll_to(id) {
+      document.documentElement.style.scrollBehavior = 'smooth'
+      element = document.createElement('a');
+      element.setAttribute('href', id)
+      element.click();
+  }
+
+  document.getElementById("knap1").addEventListener('click', () => {
+  scroll_to('#7')
+  });
+</script>
 </body>
 </html>
