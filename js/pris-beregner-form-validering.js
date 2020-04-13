@@ -80,7 +80,7 @@ var arr = null;
 
 // --- Form funktionalitet ---
 // Form
-var pb = document.getElementById("pris-bereger");
+var pb = document.getElementById("pris-beregner");
 
 // Skjuldte input
 var formIntroduktion = document.getElementById("formIntroduktion");
