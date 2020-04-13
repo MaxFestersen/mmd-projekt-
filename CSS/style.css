@@ -18,7 +18,9 @@ body{
   float: left;
   width: 100%;
 }
-
+.header-nav ul, .single-nav ul {
+    counter-reset: item;
+}
 .header-nav ul .nav-item::before, .single-nav ul .nav-item::before {
     content: "0" counter(item);
     counter-increment: item;
