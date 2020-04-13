@@ -1,4 +1,7 @@
 * {margin: 0; padding: 0;}
+*, ::before, ::after {
+    box-sizing: inherit;
+}
 
 input, textarea, label, button, img, div, section, main {
 			float:left;
@@ -26,7 +29,7 @@ body{
     counter-increment: item;
 }
 .header-nav .nav-item::before, .single-nav .nav-item::before {
-    width: 2em;
+    width: 1.5em;
     float: left;
     font-weight: 400;
     font-size: inherit;
@@ -40,14 +43,13 @@ body{
 }
 
 .header-nav, .single-nav {
-    padding: 50px 0px;
+    padding: 50px 40px;
     width: 240px;
     position: fixed;
     top: 0;
     right: 0px;
     z-index: 3;
     overflow-y: auto;
-    margin: 10px;
 }
 
 .header-nav a{
@@ -57,23 +59,17 @@ body{
 
 ul {
     list-style-type: none;
-    margin-left: 0px;
-    margin-top: 10px;
-    margin-right: 0px;
-    padding: 5px;
-
 }
 /* et par tilføjelser herunder - KIA */
 .nav-item{
-    padding: 30px 0px 10px 0px;
-    font-size: 17px;
-    opacity: 60%;
+	margin-top: 25px;
+	font-size: 18px;
+	color: #515f6d;
 }
 
 .nav-item a{
     color: inherit;
     text-decoration: none;
-    padding: 0 10px;
 }
 .nav-item a:hover{
     color: #6896AC;
@@ -81,11 +77,14 @@ ul {
 
 /* denne ul fjernede prikker i menu */
 
-nav img {
-    width: 80%;
-    display: block;
-    margin-bottom:35px;
-
+.logo-internal{
+	margin-left: 2em;
+	margin-bottom: 50px;
+	width: 97px;
+	height: 54px;
+	background: url(../Assets/HOC_logo.svg) no-repeat;
+	display: block;
+	text-indent: -9999px;
 }
 
 a {
