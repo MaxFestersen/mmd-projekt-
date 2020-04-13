@@ -168,18 +168,6 @@
 						<input type="text" placeholder="Vælg ønskede APIer..." name="Valgte API ">
 					</section>
 					<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
-					<script>
-						//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
-						document.getElementById("hvisja").addEventListener("change", function(){
-							document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
-						}); 
-						document.getElementById("hvisnej").addEventListener("change", function(){
-							document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-						});
-						document.getElementById("hvisvedikke").addEventListener("change", function(){
-							document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-						});
-					</script>
 				<img class="ikon" src="ikon" alt="BACK END IKON">
 				<label class="spoergsmaal">Skal der bygges backend til appen?</label>
 				<label>
@@ -303,6 +291,19 @@
 			</section>
 		</form>
 	</section>
+	<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
+	<script>
+		//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
+		document.getElementById("hvisja").addEventListener("change", function(){
+			document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
+		}); 
+		document.getElementById("hvisnej").addEventListener("change", function(){
+			document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+		});
+		document.getElementById("hvisvedikke").addEventListener("change", function(){
+			document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+		});
+	</script>
 	<script type="text/javascript" src="js/indholsvisning.js"></script>
 	<script type="text/javascript" src="js/input-dato.js"></script>
 	<script>
