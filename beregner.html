@@ -257,13 +257,6 @@
 				</label>
 				<button  id="indsend" type="button" onClick="showHideSection('afslutning');">Indsend</button>
 				<button type="button" onClick="showHideSection('beregner');">tilbage</button>
-			
-				<script>
-					// ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.  
-					function myFunction(){
-			document.getElementById("indsend").innerHTML="Tak for din besked.";
-			 }
-				</script>
 			</section>
 			<!-- Afslutning/Formualr -->
 			<section id="afslutning">
@@ -308,22 +301,28 @@
 		</form>
 	</section>
 	<script type="text/javascript" src="js/indholsvisning.js"></script>
-	<script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>
 	<script type="text/javascript" src="js/input-dato.js"></script>
 	<script>
-		function showHideSection(sectionToBeShown){	
-			var ids = ["pris-beregner-knap-section", "start", "egenskaber", "beregner", "resultat", "afslutning"]
-			
-			for(i = 0; i < ids.length; i++){
-				if(sectionToBeShown == ids[i]){
-					document.getElementById(ids[i]).classList.remove("hidden");
-				} 
-				else {
-					document.getElementById(ids[i]).classList.add("hidden");
-				}
+	function showHideSection(sectionToBeShown){	
+		var ids = ["pris-beregner-knap-section", "start", "egenskaber", "beregner", "resultat", "afslutning"]
+		
+		for(i = 0; i < ids.length; i++){
+			if(sectionToBeShown == ids[i]){
+				document.getElementById(ids[i]).classList.remove("hidden");
+			} 
+			else {
+				document.getElementById(ids[i]).classList.add("hidden");
 			}
-
 		}
+
+	}
+	</script>
+	<script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>
+	<script>
+	// ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.  
+	function myFunction(){
+		document.getElementById("indsend").innerHTML="Tak for din besked.";
+	}
 	</script>
 </body>
 </html>
