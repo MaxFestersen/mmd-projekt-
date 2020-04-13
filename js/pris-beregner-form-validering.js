@@ -293,7 +293,7 @@ submitEmail.onclick = function(){
 		emailValidate
 	]
 
-var arrayreturn = arrayfuncions(requiredContent);
+var arrayreturn = loopFunktioner(requiredContent);
 var errorSection = arrayreturn [0];
 	// Log om der var dejl
 	if(errorSection){
