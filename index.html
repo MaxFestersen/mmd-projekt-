@@ -120,57 +120,87 @@
 					<section id="beregner">
 						<label class="overskrift">Platform</label>
 						<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
+                <div class="pflex">
+                    <div class="pflex0">
 						<label>
-							<input type="radio" name="Platform " value="IOS.">
+                            <img src="Assets/Icons/ios.png">
+							<input class="p1" type="radio" name="Platform " value="IOS.">
 							<span>iOS</span>
 						</label>
+                    </div>
+                    <div class="pflex1">
 						<label>
-							<input type="radio" name="Platform " value="Android.">
+                            <img class="roidmg" src="Assets/Icons/android.png">
+							<input class="p2" type="radio" name="Platform " value="Android.">
 							<span>Android</span>
 						</label>
+                    </div>
+                    <div class="pflex2">
 						<label>
-							<input type="radio" name="Platform " value="IOS & Android.">
+                            <img class="roidmg3" src="Assets/Icons/iosandroid.png">
+							<input class="p3" type="radio" name="Platform " value="IOS & Android.">
 							<span>iOS &amp; Android</span>
 						</label>
+                    </div>
+                    <div class="pflex4">
 						<label>
-							<input type="radio" name="Platform " value="Ved ikke.">
+							<input class="p4" type="radio" name="Platform " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
+                    </div>
+                </div>
 						<label class="overskrift">Integrationer</label>
-						<img class="ikon" src="ikon" alt="API IKON">
-							<label class="spoergsmaal">Skal appen integreres medd APIer?</label>
+						<img class="api_1" src="Assets/Icons/api.png" alt="API IKON">
+							<label class="spoergsmaal">Skal appen integreres med APIer?
+                        </label>
+                <div class="iflex0">
+                    <div class="iflex">
 						<label>
-							<input type="radio" id="hvisja" name="API Skal integreres " value="Ja.">
+							<input  class="api0" type="radio" id="hvisja" name="API Skal integreres " value="Ja.">
 							<span>Ja</span>
 						</label>
+                    </div>
+                    <div class="iflex2">
 						<label>
-							<input type="radio" id="hvisnej" name="API Skal integreres " value="Nej.">
+							<input class="api1" type="radio" id="hvisnej" name="API Skal integreres " value="Nej.">
 							<span>Nej</span>
 						</label>
+                    </div>
+                    <div class="iflex3">
 						<label>
-							<input type="radio" id="hvisvedikke" name="API Skal integreres " value="Ved ikke.">
+							<input class="api2" type="radio" id="hvisvedikke" name="API Skal integreres " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
+                    </div>
+                </div>
 						<section id="apivalg">
 							<!--Jeg tror ikke, at det, man skriver her, sender i mailen også. Det skal vi kigge på og rette, hvis nødvendigt.-->
 							<label class="svar">Hvilke APIer ønsker du at integrere i din app?</label>
-							<input type="text" placeholder='Skriv api navne, del med ";"' name="Valgte API ">
+							<input class="ekstraapi" type="text" placeholder='Skriv api navne' name="Valgte API ">
 							<div class="addedApi"></div>
 						</section>
-						<img class="ikon" src="ikon" alt="BACK END IKON">
+						<img class="backend" src="Assets/Icons/backend.png" alt="BACK END IKON">
 						<label class="spoergsmaal">Skal der bygges backend til appen?</label>
+                <div class="bflex">
+                     <div class="bflex1">
 						<label>
-							<input type="radio" name="Backend skal bygges " value="Ja.">
+							<input class="b1" type="radio" name="Backend skal bygges " value="Ja.">
 							<span>Ja</span>
 						</label>
+                     </div>
+                     <div class="bflex2">
 						<label>
-							<input type="radio" name="Backend skal bygges " value="Nej.">
+							<input class="b2" type="radio" name="Backend skal bygges " value="Nej.">
 							<span>Nej</span>
 						</label>
+                    </div>
+                    <div class="bflex3">
 						<label>
-							<input type="radio" name="Backend skal bygges " value="Ved ikke.">
+							<input class="b3" type="radio" name="Backend skal bygges " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
+                    </div>
+                </div>
 						<img class="ikon" src="ikon" alt="SERVICE IKON">
 						<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
 						<label>
