@@ -424,9 +424,11 @@ submitEmail.onclick = function(){
 			emailBody += "Jeg har valgt følgende API:";
 			APIvalg = APIvalg.split(';');
 			for(var i=0; i < APIvalg.length; i++){
-				emailBody += "%0D%0A- " + APIvalg[i].trim() + ".";
+				if(APIvalg[i].trim()){
+					emailBody += "%0D%0A- " + APIvalg[i].trim() + ".";
+				}
 			}
-			emailBody += "%0D%0A%0D%0A"
+			emailBody += "%0D%0A%0D%0A";
 		} else if(integrationer.value == "Ja."){
 			emailBody += "%0D%0A";
 		}
@@ -475,7 +477,9 @@ submitEmail.onclick = function(){
 			emailBody += "Jeg har valgt følgende sprog:";
 			sprog = sprog.split(';');
 			for(var i=0; i < sprog.length; i++){
-				emailBody += "%0D%0A- " + sprog[i].trim() + ".";
+				if(sprog[i].trim()){
+					emailBody += "%0D%0A- " + sprog[i].trim() + ".";
+				}
 			}
 			emailBody += "%0D%0A"
 		}
@@ -503,7 +507,7 @@ submitEmail.onclick = function(){
 		console.log(emailBody);
 		var emailAdd = "minmailmax@gmail.com";
 		var subject = "Anmodning om estimat på app.";
-		window.open("mailto:"+emailAdd+"?subject="+subject+"&body="+emailBody, '_blank');
+		window.open("mailto:"+emailAdd+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(emailBody), '_blank');
 	}
      alert("Tak for din e-mail!");
 };
