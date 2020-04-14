@@ -7,7 +7,7 @@ var beregnerWarning = document.getElementById("beregnerWarning");
 var dinAppEr = document.getElementsByClassName('dinapper');
 
 // -- Variabler til point beregning --
-var point = 0;
+var point = false;
 var checkedValue = null;
 
 next03.onclick = function(){
@@ -126,6 +126,7 @@ next03.onclick = function(){
 		if(!wasUsed){
 			console.log("Pris estimering kunne ikke udføres, fordi intet var udfyldt.");
 			beregnerWarning.classList.remove("hidden");
+			point = false;
 			return false;
 		}
 	}
