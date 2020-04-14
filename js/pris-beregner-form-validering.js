@@ -422,7 +422,7 @@ submitEmail.onclick = function(){
 			for(var i=0; i < APIvalg.length; i++){
 				emailBody += "%0D%0A- " + APIvalg[i].trim() + ".";
 			}
-			emailBody += "%0D%0A"
+			emailBody += "%0D%0A%0D%0A"
 		} else if(integrationer){
 			emailBody += "%0D%0A";
 		}
