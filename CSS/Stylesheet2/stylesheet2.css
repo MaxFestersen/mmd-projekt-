@@ -3,7 +3,7 @@
 
 * {
     box-sizing: border-box;
-    font-family: Roboto mono, monospace;
+    font-family: "Roboto mono", monospace;
     letter-spacing: -0.013em;
     font-weight: 400;
 
@@ -101,7 +101,7 @@ nav a {
     color: #505e6b;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0,20em;
+    letter-spacing: 0.20em;
 
 }
 nav a:hover {
@@ -181,11 +181,11 @@ main{
 }
 
 .robotoh1{
-    font-family: Roboto mono,bold ;
+    font-family: "Roboto mono",bold ;
     font-size: 40px;
 }
 .robotop1{
-    font-family: Roboto mono, regular;
+    font-family: "Roboto mono", regular;
     font-size: 30px;
 }
 .robotop2{
