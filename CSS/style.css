@@ -212,6 +212,19 @@ i {
 }
 
 /*Her er CSS for beregneren*/
+
+ .button00{
+    background-color: #A5B978;
+    border: none;
+    color: white;
+    font-size: 15px;
+    margin: 5px 0px 0px 100px;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+.icon_calc{
+    margin-left: 350px;
+}
 		#beregner{
 			margin: 0 auto;
 			width: 75%;
