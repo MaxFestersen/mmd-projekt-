@@ -33,16 +33,6 @@ next03.onclick = function(){
 			checkedValue = false;
 		}
 	}
-	//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
-		document.getElementById("hvisja").addEventListener("change", function(){
-			document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
-		}); 
-		document.getElementById("hvisnej").addEventListener("change", function(){
-			document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-		});
-		document.getElementById("hvisvedikke").addEventListener("change", function(){
-			document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-		});
 	
 	integrationer = checkedValue;
 	var APIvalg = document.getElementsByName("Valgte API ");

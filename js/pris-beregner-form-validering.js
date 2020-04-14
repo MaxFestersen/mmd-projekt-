@@ -193,6 +193,16 @@ integrationer.onkeyup = function(){
 		integrationer.value;
 	}
 }*/
+//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
+document.getElementById("hvisja").addEventListener("change", function(){
+	document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
+}); 
+document.getElementById("hvisnej").addEventListener("change", function(){
+	document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+});
+document.getElementById("hvisvedikke").addEventListener("change", function(){
+	document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
+});
 
 // --- 04 Resultat ---
 //Nothing to validate
