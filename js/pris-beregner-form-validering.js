@@ -411,19 +411,23 @@ submitEmail.onclick = function(){
 			}
 		}
 		integrationer = checkedValue;
-		if(integrationer){
-			emailBody += "API skal integreres.%0D%0A";
+		if(integrationer.value == "Ja."){
+			emailBody += "API'er skal integreres.%0D%0A%0D%0A";
+		} else if(integrationer.value == "Nej."){
+			emailBody += "API'er skal ikke integreres.%0D%0A%0D%0A";
+		} else if(integrationer.value == "Ved Ikke."){
+			emailBody += "Jeg ved ikke om der er behov for API'er.%0D%0A";
 		}
 		var APIvalg = document.getElementsByName("Valgte API ");
 		APIvalg = APIvalg[0].value;
-		if(integrationer && APIvalg){
+		if(integrationer.value == "Ja." && APIvalg){
 			emailBody += "Jeg har valgt følgende API:";
 			APIvalg = APIvalg.split(';');
 			for(var i=0; i < APIvalg.length; i++){
 				emailBody += "%0D%0A- " + APIvalg[i].trim() + ".";
 			}
 			emailBody += "%0D%0A%0D%0A"
-		} else if(integrationer){
+		} else if(integrationer.value == "Ja."){
 			emailBody += "%0D%0A";
 		}
 		var backend = document.getElementsByName("Backend skal bygges ");
