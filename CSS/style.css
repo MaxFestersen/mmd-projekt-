@@ -468,8 +468,15 @@ textarea{
     padding: 30px;
 }
 .b1{
-    margin: 10px 5px;
+    margin: 10px 35px;
 }
+.svar1{
+    background: #fff; 
+    color:#A5B978;
+    border: 2px solid #A5B978;
+    padding: 10px 30px 10px 30px
+}
+
 .bflex2{
     padding: 30px;
 }
@@ -482,6 +489,8 @@ textarea{
 .b3{
     margin: 10px 30px;
 }
+
+
 
 .beskedsendt {
 	width: 300px;
