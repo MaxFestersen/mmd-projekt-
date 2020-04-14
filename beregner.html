@@ -149,17 +149,6 @@
 				<textarea id="minApp" name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 				<span id="beskrivelseError" class="formErrorTxt hidden">Der skal tilføjes en beskrivelse af løsningen.</span>
 				<p id="Caps">BEMÆRK! Caps lock er slået til.</p>
-				<script>
-				var input = document.getElementById("minApp");
-				var text = document.getElementById("Caps");
-				input.addEventListener("keyup", function(event) {
-
-				if (event.getModifierState("CapsLock")) {
-				  Caps.style.display = "block";} 
-				  else {
-				  Caps.style.display = "none" }
-				});
-				</script>
 				<button type="button" id="next02alt">Kontakt mig med tilbud nu</button>
 				<button type="button" id="next02">Gå videre i beregner</button>
 				<button type="button" id="back02" onClick="showHideSection('start');">tilbage</button>
