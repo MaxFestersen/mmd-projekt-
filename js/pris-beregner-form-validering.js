@@ -382,3 +382,7 @@ submitEmail.onclick = function(){
 		window.open("mailto:"+emailAdd+"?subject="+subject+"&body="+emailBody, '_blank');
 	}
 };
+/*Denne kode giver besked til brugeren, når mailen bliver sendt // ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.*/
+function myFunction(){
+		document.getElementById("indsend").innerHTML="Tak for din besked.";
+	}
