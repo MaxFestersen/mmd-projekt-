@@ -131,17 +131,17 @@ next03.onclick = function(){
 	}
 	beregnerWarning.classList.add("hidden");
 	// -- Vis relevant sektion afhænigt af point --
-	if(point <= 5){
+	if(point <= 3){
 		dinAppEr[0].classList.remove("hidden");
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.add("hidden");
 		dinAppEr[3].classList.add("hidden");
-	} else if(point > 5 && point < 10){
+	} else if(point > 3 && point < 7){
 		dinAppEr[0].classList.add("hidden");
 		dinAppEr[1].classList.remove("hidden");
 		dinAppEr[2].classList.add("hidden");
 		dinAppEr[3].classList.add("hidden");
-	} else if(point >= 10){
+	} else if(point >= 7){
 		dinAppEr[0].classList.add("hidden");
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.remove("hidden");
