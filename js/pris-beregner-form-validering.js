@@ -509,7 +509,14 @@ submitEmail.onclick = function(){
 		var subject = "Anmodning om estimat på app.";
 		window.open("mailto:"+emailAdd+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(emailBody), '_blank');
 	}
-     alert("Tak for din e-mail!");
+	// Giv brugeren besked.
+	var formSubmittet = document.getElementById("formSubmittet");
+	var target = formSubmittet.getElementsByClassName("target");
+	target = target[0];
+	target.innerHTML="E-mail klienten blev åbnet, og udfyldt med dine svar."
+	formSubmittet.classList.remove("hidden");
+    alert("E-mail klienten blev åbnet, og udfyldt med dine svar.");
+	
 };
 /*Denne kode giver besked til brugeren, når mailen bliver sendt // ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.*/
 function myFunction(){
