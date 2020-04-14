@@ -174,6 +174,15 @@ next02alt.onclick = function(){
 		showHideSection('afslutning');
 	}
 }
+/*Dette script gør brugeren opmærksom på, om Caps-lock er slået til eller ikke*/
+var input = document.getElementById("minApp");
+	var text = document.getElementById("Caps");
+	input.addEventListener("keyup", function(event) {
+	if (event.getModifierState("CapsLock")) {
+	  Caps.style.display = "block";} 
+	  else {
+	  Caps.style.display = "none" }
+	});
 
 // --- 03 Overvejelser/Beregner ---
 //Nothing required to validate
