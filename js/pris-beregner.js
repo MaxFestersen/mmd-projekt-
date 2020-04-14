@@ -23,7 +23,7 @@ next03.onclick = function(){
 		}
 	}
 	platform = checkedValue;
-	console.log(platform);
+	//console.log(platform);
 	var integrationer = document.getElementsByName("API Skal integreres ");
 	for(i=0; i < integrationer.length; i++){
 		if(integrationer[i].checked){
