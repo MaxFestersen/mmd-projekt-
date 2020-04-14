@@ -21,22 +21,6 @@ body{
 a, input[type=button], input[type=submit], button{
 	cursor: pointer;
 }
-#mainindex{
-	width: 100%;
-}
-.bigMainWrapper{
-	float: none;
-	clear: none;
-	width: 90vw;
-	min-height:1px;
-	margin:0 auto;
-}
-@media (min-width:768px) {
-	.bigMainWrapper{
-		width: 80vw;
-	}
-}
-
 .wrapper {
   height: 100%;
   min-height: 100%;
@@ -235,6 +219,44 @@ i {
 }
 
 /*Her er CSS for beregneren*/
+#mainindex{
+	width: 100%;
+}
+.bigMainWrapper{
+	float: none;
+	clear: none;
+	width: 90vw;
+	min-height:1px;
+	margin:0 auto;
+}
+@media (min-width:768px) {
+	.bigMainWrapper{
+		width: 80vw;
+	}
+}
+#pris-beregner-section, #pris-beregner{
+	float: left;
+	width: 100%;
+}
+
+#pris-beregner > section{
+	position: relative;
+	left:0;
+	float: right;
+	width: 100%;
+	transition: left 0.5s;
+}
+	
+#pris-beregner > section.hidden{
+	display:block;
+	height: 0;
+	max-width: 0;
+	overflow: hidden;
+	clear: none;
+	margin: 0 !important;
+	padding: 0 !important;
+	left: 100%;
+}
 
 .flex00{
     display: flex;
@@ -257,7 +279,7 @@ i {
 
 
 #start,#egenskaber, #resultat, #afslutning{
-margin: 50px 0px 50px 200px;
+	margin: 50px 0px 50px 0;
 }
 
 .sflex{
@@ -344,25 +366,6 @@ margin: 50px 0px 50px 200px;
 
 .hidden{
 	display: none;
-}
-form{
-	float:left;
-	width:100%;
-}
-form > section{
-	float:right;
-	width: 100%;
-	transition: width 1s;
-}
-	
-form > section.hidden{
-	display:block;
-	height: 0;
-	max-width: 0;
-	overflow: hidden;
-	clear: none;
-	margin: 0 !important;
-	padding: 0 !important;
 }
 
 #Caps {
