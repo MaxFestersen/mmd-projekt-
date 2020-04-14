@@ -3,7 +3,7 @@
     box-sizing: inherit;
 }
 
-input, textarea, label, button, img, div, section, main {
+input, textarea, label, span, button, img, div, section, main {
 			float:left;
 			clear:both;
 		}
