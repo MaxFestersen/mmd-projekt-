@@ -378,6 +378,106 @@ submitEmail.onclick = function(){
 				lille
 			}
 		}*/
+		var platform = document.getElementsByName("Platform ");
+		for(i=0; i < platform.length; i++){
+			if(platform[i].checked){
+			   checkedValue = platform[i];
+			   break;
+			} else {
+				checkedValue = false;
+			}
+		}
+		platform = checkedValue;
+		if(platform){
+			emailBody += platform.name.trim + ":%0D%0A" + platform.value + "%0D%0A%0D%0A";
+		}
+		var integrationer = document.getElementsByName("API Skal integreres ");
+		for(i=0; i < integrationer.length; i++){
+			if(integrationer[i].checked){
+			   checkedValue = integrationer[i];
+			   break;
+			} else {
+				checkedValue = false;
+			}
+		}
+		integrationer = checkedValue;
+		if(integrationer){
+			emailBody += "API skal integreres.%0D%0A";
+		}
+		var APIvalg = document.getElementsByName("Valgte API ");
+		APIvalg = APIvalg[0].value;
+		if(integrationer && APIvalg){
+			emailBody += "Jeg har valgt følgende API:";
+			APIvalg = APIvalg.split(';');
+			for(var i=0; i < APIvalg.length; i++){
+				emailBody += "%0D%0A- " + APIvalg[i].trim + ".";
+			}
+			emailBody += "%0D%0A"
+		} else if(integrationer){
+			emailBody += "%0D%0A";
+		}
+		var backend = document.getElementsByName("Backend skal bygges ");
+		for(i=0; i < backend.length; i++){
+			if(backend[i].checked){
+			   checkedValue = backend[i];
+			   break;
+			} else {
+				checkedValue = false;
+			}
+		}
+		backend = checkedValue;
+		if(backend){
+			emailBody += backend.name.trim + ":%0D%0A" + backend.value + "%0D%0A%0D%0A";
+		}
+		var serviceVedligeholdelse = document.getElementsByName("Der er behov for service eller vedligeholdelse ");
+		for(i=0; i < serviceVedligeholdelse.length; i++){
+			if(serviceVedligeholdelse[i].checked){
+			   checkedValue = serviceVedligeholdelse[i];
+			   break;
+			} else {
+				checkedValue = false;
+			}
+		}
+		serviceVedligeholdelse = checkedValue;
+		if(serviceVedligeholdelse){
+			emailBody += serviceVedligeholdelse.name.trim + ":%0D%0A" + serviceVedligeholdelse.value + "%0D%0A%0D%0A";
+		}
+		var design = document.getElementsByName("House of Code skal designe app ");
+		for(i=0; i < design.length; i++){
+			if(design[i].checked){
+			   checkedValue = design[i];
+			   break;
+			} else {
+				checkedValue = false;
+			}
+		}
+		design = checkedValue;
+		if(design){
+			emailBody += design.name.trim + ":%0D%0A" + design.value + "%0D%0A%0D%0A";
+		}
+		var sprog = document.getElementsByName("Sprog ");
+		sprog = sprog[0].value;
+		if(sprog){
+			emailBody += "Jeg har valgt følgende sprog:";
+			sprog = sprog.split(';');
+			for(var i=0; i < sprog.length; i++){
+				emailBody += "%0D%0A- " + sprog[i].trim + ".";
+			}
+			emailBody += "%0D%0A"
+		}
+		var login = document.getElementsByName("Login skal implementeres ");
+		for(i=0; i < login.length; i++){
+			if(login[i].checked){
+			   checkedValue = login[i];
+			   break;
+			} else {
+				checkedValue = false;
+			}
+		}
+		login = checkedValue;
+		if(login){
+			emailBody += login.name.trim + ":%0D%0A" + login.value + "%0D%0A%0D%0A";
+		}
 		if(besked.value){
 			emailBody += 'Jeg har vedlagt denne besked:%0D%0A' + besked.value + '%0D%0A%0D%0A';
 		}
