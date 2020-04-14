@@ -355,7 +355,7 @@ submitEmail.onclick = function(){
 		});
 	} else {
 		console.log('Der var ingen fejl i påkrævet indhold.');
-		var emailBody = 'Pris beregneren blev anvendt' + formIntroduktion.value + '\n\nHej, House of Code. Jeg har benyttet jeres pris-beregner, og vil gerne anmoder om et tilbud. Pris beregneren blev anvendt';
+		var emailBody = 'Pris beregneren blev anvendt' + formIntroduktion.value + '\n\nHej, House of Code. Jeg har benyttet jeres pris-beregner, og vil gerne anmoder om et tilbud.';
 		/*if(app & hjemmeside){
 		sol = "app og hjemmeside"
 		} else if(app){*/
@@ -366,7 +366,7 @@ submitEmail.onclick = function(){
 			return false;
 		}*/
 		// Definer krav til app.
-		emailBody += '\nJeg vil gerne have udviklet en ' + sol + '.\n\n';
+		emailBody += '\n\nJeg vil gerne have udviklet en ' + sol + '.\n\n';
 		emailBody += 'Formålet og meningen med min ' + sol + ' er:\n' + beskrivelse.value + '\n\n';
 		//\n er linjeskift
 		/*if(point>0){
