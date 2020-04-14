@@ -232,11 +232,17 @@ i {
 .icon_calc{
     margin-left: 20px;
 }
+
+
+       #start,#egenskaber, #resultat, #afslutning{
+       margin: 50px 0px 50px 200px;
+       }
+
+
 		#beregner{
-			margin: 0 auto;
+			margin: 50px 0px 50px 200px;
 			width: 75%;
-			background-color: #BFBCBA;
-			border: solid #505E6B 1px;
+			background-color: none;
 			float: left;
 		}
 		#apivalg{
