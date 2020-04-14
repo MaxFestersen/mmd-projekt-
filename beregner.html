@@ -319,44 +319,10 @@
 				<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
 			</section>
 		</form>
-	</section>
-	<!--Hvis "ja" vælges, skal muligheden for at indtaste apier vises. Hvis "nej" eller "ved ikke" vælges, skal muligheden skjules.-->
-	<script>
-		//if-else script i andre ord "this.checked", altså, hvis knappen bliver valgt, skal "display" på "apivalg" section ændres. 
-		document.getElementById("hvisja").addEventListener("change", function(){
-			document.getElementById("apivalg").style.display = this.checked ? "block" : "none";
-		}); 
-		document.getElementById("hvisnej").addEventListener("change", function(){
-			document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-		});
-		document.getElementById("hvisvedikke").addEventListener("change", function(){
-			document.getElementById("apivalg").style.display = this.checked ? "none" : "block";
-		});
-	</script>
+	</section>	
 	<script type="text/javascript" src="js/indholsvisning.js"></script>
 	<script type="text/javascript" src="js/input-dato.js"></script>
-	<script>
-	function showHideSection(sectionToBeShown){	
-		var ids = ["pris-beregner-knap-section", "start", "egenskaber", "beregner", "resultat", "afslutning"]
-		
-		for(i = 0; i < ids.length; i++){
-			if(sectionToBeShown == ids[i]){
-				document.getElementById(ids[i]).classList.remove("hidden");
-			} 
-			else {
-				document.getElementById(ids[i]).classList.add("hidden");
-			}
-		}
-
-	}
-	</script>
 	<script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>
-	<script>
-	// ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.  
-	function myFunction(){
-		document.getElementById("indsend").innerHTML="Tak for din besked.";
-	}
-	</script>
 	<script type="text/javascript" src="js/pris-beregner.js"></script>
 </body>
 </html>
