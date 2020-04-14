@@ -358,81 +358,6 @@ textarea{
     text-decoration: underline;
     color: #c57276;
 }
-		#beregner{
-			margin: 50px 0px 50px 200px;
-			width: 75%;
-			background-color: none;
-			float: left;
-		}
-		#apivalg{
-			display: none;
-		}
-        
-        .beskedsendt {
-        width: 300px;
-        height: 30px;
-        background-color: green;
-        color: white;
-        font-size: 20px;
-        }
-		
-		.formErrorTxt, .formWarningTxt {
-			float: left;
-			clear: both;
-		}
-		.formErrorTxt {
-			color: #F00;
-			font-weight: bold;
-		}
-		
-		.formWarningTxt{
-			color: #ff8c00;
-		}
-		
-		.InputError {
-			border: solid 1px #F00;
-			outline-style: solid;
-			outline-width: 1px;
-			outline-color: #F00;
-		}
-		
-		.InputWarning {
-			border: solid 1px #ff8c00;
-			outline-style: solid;
-			outline-width: 1px;
-			outline-color: #ff8c00;
-		}
-		
-		.hidden{
-			display: none;
-		}
-        
-        #Caps {
-        display:none;color:red;
-        height: 30px;
-        width: 300px;
-        padding-top: 300px; /*Skal ændres inden endelige prototype er oppe*/ 
-        }
-		
-		.breadcrumbs {
-			width: 100%;
-			height: 15px;
-			padding: 15px 0;
-			margin: auto;
-			text-align: left;
-			line-height: 0px;
-			background-color: white;
-			text-transform: normal;
-			display: flex;
-			justify-content: left;
-			align-items: center;
-            margin-left: 150px;
-			float: left;
-		}
-		.breadcrumbs li {
-			display: inline-block;
-			margin: 1px 21px;
-		}
 
 #beregner{
 	margin: 50px 0px 50px 200px;
@@ -440,6 +365,7 @@ textarea{
 	background-color: none;
 	float: left;
 }
+
 #apivalg{
 	display: none;
 }
