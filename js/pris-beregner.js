@@ -33,7 +33,6 @@ next03.onclick = function(){
 			checkedValue = false;
 		}
 	}
-	
 	integrationer = checkedValue;
 	var APIvalg = document.getElementsByName("Valgte API ");
 	APIvalg = APIvalg[0].value;
