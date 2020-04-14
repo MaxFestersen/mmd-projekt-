@@ -412,26 +412,25 @@ submitEmail.onclick = function(){
 		}
 		integrationer = checkedValue;
 		if(integrationer.value == "Ja."){
-			emailBody += "API'er skal integreres.\n\n";
+			APIvalg = APIvalg[0].value;
+			if(APIvalg){
+				emailBody += "Jeg har valgt følgende API:";
+				APIvalg = APIvalg.split(';');
+				for(var i=0; i < APIvalg.length; i++){
+					if(APIvalg[i].trim()){
+						emailBody += "\n- " + APIvalg[i].trim() + ".";
+					}
+				}
+				emailBody += "\n\n";
+			} else {
+				emailBody += "API'er skal integreres.\n\n";
+			}		
 		} else if(integrationer.value == "Nej."){
 			emailBody += "API'er skal ikke integreres.\n\n";
 		} else if(integrationer.value == "Ved Ikke."){
 			emailBody += "Jeg ved ikke om der er behov for API'er.\n";
 		}
 		var APIvalg = document.getElementsByName("Valgte API ");
-		APIvalg = APIvalg[0].value;
-		if(integrationer.value == "Ja." && APIvalg){
-			emailBody += "Jeg har valgt følgende API:";
-			APIvalg = APIvalg.split(';');
-			for(var i=0; i < APIvalg.length; i++){
-				if(APIvalg[i].trim()){
-					emailBody += "\n- " + APIvalg[i].trim() + ".";
-				}
-			}
-			emailBody += "\n\n";
-		} else if(integrationer.value == "Ja."){
-			emailBody += "\n";
-		}
 		var backend = document.getElementsByName("Backend skal bygges ");
 		for(i=0; i < backend.length; i++){
 			if(backend[i].checked){
