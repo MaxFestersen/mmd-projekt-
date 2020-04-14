@@ -73,18 +73,36 @@
 					<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
 					<!-- 01 Start -->
 					<section id="start">
-						<label>Ønsker du at udvikle en app og/eller en hjemmeside?</label>
-						<label>
-							<input type="checkbox" name="App " value="tilvalgt." required>
-							<span>App</span>
-						</label>
-						<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
-							<input type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
-							<span>Hjemmeside</span>
-						</label>
+						<label>Ønsker du at udvikle en app eller en hjemmeside?</label>
+						<div class="sflex">
+							<div class="startbox1">
+								<label>
+									<div>
+										<img alt="appicon" src="Assets/Icons/app_1.png">
+									</div>
+									<input class="i1" type="checkbox" name="App " value="tilvalgt." required >
+									<span>App</span>
+								</label>
+							</div>
+							<div class="startbox2">
+								<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
+									 <div>
+										<img  alt="webicon" src="Assets/Icons/web_2.png">
+									</div>
+									<input class="i2" type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
+									<span>Hjemmeside</span>
+								</label>
+							</div>
+						</div>
 						<span id="appHjemmesideError" class="formErrorTxt hidden">App og/eller hjemmeside skal være valgt.</span>
-						<button type="button" id="back01" onClick="showHideSection('pris-beregner-knap-section');">tilbage</button>
-						<button type="button" id="next01">fortsæt</button>
+						<div class="sflex2">
+							<div class="sflex3">
+								<button type="button" id="back01" onClick="showHideSection('pris-beregner-knap-section');">&lt;tilbage</button>
+							</div>
+							<div class="sflex4">
+								<button type="button" id="next01">fortsæt&gt;</button>
+							</div>
+						</div>
 					</section>
 					<!-- 02 Egenskaber -->
 					<section id="egenskaber">
