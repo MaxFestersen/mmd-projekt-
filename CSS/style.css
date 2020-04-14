@@ -217,6 +217,7 @@ i {
 .flex00{
     display: flex;
     flex-wrap: nowrap;
+    margin-top: 100px;
 }
 
  .button00{
