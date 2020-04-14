@@ -35,7 +35,7 @@
 			<span class="blue">web-</span>
 			udvikling
 		</p> 
-         <p class="indent">}</p>
+        <p class="code_heading">}</p>
       </div>
     </div>
   </div>
@@ -69,7 +69,7 @@
 		accept-charset: definerer hvilken encoding der indtastes i formen. Det påvirker pt. ikke funktionaliteten synligt. Det er tilføjet, da jeg havde læst at det ville hjælpe til at indsætte de special tegn i nogen e-mail klienter. Det har ikke virket i mine tests.
 		-->
 			<!-- Skjuldt form indhold -->
-			<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet pris-beregneren. Jeg anmoder om et tilbud. Pris beregneren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
+			<input type="hidden" id="formIntroduktion" name="Hej, House of Code. Jeg har benyttet jeres pris-beregner, og vil gerne anmoder om et tilbud. Pris beregneren blev anvendt " value="Se e-mail afsendelsestidspunktet.">
 			<!-- type="hidden" er input der ikke er synlige. Deres formål er normalt at få indhold fra JavaScript eller PHP, men vi bruger det yderligere til at struturere e-mailen. -->
 			<!-- 01 Start -->
 			
@@ -264,6 +264,7 @@
 				<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
 			</section>
 		</form>
+<<<<<<< HEAD
 	</section>	
 	  
       <div class="calctext">
@@ -275,6 +276,13 @@
         </div>
          <span>}</span>
       </div>
+=======
+		<div id="formSubmittet" class="hidden">
+			<span class="target"></span>
+		</div>
+	</section>
+	<div>Vi i House of Code ønsker {at møde din virksomhed lige præcis der, hvor I er i processen}</div>
+>>>>>>> e6d8bb1d87b2038ccc8c53ed65b666c67e7df2be
 	<script type="text/javascript" src="js/indholsvisning.js"></script>
 	<script type="text/javascript" src="js/input-dato.js"></script>
 	<script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>

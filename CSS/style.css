@@ -127,13 +127,14 @@ a {
 	margin: 0 auto;
 }
 
-h1{
-	float: left;
-	font-family: "roboto mono", monospace;
-	font-size: 40px;
-	font-weight: 700;
-	color: #515f6d;
-	display: flex;
+.code_heading{
+    float: left;
+    font-family: "roboto mono", monospace;
+    font-size: 40px;
+    font-weight: 700;
+    color: #515f6d;
+    display: flex;
+    clear: left;
 }
 
 p{

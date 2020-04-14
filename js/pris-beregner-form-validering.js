@@ -355,7 +355,7 @@ submitEmail.onclick = function(){
 		});
 	} else {
 		console.log('Der var ingen fejl i påkrævet indhold.');
-		var emailBody = formIntroduktion.name + formIntroduktion.value;
+		var emailBody = 'Pris beregneren blev anvendt' + formIntroduktion.value + '\n\nHej, House of Code. Jeg har benyttet jeres pris-beregner, og vil gerne anmoder om et tilbud.';
 		/*if(app & hjemmeside){
 		sol = "app og hjemmeside"
 		} else if(app){*/
@@ -366,9 +366,9 @@ submitEmail.onclick = function(){
 			return false;
 		}*/
 		// Definer krav til app.
-		emailBody += '%0D%0AJeg vil gerne have udviklet en ' + sol + '.%0D%0A%0D%0A';
-		emailBody += 'Formålet og meningen med min ' + sol + ' er:%0D%0A' + beskrivelse.value + '%0D%0A%0D%0A';
-		//%0D%0A er linjeskift
+		emailBody += '\n\nJeg vil gerne have udviklet en ' + sol + '.\n\n';
+		emailBody += 'Formålet og meningen med min ' + sol + ' er:\n' + beskrivelse.value + '\n\n';
+		//\n er linjeskift
 		/*if(point>0){
 			emailBody += 'Jeg anvendte pris-beregneren, og fik følgende estimat: ';
 			if(point >= 10){
@@ -380,13 +380,13 @@ submitEmail.onclick = function(){
 			}
 		}*/
 		if(point && point <= 3){
-			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 1 kop kaffe dagligt pr. udvikler.%0D%0A%0D%0A"
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 1 kop kaffe dagligt pr. udvikler.\n\n"
 		} else if(point && point > 3 && point < 7){
-			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 2 kop kaffe dagligt pr. udvikler.%0D%0A%0D%0A"
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 2 kop kaffe dagligt pr. udvikler.\n\n"
 		} else if(point && point >= 7){
-			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 3 kop kaffe dagligt pr. udvikler.%0D%0A%0D%0A"
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 3 kop kaffe dagligt pr. udvikler.\n\n"
 		} else {
-			emailBody += "Jeg har ikke foretaget en vurdering af min " + sol + ".%0D%0A%0D%0A"
+			emailBody += "Jeg har ikke foretaget en vurdering af min " + sol + ".\n\n"
 		}
 		var platform = document.getElementsByName("Platform ");
 		for(i=0; i < platform.length; i++){
@@ -399,7 +399,7 @@ submitEmail.onclick = function(){
 		}
 		platform = checkedValue;
 		if(platform){
-			emailBody += platform.name.trim() + ":%0D%0A" + platform.value + "%0D%0A%0D%0A";
+			emailBody += platform.name.trim() + ":\n" + platform.value + "\n\n";
 		}
 		var integrationer = document.getElementsByName("API Skal integreres ");
 		for(i=0; i < integrationer.length; i++){
@@ -412,23 +412,24 @@ submitEmail.onclick = function(){
 		}
 		integrationer = checkedValue;
 		if(integrationer.value == "Ja."){
-			emailBody += "API'er skal integreres.%0D%0A%0D%0A";
-		} else if(integrationer.value == "Nej."){
-			emailBody += "API'er skal ikke integreres.%0D%0A%0D%0A";
-		} else if(integrationer.value == "Ved Ikke."){
-			emailBody += "Jeg ved ikke om der er behov for API'er.%0D%0A";
-		}
 		var APIvalg = document.getElementsByName("Valgte API ");
-		APIvalg = APIvalg[0].value;
-		if(integrationer.value == "Ja." && APIvalg){
-			emailBody += "Jeg har valgt følgende API:";
-			APIvalg = APIvalg.split(';');
-			for(var i=0; i < APIvalg.length; i++){
-				emailBody += "%0D%0A- " + APIvalg[i].trim() + ".";
-			}
-			emailBody += "%0D%0A%0D%0A"
-		} else if(integrationer.value == "Ja."){
-			emailBody += "%0D%0A";
+			APIvalg = APIvalg[0].value;
+			if(APIvalg){
+				emailBody += "Jeg har valgt følgende API:";
+				APIvalg = APIvalg.split(';');
+				for(var i=0; i < APIvalg.length; i++){
+					if(APIvalg[i].trim()){
+						emailBody += "\n- " + APIvalg[i].trim() + ".";
+					}
+				}
+				emailBody += "\n\n";
+			} else {
+				emailBody += "API'er skal integreres.\n\n";
+			}		
+		} else if(integrationer.value == "Nej."){
+			emailBody += "API'er skal ikke integreres.\n\n";
+		} else if(integrationer.value == "Ved Ikke."){
+			emailBody += "Jeg ved ikke om der er behov for API'er.\n";
 		}
 		var backend = document.getElementsByName("Backend skal bygges ");
 		for(i=0; i < backend.length; i++){
@@ -441,7 +442,7 @@ submitEmail.onclick = function(){
 		}
 		backend = checkedValue;
 		if(backend){
-			emailBody += backend.name.trim() + ":%0D%0A" + backend.value + "%0D%0A%0D%0A";
+			emailBody += backend.name.trim() + ":\n" + backend.value + "\n\n";
 		}
 		var serviceVedligeholdelse = document.getElementsByName("Der er behov for service eller vedligeholdelse ");
 		for(i=0; i < serviceVedligeholdelse.length; i++){
@@ -454,7 +455,7 @@ submitEmail.onclick = function(){
 		}
 		serviceVedligeholdelse = checkedValue;
 		if(serviceVedligeholdelse){
-			emailBody += serviceVedligeholdelse.name.trim() + ":%0D%0A" + serviceVedligeholdelse.value + "%0D%0A%0D%0A";
+			emailBody += serviceVedligeholdelse.name.trim() + ":\n" + serviceVedligeholdelse.value + "\n\n";
 		}
 		var design = document.getElementsByName("House of Code skal designe app ");
 		for(i=0; i < design.length; i++){
@@ -467,17 +468,18 @@ submitEmail.onclick = function(){
 		}
 		design = checkedValue;
 		if(design){
-			emailBody += design.name.trim() + ":%0D%0A" + design.value + "%0D%0A%0D%0A";
+			emailBody += design.name.trim() + ":\n" + design.value + "\n\n";
 		}
 		var sprog = document.getElementsByName("Sprog ");
 		sprog = sprog[0].value;
 		if(sprog){
-			emailBody += "Jeg har valgt følgende sprog:";
 			sprog = sprog.split(';');
 			for(var i=0; i < sprog.length; i++){
-				emailBody += "%0D%0A- " + sprog[i].trim() + ".";
+				if(sprog[i].trim()){
+					emailBody += "\n- " + sprog[i].trim() + ".";
+				}
 			}
-			emailBody += "%0D%0A"
+			emailBody += "\n\n"
 		}
 		var login = document.getElementsByName("Login skal implementeres ");
 		for(i=0; i < login.length; i++){
@@ -490,22 +492,29 @@ submitEmail.onclick = function(){
 		}
 		login = checkedValue;
 		if(login){
-			emailBody += login.name.trim() + ":%0D%0A" + login.value + "%0D%0A%0D%0A";
+			emailBody += login.name.trim() + ":\n" + login.value + "\n\n";
 		}
 		if(besked.value){
-			emailBody += 'Jeg har vedlagt denne besked:%0D%0A' + besked.value + '%0D%0A%0D%0A';
+			emailBody += 'Jeg har vedlagt denne besked:\n' + besked.value + '\n\n';
 		}
-		emailBody += 'Mvh.%0D%0A' + navn.value + '%0D%0A';
+		emailBody += 'Mvh.\n' + navn.value + '\n';
 		if(tel.value){
-			emailBody += 'Telefon: ' + tel.value + '%0D%0A';
+			emailBody += 'Telefon: ' + tel.value + '\n';
 		}
 		emailBody += 'E-mail: ' + email.value;
 		console.log(emailBody);
 		var emailAdd = "minmailmax@gmail.com";
 		var subject = "Anmodning om estimat på app.";
-		window.open("mailto:"+emailAdd+"?subject="+subject+"&body="+emailBody, '_blank');
+		window.open("mailto:"+emailAdd+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(emailBody), '_blank');
 	}
-     alert("Tak for din e-mail!");
+	// Giv brugeren besked.
+	var formSubmittet = document.getElementById("formSubmittet");
+	var target = formSubmittet.getElementsByClassName("target");
+	target = target[0];
+	target.innerHTML="E-mail klienten blev åbnet, og udfyldt med dine svar."
+	formSubmittet.classList.remove("hidden");
+    alert("E-mail klienten blev åbnet, og udfyldt med dine svar.");
+	
 };
 /*Denne kode giver besked til brugeren, når mailen bliver sendt // ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.*/
 function myFunction(){
