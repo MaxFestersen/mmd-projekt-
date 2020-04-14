@@ -238,6 +238,42 @@ i {
        margin: 50px 0px 50px 200px;
        }
 
+.sflex{
+    display: flex;
+    padding: 50px 0px 30px 0px;
+    
+}
+.startbox2{
+    margin-left: 50px;
+    margin-top: 6px;
+}
+
+.i1{
+    margin: 10px 0px 10px 17px;
+}
+.i2{
+    margin: 10px 0px 10px 40px;
+}
+
+.sflex2{
+    display: flex;
+}
+#back01,#next01{
+    margin-top: 30px;
+    border: none;
+    background-color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#back01{
+    color: #c57276;
+    margin-right: 45px;
+}
+
+#next01{
+    color: #A5B978;
+}
 
 		#beregner{
 			margin: 50px 0px 50px 200px;
