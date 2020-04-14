@@ -368,6 +368,7 @@ submitEmail.onclick = function(){
 		// Definer krav til app.
 		emailBody += '%0D%0AJeg vil gerne have udviklet en ' + sol + '.%0D%0A%0D%0A';
 		emailBody += 'Formålet og meningen med min ' + sol + ' er:%0D%0A' + beskrivelse.value + '%0D%0A%0D%0A';
+		//%0D%0A er linjeskift
 		/*if(point>0){
 			emailBody += 'Jeg anvendte pris-beregneren, og fik følgende estimat: ';
 			if(point >= 10){
