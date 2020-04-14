@@ -379,6 +379,15 @@ submitEmail.onclick = function(){
 				lille
 			}
 		}*/
+		if(point && point <= 3){
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 1 kop kaffe dagligt pr. udvikler.%0D%0A%0D%0A"
+		} else if(point && point > 3 && point < 7){
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 2 kop kaffe dagligt pr. udvikler.%0D%0A%0D%0A"
+		} else if(point && point >= 7){
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 3 kop kaffe dagligt pr. udvikler.%0D%0A%0D%0A"
+		} else {
+			emailBody += "Jeg har ikke foretaget en vurdering af min " + sol + ".%0D%0A%0D%0A"
+		}
 		var platform = document.getElementsByName("Platform ");
 		for(i=0; i < platform.length; i++){
 			if(platform[i].checked){
