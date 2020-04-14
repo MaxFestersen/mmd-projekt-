@@ -389,7 +389,7 @@ submitEmail.onclick = function(){
 		}
 		platform = checkedValue;
 		if(platform){
-			emailBody += platform.name.trim + ":%0D%0A" + platform.value + "%0D%0A%0D%0A";
+			emailBody += platform.name.trim() + ":%0D%0A" + platform.value + "%0D%0A%0D%0A";
 		}
 		var integrationer = document.getElementsByName("API Skal integreres ");
 		for(i=0; i < integrationer.length; i++){
@@ -410,7 +410,7 @@ submitEmail.onclick = function(){
 			emailBody += "Jeg har valgt følgende API:";
 			APIvalg = APIvalg.split(';');
 			for(var i=0; i < APIvalg.length; i++){
-				emailBody += "%0D%0A- " + APIvalg[i].trim + ".";
+				emailBody += "%0D%0A- " + APIvalg[i].trim() + ".";
 			}
 			emailBody += "%0D%0A"
 		} else if(integrationer){
@@ -427,7 +427,7 @@ submitEmail.onclick = function(){
 		}
 		backend = checkedValue;
 		if(backend){
-			emailBody += backend.name.trim + ":%0D%0A" + backend.value + "%0D%0A%0D%0A";
+			emailBody += backend.name.trim() + ":%0D%0A" + backend.value + "%0D%0A%0D%0A";
 		}
 		var serviceVedligeholdelse = document.getElementsByName("Der er behov for service eller vedligeholdelse ");
 		for(i=0; i < serviceVedligeholdelse.length; i++){
@@ -440,7 +440,7 @@ submitEmail.onclick = function(){
 		}
 		serviceVedligeholdelse = checkedValue;
 		if(serviceVedligeholdelse){
-			emailBody += serviceVedligeholdelse.name.trim + ":%0D%0A" + serviceVedligeholdelse.value + "%0D%0A%0D%0A";
+			emailBody += serviceVedligeholdelse.name.trim() + ":%0D%0A" + serviceVedligeholdelse.value + "%0D%0A%0D%0A";
 		}
 		var design = document.getElementsByName("House of Code skal designe app ");
 		for(i=0; i < design.length; i++){
@@ -453,7 +453,7 @@ submitEmail.onclick = function(){
 		}
 		design = checkedValue;
 		if(design){
-			emailBody += design.name.trim + ":%0D%0A" + design.value + "%0D%0A%0D%0A";
+			emailBody += design.name.trim() + ":%0D%0A" + design.value + "%0D%0A%0D%0A";
 		}
 		var sprog = document.getElementsByName("Sprog ");
 		sprog = sprog[0].value;
@@ -461,7 +461,7 @@ submitEmail.onclick = function(){
 			emailBody += "Jeg har valgt følgende sprog:";
 			sprog = sprog.split(';');
 			for(var i=0; i < sprog.length; i++){
-				emailBody += "%0D%0A- " + sprog[i].trim + ".";
+				emailBody += "%0D%0A- " + sprog[i].trim() + ".";
 			}
 			emailBody += "%0D%0A"
 		}
@@ -476,7 +476,7 @@ submitEmail.onclick = function(){
 		}
 		login = checkedValue;
 		if(login){
-			emailBody += login.name.trim + ":%0D%0A" + login.value + "%0D%0A%0D%0A";
+			emailBody += login.name.trim() + ":%0D%0A" + login.value + "%0D%0A%0D%0A";
 		}
 		if(besked.value){
 			emailBody += 'Jeg har vedlagt denne besked:%0D%0A' + besked.value + '%0D%0A%0D%0A';
