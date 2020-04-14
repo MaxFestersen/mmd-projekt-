@@ -1,12 +1,16 @@
-* {margin: 0; padding: 0;}
+* {
+	margin: 0;
+	padding: 0;
+}
+
 *, ::before, ::after {
     box-sizing: inherit;
 }
 
 input, textarea, label, span, button, img, div, section, main {
-			float:left;
-			clear:both;
-		}
+	float:left;
+	clear:both;
+}
 
 body{
 	background-color: #ffffff;
@@ -362,10 +366,10 @@ form > section.hidden{
 }
 
 #Caps {
-display:none;color:red;
-height: 30px;
-width: 300px;
-padding-top: 300px; /*Skal ændres inden endelige prototype er oppe*/ 
+	display:none;color:red;
+	height: 30px;
+	width: 300px;
+	padding-top: 300px; /*Skal ændres inden endelige prototype er oppe*/ 
 }
 
 .breadcrumbs {
