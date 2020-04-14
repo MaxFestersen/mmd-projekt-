@@ -474,7 +474,6 @@ submitEmail.onclick = function(){
 		var sprog = document.getElementsByName("Sprog ");
 		sprog = sprog[0].value;
 		if(sprog){
-			emailBody += "Jeg har valgt følgende sprog:";
 			sprog = sprog.split(';');
 			for(var i=0; i < sprog.length; i++){
 				if(sprog[i].trim()){
