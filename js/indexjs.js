@@ -5,7 +5,6 @@ function scroll_to(id) {
       element.setAttribute('href', id)
       element.click();
   }
-
   document.getElementById("tocontent").addEventListener('click', () => {
   scroll_to('#7')
   });
