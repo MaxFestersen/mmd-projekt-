@@ -412,6 +412,7 @@ submitEmail.onclick = function(){
 		}
 		integrationer = checkedValue;
 		if(integrationer.value == "Ja."){
+		var APIvalg = document.getElementsByName("Valgte API ");
 			APIvalg = APIvalg[0].value;
 			if(APIvalg){
 				emailBody += "Jeg har valgt følgende API:";
@@ -430,7 +431,6 @@ submitEmail.onclick = function(){
 		} else if(integrationer.value == "Ved Ikke."){
 			emailBody += "Jeg ved ikke om der er behov for API'er.\n";
 		}
-		var APIvalg = document.getElementsByName("Valgte API ");
 		var backend = document.getElementsByName("Backend skal bygges ");
 		for(i=0; i < backend.length; i++){
 			if(backend[i].checked){
