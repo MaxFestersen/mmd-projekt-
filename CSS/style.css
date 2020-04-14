@@ -14,6 +14,9 @@ body{
 	font-family: "roboto mono", monospace;
 
 }
+a, input[type=button], input[type=submit], button{
+	cursor: pointer;
+}
 
 .wrapper {
   height: 100%;
