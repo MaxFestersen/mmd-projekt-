@@ -491,6 +491,7 @@ submitEmail.onclick = function(){
 		var subject = "Anmodning om estimat på app.";
 		window.open("mailto:"+emailAdd+"?subject="+subject+"&body="+emailBody, '_blank');
 	}
+     alert("Tak for din e-mail!");
 };
 /*Denne kode giver besked til brugeren, når mailen bliver sendt // ved hjælp af function + event, ved indsend knappen bliver Onclick eventet aktiveret via elementid og erstattet med tekst i innerhtml.*/
 function myFunction(){
