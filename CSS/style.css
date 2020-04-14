@@ -213,17 +213,22 @@ i {
 
 /*Her er CSS for beregneren*/
 
+.flex00{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
  .button00{
     background-color: #A5B978;
     border: none;
     color: white;
     font-size: 15px;
-    margin: 5px 0px 0px 100px;
+    margin: 5px 0px 0px 150px;
     padding: 15px 20px;
     cursor: pointer;
-}
+} 
 .icon_calc{
-    margin-left: 350px;
+    margin-left: 20px;
 }
 		#beregner{
 			margin: 0 auto;
@@ -294,6 +299,7 @@ i {
 			display: flex;
 			justify-content: left;
 			align-items: center;
+            margin-left: 150px;
 			float: left;
 		}
 		.breadcrumbs li {
@@ -319,7 +325,25 @@ i {
 	width: 660px;
 }
 
+.calctext{
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.stor_tekst{
+    font-size: 15px;
+    color: #7095a8;
+    font-weight:600;
+}
+.indryk2{
+    margin-left: 25px;
+}
+.gul_tekst{
+    color: #d9aa63;
+}
 
+.rød_tekst{
+    color: #c57276;
+}
  /* #footer{
   display: grid;
   grid-template-columns: auto auto auto;
