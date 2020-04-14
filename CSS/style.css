@@ -17,6 +17,21 @@ body{
 a, input[type=button], input[type=submit], button{
 	cursor: pointer;
 }
+#mainindex{
+	width: 100%;
+}
+.bigMainWrapper{
+	float: none;
+	clear: none;
+	width: 90vw;
+	min-height:1px;
+	margin:0 auto;
+}
+@media (min-width:768px) {
+	.bigMainWrapper{
+		width: 80vw;
+	}
+}
 
 .wrapper {
   height: 100%;
@@ -237,9 +252,9 @@ i {
 }
 
 
-       #start,#egenskaber, #resultat, #afslutning{
-       margin: 50px 0px 50px 200px;
-       }
+#start,#egenskaber, #resultat, #afslutning{
+margin: 50px 0px 50px 200px;
+}
 
 .sflex{
     display: flex;
@@ -288,6 +303,7 @@ textarea{
     font-size: 15px;
 }
 
+<<<<<<< HEAD
 #next02alt{
      background-color: #A5B978;
     border: none;
@@ -391,22 +407,118 @@ textarea{
 			display: inline-block;
 			margin: 1px 21px;
 		}
+=======
+#beregner{
+	margin: 50px 0px 50px 200px;
+	width: 75%;
+	background-color: none;
+	float: left;
+}
+#apivalg{
+	display: none;
+}
+>>>>>>> a905f4eaba66a6d34064f8229c645ddff3baa33e
 
-		.breadcrumbs li a {
-			text-decoration: none;
-			color: #505E6B;
-			padding: 5px 10px 10px 5px;
-			font-family: roboto mono;
-			letter-spacing: 2px;
-			line-height: normal;
-		}
+.beskedsendt {
+	width: 300px;
+	height: 30px;
+	background-color: green;
+	color: white;
+	font-size: 20px;
+}
+
+.formErrorTxt, .formWarningTxt {
+	float: left;
+	clear: both;
+}
+.formErrorTxt {
+	color: #F00;
+	font-weight: bold;
+}
+
+.formWarningTxt{
+	color: #ff8c00;
+}
+
+.InputError {
+	border: solid 1px #F00;
+	outline-style: solid;
+	outline-width: 1px;
+	outline-color: #F00;
+}
+
+.InputWarning {
+	border: solid 1px #ff8c00;
+	outline-style: solid;
+	outline-width: 1px;
+	outline-color: #ff8c00;
+}
+
+.hidden{
+	display: none;
+}
+form{
+	float:left;
+	width:100%;
+}
+form > section{
+	float:right;
+	width: 100%;
+	transition: width 1s;
+}
+	
+form > section.hidden{
+	display:block;
+	height: 0;
+	max-width: 0;
+	overflow: hidden;
+	clear: none;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#Caps {
+display:none;color:red;
+height: 30px;
+width: 300px;
+padding-top: 300px; /*Skal ændres inden endelige prototype er oppe*/ 
+}
+
+.breadcrumbs {
+	width: 100%;
+	height: 15px;
+	padding: 15px 0;
+	margin: auto;
+	text-align: left;
+	line-height: 0px;
+	background-color: white;
+	text-transform: normal;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-left: 150px;
+	float: left;
+}
+.breadcrumbs li {
+	display: inline-block;
+	margin: 1px 21px;
+}
+
+.breadcrumbs li a {
+	text-decoration: none;
+	color: #505E6B;
+	padding: 5px 10px 10px 5px;
+	font-family: roboto mono;
+	letter-spacing: 2px;
+	line-height: normal;
+}
 
 .rowfootercontent{
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #515f6d;
-  padding: 150px 100px;
+	margin-top: 50px;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: #515f6d;
+	padding: 150px 100px;
 	width: 660px;
 }
 
