@@ -480,7 +480,7 @@ submitEmail.onclick = function(){
 					emailBody += "\n- " + sprog[i].trim() + ".";
 				}
 			}
-			emailBody += "\n"
+			emailBody += "\n\n"
 		}
 		var login = document.getElementsByName("Login skal implementeres ");
 		for(i=0; i < login.length; i++){
