@@ -673,6 +673,12 @@ i {
 .rød_tekst{
     color: #c57276;
 }
+#formSubmittet{
+	padding: 20px;
+    border: 3px solid #A5B978;
+    color: #A5B978;
+    max-width: 380px;
+}
  /* #footer{
   display: grid;
   grid-template-columns: auto auto auto;
