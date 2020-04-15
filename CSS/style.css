@@ -18,9 +18,13 @@ body{
 	font-family: "roboto mono", monospace;
 
 }
-a, input[type=button], input[type=submit], button{
+a, input[type=button], input[type=submit], button,input[type=radio],input[type=checkbox], .labelOption{
 	cursor: pointer;
 }
+a.disabled, input[type=button]:disabled, input[type=submit]:disabled, button:disabled, .labelDisabled, .labelDisabled input{
+	cursor: not-allowed;
+}
+
 .wrapper {
   height: 100%;
   min-height: 100%;
@@ -271,7 +275,6 @@ i {
     font-size: 15px;
     margin: 5px 0px 0px 150px;
     padding: 15px 20px;
-    cursor: pointer;
 }
 .icon_calc{
     margin-left: 20px;
@@ -307,7 +310,6 @@ i {
     border: none;
     background-color: #fff;
     font-size: 13px;
-    cursor: pointer;
     text-decoration: underline;
 }
 #back01{
@@ -337,7 +339,6 @@ i {
     font-size: 18px;
     margin-bottom: 15px ;
     padding: 5px 7px 5px 7px;
-    cursor: pointer;
 }
 #next02{
     background-color: #d9aa63;
@@ -346,7 +347,6 @@ i {
     font-size: 18px;
     margin-bottom: 15px ;
     padding: 5px 34px 5px 35px;
-    cursor: pointer;
 }
 
 #back02,#back03,.back04,#back05{
@@ -354,7 +354,6 @@ i {
     border: none;
     background-color: #fff;
     font-size: 13px;
-    cursor: pointer;
     text-decoration: underline;
     color: #c57276;
 }
@@ -536,7 +535,6 @@ i {
     font-size: 17px;
     margin-top: 40px;
     padding: 5px 40px;
-    cursor: pointer;
 }
 
 /* afslutning/formular */
@@ -565,7 +563,6 @@ i {
     font-size: 15px;
     margin-bottom: 10px;
     padding: 10px 22px 10px 22px;
-    cursor: pointer;
 }
 
 #submitEmail{
@@ -575,7 +572,6 @@ i {
     font-size: 15px;
     margin-bottom: 10px;
     padding: 10px 22px 10px 22px;
-    cursor: pointer;
 }
 
 .beskedsendt {

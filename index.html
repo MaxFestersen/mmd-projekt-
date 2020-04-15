@@ -75,14 +75,14 @@
 						<label>Ønsker du at udvikle en app eller en hjemmeside?</label>
 						<div class="sflex">
 							<div class="startbox1">
-								<label>
-										<img alt="appicon" src="Assets/Icons/app_1.png">
+								<label class="labelOption">
+									<img alt="appicon" src="Assets/Icons/app_1.png">
 									<input class="i1" type="checkbox" name="App " value="tilvalgt." required >
 									<span>App</span>
 								</label>
 							</div>
 							<div class="startbox2">
-								<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
+								<label  class="labelDisabled" title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
 										<img  alt="webicon" src="Assets/Icons/web_2.png">
 									<input class="i2" type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
 									<span>Hjemmeside</span>
@@ -117,28 +117,28 @@
 						<label class="spoergsmaal">Hvilke platforme skal appen kunne understøttes af?</label>
                 <div class="pflex">
                     <div class="pflex0">
-						<label>
+						<label class="labelOption">
                             <img src="Assets/Icons/ios.png" alt="iOS-icon">
 							<input class="p1" type="radio" name="Platform " value="IOS.">
 							<span>iOS</span>
 						</label>
                     </div>
                     <div class="pflex1">
-						<label>
+						<label class="labelOption">
                             <img class="roidmg" src="Assets/Icons/android.png" alt="Android-icon">
 							<input class="p2" type="radio" name="Platform " value="Android.">
 							<span>Android</span>
 						</label>
                     </div>
                     <div class="pflex2">
-						<label>
+						<label class="labelOption">
                             <img class="roidmg3" src="Assets/Icons/iosandroid.png" alt="iOS-og-Android-icon">
 							<input class="p3" type="radio" name="Platform " value="IOS & Android.">
 							<span>iOS &amp; Android</span>
 						</label>
                     </div>
                     <div class="pflex4">
-						<label>
+						<label class="labelOption">
 							<input class="p4" type="radio" name="Platform " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
@@ -146,23 +146,22 @@
                 </div>
 						<label class="overskrift">Integrationer</label>
 						<img class="ikon1" src="Assets/Icons/api.png" alt="API IKON">
-							<label class="spoergsmaal">Skal appen integreres med APIer?
-                        </label>
+						<label class="spoergsmaal">Skal appen integreres med APIer?</label>
                 <div class="iflex0">
                     <div class="iflex">
-						<label>
+						<label class="labelOption">
 							<input  class="api0" type="radio" id="hvisja" name="API Skal integreres " value="Ja.">
 							<span>Ja</span>
 						</label>
                     </div>
                     <div class="iflex2">
-						<label>
+						<label class="labelOption">
 							<input class="api1" type="radio" id="hvisnej" name="API Skal integreres " value="Nej.">
 							<span>Nej</span>
 						</label>
                     </div>
                     <div class="iflex3">
-						<label>
+						<label class="labelOption">
 							<input class="api2" type="radio" id="hvisvedikke" name="API Skal integreres " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
@@ -178,19 +177,19 @@
 						<label class="spoergsmaal">Skal der bygges backend til appen?</label>
                 <div class="bflex">
                      <div class="bflex1">
-						<label>
+						<label class="labelOption">
 							<input class="b1" type="radio" name="Backend skal bygges " value="Ja.">
 							<span class="svar1">Ja</span>
 						</label>
                      </div>
                      <div class="bflex2">
-						<label>
+						<label class="labelOption">
 							<input class="b2" type="radio" name="Backend skal bygges " value="Nej.">
 							<span>Nej</span>
 						</label>
                     </div>
                     <div class="bflex3">
-						<label>
+						<label class="labelOption">
 							<input class="b3" type="radio" name="Backend skal bygges " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
@@ -199,15 +198,15 @@
 						<img class="ikon" src="Assets/Icons/Service.png" alt="SERVICE IKON">
 						<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
 				<div class="serviceflex">
-                        <label class="service1">
+                        <label class="labelOption service1">
 							<input class="s1" type="radio" name="Der er behov for service eller vedligeholdelse " value="Ja.">
 							<span>Ja</span>
 						</label>
-						<label class="service2">
+						<label  class="labelOption service2">
 							<input class="s2" type="radio" name="Der er behov for service eller vedligeholdelse " value="Nej.">
 							<span>Nej</span>
 						</label>
-						<label class="service3">
+						<label  class="labelOption service3">
 							<input class="s3" type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
@@ -216,15 +215,15 @@
 						<img class="ikon" src="Assets/Icons/design.png" alt="DESIGN IKON">
 						<label class="spoergsmaal">Skal House of Code stå for design?</label>
                     <div class="designflex">
-						<label class="design1">
+						<label class="labelOption design1">
 							<input class="d1" type="radio" name="House of Code skal designe app " value="Ja.">
 							<span>Ja</span>
 						</label>
-						<label class="design2">
+						<label  class="labelOption design2">
 							<input class="d2" type="radio" name="House of Code skal designe app " value="Nej.">
 							<span>Nej</span>
 						</label>
-						<label class="design3">
+						<label  class="labelOption design3">
 							<input class="d3" type="radio" name="House of Code skal designe app " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
@@ -236,15 +235,15 @@
 						<img class="ikon" src="Assets/Icons/login.png" alt="LOGIN IKON">
 						<label class="spoergsmaal">Skal der være mulighed for login?</label>
                     <div class="loginflex">
-						<label class="login1">
+						<label  class="labelOption login1">
 							<input class="l1" type="radio" name="Login skal implementeres " value="Ja.">
 							<span>Ja</span>
 						</label>
-						<label class="login2">
+						<label  class="labelOption login2">
 							<input class="l2" type="radio" name="Login skal implementeres " value="Nej.">
 							<span>Nej</span>
 						</label>
-						<label class="login3">
+						<label  class="labelOption login3">
 							<input class="l3" type="radio" name="Login skal implementeres " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
@@ -274,7 +273,7 @@
 					</section>
 					<!-- Afslutning/Formualr -->
 					<section id="afslutning">
-						<label>
+						<label class="labelOption">
 							<span>Hvordan må vi kontakte dig om vores tilbud?</span>
 							<input class="inputslut" type="text" placeholder="Navn" name="Mit navn " required>
 						</label>
