@@ -5,6 +5,7 @@ Formål: At udregne pris, validere at der blev foretaget mindst 1 valg, og gå f
 var next03 = document.getElementById("next03");
 var beregnerWarning = document.getElementById("beregnerWarning");
 var dinAppEr = document.getElementsByClassName('dinapper');
+var dinAppBillede = document.getElementsByClassName('dinAppBillede');
 
 // -- Variabler til point beregning --
 var point = false;
@@ -137,16 +138,26 @@ next03.onclick = function(){
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.add("hidden");
 		dinAppEr[3].classList.add("hidden");
+		dinAppBillede[0].classList.remove("hidden");
+		dinAppBillede[1].classList.add("hidden");
+		dinAppBillede[2].classList.add("hidden");
+		
 	} else if(point > 3 && point < 7){
 		dinAppEr[0].classList.add("hidden");
 		dinAppEr[1].classList.remove("hidden");
 		dinAppEr[2].classList.add("hidden");
 		dinAppEr[3].classList.add("hidden");
+		dinAppBillede[0].classList.add("hidden");
+		dinAppBillede[1].classList.remove("hidden");
+		dinAppBillede[2].classList.add("hidden");
 	} else if(point >= 7){
 		dinAppEr[0].classList.add("hidden");
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.remove("hidden");
 		dinAppEr[3].classList.add("hidden");
+		dinAppBillede[0].classList.add("hidden");
+		dinAppBillede[1].classList.add("hidden");
+		dinAppBillede[2].classList.remove("hidden");
 	} else{
 		// Umuligt tilfælde
 		console.log("Dette bør aldrig kunne ske.");
@@ -154,6 +165,9 @@ next03.onclick = function(){
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.add("hidden");
 		dinAppEr[3].classList.remove("hidden");
+		dinAppBillede[0].classList.add("hidden");
+		dinAppBillede[1].classList.add("hidden");
+		dinAppBillede[2].classList.add("hidden");
 	}
 	
 	// -- Navigering --
