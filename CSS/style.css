@@ -824,11 +824,10 @@ button{
 }
 
 .tooltip {
-  position: relative;
-  display: inline-block;
-  margin-top: 300px;
-  margin-left: 100px;
-
+	position: relative;
+	display: inline-block;
+	float: none;
+	clear: none;
 }
 
 .tooltip .tooltiptext {
