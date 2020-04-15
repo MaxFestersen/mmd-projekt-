@@ -6,13 +6,12 @@
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/758f05fc43.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/indexjs.js"></script>
     <title>Hvad koster en app?</title>
 </head>
 <body>
 <div class="wrapper">
-	<nav id="header-nav" class="header-nav jq-clipthru-origin" role="navigation" style="clip: rect(auto, auto, auto, auto);">
-		<a class="logo-internal" href="https://www.houseofcode.io/" rel="home" title="House of Code">House of Code</a>
+	<nav id="header-nav" class="header-nav jq-clipthru-origin">
+		<a class="logo-internal" href="https://www.houseofcode.io/" title="House of Code">House of Code</a>
 		<ul>
 			<li class="nav-item"><a title="Projekter" class="nav-link-internal" href="https://www.houseofcode.io/projekter/">Projekter</a></li>
 			<li class="nav-item"><a title="Det vi tilbyder" class="nav-link-internal" href="https://www.houseofcode.io/vi-tilbyder-alt-inden-for-app-og-web/">Det vi tilbyder</a></li>
@@ -56,7 +55,7 @@
 				</ul>
 			</nav>
 			<section id="pris-beregner-section">
-				<div class="flex00" id="pris-beregner-knap-section" class="hidden">
+				<div class="flex00 hidden" id="pris-beregner-knap-section">
 					<div><button id="demonstrationsknap" type="button" class="button00">Start pris-beregner</button></div>
 					<div><img class="icon_calc" src="Assets/Icons/icon_calc.png" alt="calculatoricon"></div>
 				</div>
@@ -77,18 +76,14 @@
 						<div class="sflex">
 							<div class="startbox1">
 								<label>
-									<div>
 										<img alt="appicon" src="Assets/Icons/app_1.png">
-									</div>
 									<input class="i1" type="checkbox" name="App " value="tilvalgt." required >
 									<span>App</span>
 								</label>
 							</div>
 							<div class="startbox2">
 								<label title="Hjemmeside er ikke en feature i denne prototype! Kommer snart.">
-									 <div>
 										<img  alt="webicon" src="Assets/Icons/web_2.png">
-									</div>
 									<input class="i2" type="checkbox" name="Hjemmeside " value="tilvalgt." disabled>
 									<span>Hjemmeside</span>
 								</label>
@@ -123,21 +118,21 @@
                 <div class="pflex">
                     <div class="pflex0">
 						<label>
-                            <img src="Assets/Icons/ios.png">
+                            <img src="Assets/Icons/ios.png" alt="iOS-icon">
 							<input class="p1" type="radio" name="Platform " value="IOS.">
 							<span>iOS</span>
 						</label>
                     </div>
                     <div class="pflex1">
 						<label>
-                            <img class="roidmg" src="Assets/Icons/android.png">
+                            <img class="roidmg" src="Assets/Icons/android.png" alt="Android-icon">
 							<input class="p2" type="radio" name="Platform " value="Android.">
 							<span>Android</span>
 						</label>
                     </div>
                     <div class="pflex2">
 						<label>
-                            <img class="roidmg3" src="Assets/Icons/iosandroid.png">
+                            <img class="roidmg3" src="Assets/Icons/iosandroid.png" alt="iOS-og-Android-icon">
 							<input class="p3" type="radio" name="Platform " value="IOS & Android.">
 							<span>iOS &amp; Android</span>
 						</label>
