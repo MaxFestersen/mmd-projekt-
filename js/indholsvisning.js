@@ -1,4 +1,5 @@
 /* IndholdsvisningFormål: Skjul sektioner med JavaScript, således at formen er anvendelig uden brug af JavaScript.*/
+console.log('Løsning udviklet 2020, af MMD studerende på UCL. Signe, Max & Khalid fra OEAMM19EDA. Konrad og Mie fra OEAMM19EDC.');
 document.getElementById("pris-beregner-knap-section").classList.remove("hidden");
 document.getElementById("start").classList.add("hidden");
 document.getElementById("egenskaber").classList.add("hidden");
