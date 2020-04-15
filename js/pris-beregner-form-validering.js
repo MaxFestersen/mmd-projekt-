@@ -503,7 +503,7 @@ submitEmail.onclick = function(){
 		}
 		emailBody += 'E-mail: ' + email.value;
 		console.log(emailBody);
-		var emailAdd = "minmailmax@gmail.com";
+		var emailAdd = "konr0087@edu.ucl.dk";
 		var subject = "Anmodning om estimat på app.";
 		window.open("mailto:"+emailAdd+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(emailBody), '_blank');
 		// Giv brugeren besked.
