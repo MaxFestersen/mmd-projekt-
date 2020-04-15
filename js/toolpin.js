@@ -14,6 +14,6 @@ let displayTooltip = function(e, obj) {
 toolTipElements.forEach(function(elem){
   elem.addEventListerner("mouseenter", function(e) {
     displayTooltip(e, this);
-  })
-})
+  });
+});
 };

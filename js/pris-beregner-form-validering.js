@@ -91,7 +91,7 @@ var demonstrationsknap = document.getElementById("demonstrationsknap");
 demonstrationsknap.onclick = function(){
 	breadcrumbs.classList.remove("hidden");
 	showHideSection('start');
-}
+};
 
 // -- 01 Start --
 var startSection = document.getElementById("start");
@@ -118,17 +118,17 @@ function appHjemmesideValidate() {
 // Fjern error når der klickes på en box
 app.onclick = function(){
 	rmError([hjemmeside, app], appHjemmesideError);
-}
+};
 hjemmeside.onclick = function(){
 	rmError([hjemmeside, app], appHjemmesideError);
-}
+};
 // Valider når man trykker på næste
 next01.onclick = function(){
 	var err = loopFunktioner([appHjemmesideValidate]);
 	if(err[1] == 0) {
 		showHideSection('egenskaber');
 	}
-}
+};
 
 // -- 02 Egenskaber --
 var egenskaberSection = document.getElementById("egenskaber");
@@ -150,30 +150,30 @@ function beskrivelseValidate() {
 // Fjern error på focus på beskrivelsen (når der trykkes i den)
 beskrivelse.onfocus = function() {
 	rmError(beskrivelse, beskrivelseError);
-}
+};
 // Trim og kør validering når man trykker ud af beskrivelsen. Primær
 beskrivelse.onblur = function() {
 	beskrivelse.value= beskrivelse.value.trim();
 	beskrivelseValidate();
-}
+};
 // Trim og kør validering når man trykker ud af beskrivelsen. Sekundær.
 beskrivelse.onfocusout = function() {
 	beskrivelse.value= beskrivelse.value.trim();
 	beskrivelseValidate();
-}
+};
 // Valider når man trykker på næste
 next02.onclick = function(){
 	var err = loopFunktioner([beskrivelseValidate]);
 	if(err[1] == 0) {
 		showHideSection('beregner');
 	}
-}
+};
 next02alt.onclick = function(){
 	var err = loopFunktioner([beskrivelseValidate]);
 	if(err[1] == 0) {
 		showHideSection('afslutning');
 	}
-}
+};
 /*Dette script gør brugeren opmærksom på, om Caps-lock er slået til eller ikke*/
 var input = document.getElementById("minApp");
 	var text = document.getElementById("Caps");
@@ -181,7 +181,7 @@ var input = document.getElementById("minApp");
 	if (event.getModifierState("CapsLock")) {
 	  Caps.style.display = "block";} 
 	  else {
-	  Caps.style.display = "none" }
+	  Caps.style.display = "none"; }
 	});
 
 // --- 03 Overvejelser/Beregner ---
@@ -223,7 +223,7 @@ function navnValidate() {
 	if(!navn.value){
 		addError(navn, navnError);
 		return afslutningSection;
-	} else if(navn.value.split(' ').filter(function(v){return v!==''}).length <= 1){
+	} else if(navn.value.split(' ').filter(function(v){return v!=='';}).length <= 1){
 		addWarning(navn, navnWarning);
 		return 0;
 	} else{
@@ -234,17 +234,17 @@ function navnValidate() {
 // Fjern error på focus på navn (når der trykkes i den)
 navn.onfocus = function() {
 	rmError(navn, [navnError, navnWarning]);
-}
+};
 // Trim og kør validering når man trykker ud af navn. Primær
 navn.onblur = function() {
 	navn.value = navn.value.trim();
 	navnValidate();
-}
+};
 // Trim og kør validering når man trykker ud af navn. Sekundær.
 navn.onfocusout = function() {
 	navn.value = navn.value.trim();
 	navnValidate();
-}
+};
 // -- Valider telefon --
 function telValidate() {
 	console.log('Telefon blev valideret.');
@@ -268,24 +268,24 @@ function telValidate() {
 // Trim og kør validering når man trykker ud af telefon. Primær.
 tel.onblur = function() {
 	telValidate();
-}
+};
 // Trim og kør validering når man trykker ud af telefon. Sekundær.
 tel.onfocusout = function() {
 	telValidate();
-}
+};
 // Stop taster der ikke er numre eller funktionstaster til at virke.
 tel.onkeydown = function() {
 	//console.log(event.key);
 	if(event.key.length == 1 && event.key.match(/[a-z]/i) || event.key.length == 1 && event.key.match(/[^\w\s]/gi) && event.key != "+" || event.key == " " || event.key.length == 1 && event.key.match(/[^\w\s]/gi) && tel.value.length != 0){
 		event.preventDefault();
 	}
-}
+};
 // Valider og trim ved hver gang der bliver trykket på en tast
 tel.onkeyup = function() {
 	tel.value = tel.value.trim();
 	tel.value = tel.value.replace(/(\d{2})/g, '$1 ').replace(/(^\s+|\s+$)/,'').replace(/ +(?= )/g,'');
 	telValidate();
-}
+};
 
 // -- Valider e-mail --
 function emailValidate() {
@@ -304,30 +304,30 @@ function emailValidate() {
 // Fjern error på focus på email (når der trykkes i den)
 email.onfocus = function() {
 	rmError(email, [emailErrorMissing, emailErrorWrong]);
-}
+};
 // Trim og kør validering når man trykker ud af email. Primær
 email.onblur = function() {
 	email.value = email.value.trim();
 	emailValidate();
-}
+};
 // Trim og kør validering når man trykker ud af email. Sekundær.
 email.onfocusout = function() {
 	email.value = navn.value.trim();
 	emailValidate();
-}
+};
 // Valider ved hver gang der bliver trykket på en tast
 email.onkeyup = function() {
 	emailValidate();
-}
+};
 // -- Trim besked --
 // Trim og kør validering når man trykker ud af beskrivelsen. Primær
 besked.onblur = function() {
 	besked.value= besked.value.trim();
-}
+};
 // Trim og kør validering når man trykker ud af beskrivelsen. Sekundær.
 besked.onfocusout = function() {
 	besked.value= besked.value.trim();
-}
+};
 
 // -- Submit e-mail --
 var submitEmail = document.getElementById("submitEmail");
@@ -341,7 +341,7 @@ submitEmail.onclick = function(){
 		beskrivelseValidate,
 		navnValidate,
 		emailValidate
-	]
+	];
 
 	var arrayreturn = loopFunktioner(requiredContent);
 	var errorSection = arrayreturn[0];
@@ -359,7 +359,7 @@ submitEmail.onclick = function(){
 		/*if(app & hjemmeside){
 		sol = "app og hjemmeside"
 		} else if(app){*/
-		sol = "app"
+		sol = "app";
 		/*} else if(hjemmeside){
 		sol = "hjemmeside"
 		} else{
@@ -380,13 +380,13 @@ submitEmail.onclick = function(){
 			}
 		}*/
 		if(point && point <= 3){
-			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 1 kop kaffe dagligt pr. udvikler.\n\n"
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 1 kop kaffe dagligt pr. udvikler.\n\n";
 		} else if(point && point > 3 && point < 7){
-			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 2 kop kaffe dagligt pr. udvikler.\n\n"
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 2 kop kaffe dagligt pr. udvikler.\n\n";
 		} else if(point && point >= 7){
-			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 3 kop kaffe dagligt pr. udvikler.\n\n"
+			emailBody += "Min " + sol + " blev vurderet til at det kræver at i drikker mindst 3 kop kaffe dagligt pr. udvikler.\n\n";
 		} else {
-			emailBody += "Jeg har ikke foretaget en vurdering af min " + sol + ".\n\n"
+			emailBody += "Jeg har ikke foretaget en vurdering af min " + sol + ".\n\n";
 		}
 		var platform = document.getElementsByName("Platform ");
 		for(i=0; i < platform.length; i++){
@@ -479,7 +479,7 @@ submitEmail.onclick = function(){
 					emailBody += "\n- " + sprog[i].trim() + ".";
 				}
 			}
-			emailBody += "\n\n"
+			emailBody += "\n\n";
 		}
 		var login = document.getElementsByName("Login skal implementeres ");
 		for(i=0; i < login.length; i++){
@@ -510,7 +510,7 @@ submitEmail.onclick = function(){
 		var formSubmittet = document.getElementById("formSubmittet");
 		var target = formSubmittet.getElementsByClassName("target");
 		target = target[0];
-		target.innerHTML="E-mail klienten blev åbnet, og udfyldt med dine svar."
+		target.innerHTML="E-mail klienten blev åbnet, og udfyldt med dine svar.";
 		formSubmittet.classList.remove("hidden");
 		alert("E-mail klienten blev åbnet, og udfyldt med dine svar.");
 	}

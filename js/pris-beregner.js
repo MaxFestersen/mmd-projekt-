@@ -89,7 +89,7 @@ next03.onclick = function(){
 	if(integrationer == "Ja."){
 		point++;
 		if(APIvalg){
-			point--
+			point--;
 			var splitAPIvalg = APIvalg.split(";");
 			for(i=0; i < splitAPIvalg.length; i++){
 				point++;
@@ -149,7 +149,7 @@ next03.onclick = function(){
 		dinAppEr[3].classList.add("hidden");
 	} else{
 		// Umuligt tilfælde
-		console.log("Dette bør aldrig kunne ske.")
+		console.log("Dette bør aldrig kunne ske.");
 		dinAppEr[0].classList.add("hidden");
 		dinAppEr[1].classList.add("hidden");
 		dinAppEr[2].classList.add("hidden");
@@ -161,4 +161,4 @@ next03.onclick = function(){
 	
 	// -- Log --
 	console.log("Pris estimering blev udført.");
-}
+};
