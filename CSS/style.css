@@ -581,14 +581,14 @@ i {
 }
 
 .InputError {
-	border: solid 1px #F00;
+	border-color: #F00;
 	outline-style: solid;
 	outline-width: 1px;
 	outline-color: #F00;
 }
 
 .InputWarning {
-	border: solid 1px #ff8c00;
+	border-color: #ff8c00;
 	outline-style: solid;
 	outline-width: 1px;
 	outline-color: #ff8c00;
