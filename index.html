@@ -26,7 +26,7 @@
 		<div class="sectionWrapper">
 			<div class="center-hero">
 				<div class="code-content">
-					<h1 class="code_heading">Vi tilbyder {</h1> 
+					<h1 class="code_heading">Vi tilbyder {</h1>
 					<p class="indent">
 						<span class="purple">Alt </span>
 						&nbsp;inden for
@@ -34,7 +34,7 @@
 						&amp;
 						<span class="blue">web-</span>
 						udvikling
-					</p> 
+					</p>
 					<p class="code_heading">}</p>
 				</div>
 			</div>
@@ -215,7 +215,7 @@
 							<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
-						
+
 						<label class="overskrift">Design</label>
 						<img class="ikon" src="Assets/Icons/design.png" alt="DESIGN IKON">
 						<label class="spoergsmaal">Skal House of Code stå for design?</label>
@@ -262,13 +262,13 @@
 						<label class="overskrift">Din app kræver at vi...</label>
 						<label class="dinapper hidden">... drikker mindst 1 kop kaffe dagligt pr. udvikler.</label>
 						<label class="dinapper hidden">... drikker mindst 2 kopper kaffe dagligt pr. udvikler.</label>
-						<label class="dinapper hidden">... drikker mindst 3 kopper kaffe dagligt pr. udvikler.</label>		
-						<label class="dinapper">... får taget en vurdering. Anvend prisberegneren. <a onclick="showHideSection('beregner');">Indtast info</a>.</label>		
+						<label class="dinapper hidden">... drikker mindst 3 kopper kaffe dagligt pr. udvikler.</label>
+						<label class="dinapper">... får taget en vurdering. Anvend prisberegneren. <a onclick="showHideSection('beregner');">Indtast info</a>.</label>
 						<label>Tusind tak for din tid! <br>
 							Tryk på knappen "Indsend" for at få et tilbud fra os!
 						</label>
 						<button  id="indsend" type="button" onClick="showHideSection('afslutning');">Indsend</button>
-						<button type="button" onClick="showHideSection('beregner');">tilbage</button>		
+						<button type="button" onClick="showHideSection('beregner');">tilbage</button>
 					</section>
 					<!-- Afslutning/Formualr -->
 					<section id="afslutning">
@@ -276,17 +276,17 @@
 							<span>Hvordan må vi kontakte dig om vores tilbud?</span>
 							<input type="text" placeholder="Navn" name="Mit navn " required>
 						</label>
-						<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>		
+						<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>
 						<span id="navnWarning" class="formWarningTxt hidden">Der blev ikke registreret et efernavn.</span>
-						<input type="tel" 
+						<input type="tel"
 							placeholder="Telefonnummer"
 							title="Telefonnummer 8 cifre. F.eks. 12 34 56 78. Landekoder accepteres."
 							name="Mit telefon nummer ">
-								<!-- 
+								<!--
 							pattern definerer hvilket format telefonnummeret skal stå i. Jeg har opsat det således at der forventes et dansk telefon nummer med eller uden landekode, og med bindestreg, mellemrum eller uden tegnsætning.
-							
+
 							Pattern var for aggarsivt, og er en forhindring, især for numre der ikke er danske. Derfor er det som udgangspunkt ikke implementeret.
-							
+
 							Se pattern overskueligt her. Bemærk at pattern vil læse linjeskift og tab, så disse skal fjernes inden implementation.
 								pattern="	[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}
 								| 	[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}
@@ -301,10 +301,10 @@
 							Pattern på en linje:
 								pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
 							-->
-						<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>		
+						<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>
 						<input type="email" placeholder="E-mail" name="Min e-mail " required>
-						<span id="emailErrorMissing" class="formErrorTxt hidden">E-mail skal indtastes.</span>		
-						<span id="emailErrorWrong" class="formErrorTxt hidden">E-mail skal indstastes i et korrekt format.</span>		
+						<span id="emailErrorMissing" class="formErrorTxt hidden">E-mail skal indtastes.</span>
+						<span id="emailErrorWrong" class="formErrorTxt hidden">E-mail skal indstastes i et korrekt format.</span>
 						<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
 						<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
 						<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
@@ -314,11 +314,11 @@
 				<div id="formSubmittet" class="hidden">
 					<span class="target"></span>
 				</div>
-				<section>	
+				<section>
 					<div class="calctext">
 						<span class="stor_tekst">Vi i House of Code ønsker {</span>
 						<div class="indryk2">
-							 <span class="lille_tekst">at møde din </span> 
+							 <span class="lille_tekst">at møde din </span>
 							 <span class="gul_tekst">virksomhed</span> <span>lige præcis der, hvor i er</span>
 							 <span class="rød_tekst">i processen</span>
 						</div>
@@ -364,5 +364,6 @@
 <script type="text/javascript" src="js/input-dato.js"></script>
 <script type="text/javascript" src="js/pris-beregner-form-validering.js"></script>
 <script type="text/javascript" src="js/pris-beregner.js"></script>
+<script type="text/javascript" src="js/indexjs.js"></script>
 </body>
 </html>
