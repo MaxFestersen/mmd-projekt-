@@ -91,7 +91,7 @@ var demonstrationsknap = document.getElementById("demonstrationsknap");
 demonstrationsknap.onclick = function(){
 	breadcrumbs.classList.remove("hidden");
 	showHideSection('start');
-}
+};
 
 // -- 01 Start --
 var startSection = document.getElementById("start");
@@ -118,17 +118,17 @@ function appHjemmesideValidate() {
 // Fjern error når der klickes på en box
 app.onclick = function(){
 	rmError([hjemmeside, app], appHjemmesideError);
-}
+};
 hjemmeside.onclick = function(){
 	rmError([hjemmeside, app], appHjemmesideError);
-}
+};
 // Valider når man trykker på næste
 next01.onclick = function(){
 	var err = loopFunktioner([appHjemmesideValidate]);
 	if(err[1] == 0) {
 		showHideSection('egenskaber');
 	}
-}
+};
 
 // -- 02 Egenskaber --
 var egenskaberSection = document.getElementById("egenskaber");
@@ -150,30 +150,30 @@ function beskrivelseValidate() {
 // Fjern error på focus på beskrivelsen (når der trykkes i den)
 beskrivelse.onfocus = function() {
 	rmError(beskrivelse, beskrivelseError);
-}
+};
 // Trim og kør validering når man trykker ud af beskrivelsen. Primær
 beskrivelse.onblur = function() {
 	beskrivelse.value= beskrivelse.value.trim();
 	beskrivelseValidate();
-}
+};
 // Trim og kør validering når man trykker ud af beskrivelsen. Sekundær.
 beskrivelse.onfocusout = function() {
 	beskrivelse.value= beskrivelse.value.trim();
 	beskrivelseValidate();
-}
+};
 // Valider når man trykker på næste
 next02.onclick = function(){
 	var err = loopFunktioner([beskrivelseValidate]);
 	if(err[1] == 0) {
 		showHideSection('beregner');
 	}
-}
+};
 next02alt.onclick = function(){
 	var err = loopFunktioner([beskrivelseValidate]);
 	if(err[1] == 0) {
 		showHideSection('afslutning');
 	}
-}
+};
 /*Dette script gør brugeren opmærksom på, om Caps-lock er slået til eller ikke*/
 var input = document.getElementById("minApp");
 	var text = document.getElementById("Caps");
@@ -181,7 +181,7 @@ var input = document.getElementById("minApp");
 	if (event.getModifierState("CapsLock")) {
 	  Caps.style.display = "block";} 
 	  else {
-	  Caps.style.display = "none" }
+	  Caps.style.display = "none"; }
 	});
 
 // --- 03 Overvejelser/Beregner ---
@@ -223,7 +223,7 @@ function navnValidate() {
 	if(!navn.value){
 		addError(navn, navnError);
 		return afslutningSection;
-	} else if(navn.value.split(' ').filter(function(v){return v!==''}).length <= 1){
+	} else if(navn.value.split(' ').filter(function(v){return v!=='';}).length <= 1){
 		addWarning(navn, navnWarning);
 		return 0;
 	} else{
