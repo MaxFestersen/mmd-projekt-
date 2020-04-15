@@ -108,7 +108,7 @@
 					<section id="egenskaber">
 						<label class="overskrift">Hvad skal din app kunne?</label>
 						<label>Beskriv gerne formålet og egenskaberne med dine egne ord.</label>
-						<textarea id="minApp" name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
+						<textarea class="textarea1" id="minApp" name="Min app skal kunne " cols="40" rows="10" placeholder="Min app skal.." required></textarea>
 						<span id="beskrivelseError" class="formErrorTxt hidden">Der skal tilføjes en beskrivelse af løsningen.</span>
 						<p id="Caps">BEMÆRK! Caps lock er slået til.</p>
 						<button type="button" id="next02alt">Kontakt mig med tilbud nu</button>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
 						<label class="overskrift">Integrationer</label>
-						<img class="api_1" src="Assets/Icons/api.png" alt="API IKON">
+						<img class="ikon1" src="Assets/Icons/api.png" alt="API IKON">
 							<label class="spoergsmaal">Skal appen integreres med APIer?
                         </label>
                 <div class="iflex0">
@@ -179,7 +179,7 @@
 							<input class="ekstraapi" type="text" placeholder='Skriv api navne' name="Valgte API ">
 							<div class="addedApi"></div>
 						</section>
-						<img class="backend" src="Assets/Icons/backend.png" alt="BACK END IKON">
+						<img class="backend" src="Assets/Icons/backend.png" alt="BACK END ikon">
 						<label class="spoergsmaal">Skal der bygges backend til appen?</label>
                 <div class="bflex">
                      <div class="bflex1">
@@ -203,58 +203,65 @@
                 </div>
 						<img class="ikon" src="Assets/Icons/Service.png" alt="SERVICE IKON">
 						<label class="spoergsmaal">Kræver appen service og vedligeholdelse?</label>
-						<label>
-							<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ja.">
+				<div class="serviceflex">
+                        <label class="service1">
+							<input class="s1" type="radio" name="Der er behov for service eller vedligeholdelse " value="Ja.">
 							<span>Ja</span>
 						</label>
-						<label>
-							<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Nej.">
+						<label class="service2">
+							<input class="s2" type="radio" name="Der er behov for service eller vedligeholdelse " value="Nej.">
 							<span>Nej</span>
 						</label>
-						<label>
-							<input type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
+						<label class="service3">
+							<input class="s3" type="radio" name="Der er behov for service eller vedligeholdelse " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
-
+                </div>
 						<label class="overskrift">Design</label>
 						<img class="ikon" src="Assets/Icons/design.png" alt="DESIGN IKON">
 						<label class="spoergsmaal">Skal House of Code stå for design?</label>
-						<label>
-							<input type="radio" name="House of Code skal designe app " value="Ja.">
+                    <div class="designflex">
+						<label class="design1">
+							<input class="d1" type="radio" name="House of Code skal designe app " value="Ja.">
 							<span>Ja</span>
 						</label>
-						<label>
-							<input type="radio" name="House of Code skal designe app " value="Nej.">
+						<label class="design2">
+							<input class="d2" type="radio" name="House of Code skal designe app " value="Nej.">
 							<span>Nej</span>
 						</label>
-						<label>
-							<input type="radio" name="House of Code skal designe app " value="Ved ikke.">
+						<label class="design3">
+							<input class="d3" type="radio" name="House of Code skal designe app " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
+                    </div>
 						<label class="overskrift">Features</label>
 						<img class="ikon" src="Assets/Icons/Features.png" alt="SPROG IKON">
 						<label class="spoergsmaal">Hvilke sprog skal appen være tilgængelig i?</label>
-						<input type="text" placeholder='Vælg sprog. Del med ";"' name="Sprog ">
+						<input class="sprogboks" type="text" placeholder='Vælg sprog. Del med ";"' name="Sprog ">
 						<img class="ikon" src="Assets/Icons/login.png" alt="LOGIN IKON">
 						<label class="spoergsmaal">Skal der være mulighed for login?</label>
-						<label>
-							<input type="radio" name="Login skal implementeres " value="Ja.">
+                    <div class="loginflex">
+						<label class="login1">
+							<input class="l1" type="radio" name="Login skal implementeres " value="Ja.">
 							<span>Ja</span>
 						</label>
-						<label>
-							<input type="radio" name="Login skal implementeres " value="Nej.">
+						<label class="login2">
+							<input class="l2" type="radio" name="Login skal implementeres " value="Nej.">
 							<span>Nej</span>
 						</label>
-						<label>
-							<input type="radio" name="Login skal implementeres " value="Ved ikke.">
+						<label class="login3">
+							<input class="l3" type="radio" name="Login skal implementeres " value="Ved ikke.">
 							<span>Ved ikke</span>
 						</label>
 						<div id="beregnerWarning" class="hidden">
 							<span class="formWarningTxt">Intent i beregneren er udfyldt.</span>
 							<button type="button" id="next03alt" onClick="showHideSection('afslutning');">fortsæt uden beregner</button>
 						</div>
-						<button type="button" id="back03" onClick="showHideSection('egenskaber');">tilbage</button>
-						<button type="button" id="next03">fortsæt</button>
+                    </div>
+                    <div class="buttonflex">
+						<button type="button" id="back03" onClick="showHideSection('egenskaber');">&lt;tilbage</button>
+						<button type="button" id="next03">fortsæt&gt;</button>
+                    </div>
 					</section>
 					<!-- 04 Resultat -->
 					<!-- Din app er -->
@@ -268,17 +275,17 @@
 							Tryk på knappen "Indsend" for at få et tilbud fra os!
 						</label>
 						<button  id="indsend" type="button" onClick="showHideSection('afslutning');">Indsend</button>
-						<button type="button" onClick="showHideSection('beregner');">tilbage</button>
+						<button class="back04" type="button" onClick="showHideSection('beregner');">&lt;tilbage</button>
 					</section>
 					<!-- Afslutning/Formualr -->
 					<section id="afslutning">
 						<label>
 							<span>Hvordan må vi kontakte dig om vores tilbud?</span>
-							<input type="text" placeholder="Navn" name="Mit navn " required>
+							<input class="inputslut" type="text" placeholder="Navn" name="Mit navn " required>
 						</label>
 						<span id="navnError" class="formErrorTxt hidden">Navn skal indtastes.</span>
 						<span id="navnWarning" class="formWarningTxt hidden">Der blev ikke registreret et efernavn.</span>
-						<input type="tel"
+						<input class="inputslut" type="tel"
 							placeholder="Telefonnummer"
 							title="Telefonnummer 8 cifre. F.eks. 12 34 56 78. Landekoder accepteres."
 							name="Mit telefon nummer ">
@@ -302,13 +309,13 @@
 								pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-9]{8}|+[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|+[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|+[0-9]{10}|[0-0]{2}[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}|[0-0]{2}[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}|[0-0]{2}[0-9]{10}"
 							-->
 						<span id="telWarning" class="formWarningTxt hidden">Formattet på telefonnummeret blev ikke genkendt.</span>
-						<input type="email" placeholder="E-mail" name="Min e-mail " required>
+						<input class="inputslut" type="email" placeholder="E-mail" name="Min e-mail " required>
 						<span id="emailErrorMissing" class="formErrorTxt hidden">E-mail skal indtastes.</span>
 						<span id="emailErrorWrong" class="formErrorTxt hidden">E-mail skal indstastes i et korrekt format.</span>
-						<textarea name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
+						<textarea class="textarea2" name="Besked " cols="40" rows="10" placeholder="Besked" ></textarea>
 						<input id="submitPHP" type="submit" Value="Kontakt mig" disabled>
 						<input id="submitEmail" type="submit" Value="Lad mig sende en e-mail med mine resultater.">
-						<button type="button" id="back04" onClick="showHideSection('resultat');">tilbage</button>
+						<button type="button" id="back05" onClick="showHideSection('resultat');">&lt;tilbage</button>
 					</section>
 				</form>
 				<div id="formSubmittet" class="hidden">

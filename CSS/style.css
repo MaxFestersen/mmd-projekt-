@@ -319,7 +319,7 @@ i {
     color: #A5B978;
 }
 /* egenskaber css */
-textarea{
+.textarea1{
     padding-bottom: 0px;
     padding-left: 10px;
     padding-top: 10px;
@@ -537,6 +537,26 @@ textarea{
     margin-top: 40px;
     padding: 5px 40px;
     cursor: pointer;
+}
+
+/* afslutning/formular */
+
+.inputslut{
+    width: 400px;
+    border: 3px solid #A5B978;
+    padding: 10px 20px 10px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.textarea2{
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 420px;
+    border: 3px solid #A5B978;
+    margin: 10px 0px 15px 0px;
+    font-size: 15px;
 }
 
 .beskedsendt {
