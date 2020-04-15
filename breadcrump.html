@@ -59,12 +59,14 @@
 </html>
 
 <script>
-  id.scrollIntoView({
-		behavior: 'smooth'
-	})
+  function scroll_to(id) {
+      document.documentElement.style.scrollBehavior = 'smooth'
+      element = document.createElement('a');
+      element.setAttribute('href', id)
+      element.click();
   }
 
   document.getElementById("knap1").addEventListener('click', () => {
-  scroll_to('breadcrumbs')
+  scroll_to('#7')
   });
 </script>
