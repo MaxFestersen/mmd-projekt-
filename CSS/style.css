@@ -330,7 +330,7 @@ i {
 }
 
 
-#next02alt{
+#next02alt,#next03alt{
     background-color: #A5B978;
     border: none;
     color: white;
@@ -349,7 +349,7 @@ i {
     cursor: pointer;
 }
 
-#back02,#back03,.back04{
+#back02,#back03,.back04,#back05{
     margin-top: 30px;
     border: none;
     background-color: #fff;
@@ -362,7 +362,7 @@ i {
 #beregner{
 	margin: 50px 0px 50px 200px;
 	width: 75%;
-	background: none;
+	background-color: none;
 	float: left;
 }
 
@@ -558,6 +558,25 @@ i {
     margin: 10px 0px 15px 0px;
     font-size: 15px;
 }
+#submitPHP{
+    background-color: #A5B978;
+    color: #fff;
+    width: 390px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 10px 22px 10px 22px;
+    cursor: pointer;
+}
+
+#submitEmail{
+    background-color: #d9aa63;
+    color: #fff;
+    width: 390px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 10px 22px 10px 22px;
+    cursor: pointer;
+}
 
 .beskedsendt {
 	width: 300px;
@@ -577,7 +596,8 @@ i {
 }
 
 .formWarningTxt{
-	color: #ff8c00;
+	color: #F00;
+    font-weight: bold;
 }
 
 .InputError {
@@ -613,11 +633,10 @@ i {
 	text-align: left;
 	line-height: 0px;
 	background-color: white;
-	text-transform: none;
+	text-transform: normal;
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	margin-left: 150px;
 	float: left;
 }
 .breadcrumbs li {
@@ -645,7 +664,6 @@ i {
 
 .calctext{
     margin-top: 50px;
-    margin-left: 150px;
 }
 .stor_tekst{
     font-size: 15px;
