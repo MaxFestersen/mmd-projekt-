@@ -51,7 +51,7 @@
 
 <div class="knapper">
   <button>tilbage</button>
-	<a href="#breadcrumbs" id="knap1"></a><button>fortsæt</button>
+	<a href="#breadcrumbs"></a><button id="knap1">fortsæt</button>
 </div>
 
 
@@ -67,6 +67,10 @@
   }
 
   document.getElementById("knap1").addEventListener('click', () => {
-  scroll_to('#7')
+	var section = document.getElementById('breadcrumbs');
+	section.scrollIntoView({
+	  behavior: 'smooth'
+	});
+	//scroll_to('#7')
   });
 </script>
