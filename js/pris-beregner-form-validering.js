@@ -312,7 +312,7 @@ email.onblur = function() {
 };
 // Trim og kør validering når man trykker ud af email. Sekundær.
 email.onfocusout = function() {
-	email.value = navn.value.trim();
+	email.value = email.value.trim();
 	emailValidate();
 };
 // Valider ved hver gang der bliver trykket på en tast
