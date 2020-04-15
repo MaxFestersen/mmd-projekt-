@@ -355,7 +355,7 @@ submitEmail.onclick = function(){
 		});
 	} else {
 		console.log('Der var ingen fejl i påkrævet indhold.');
-		var emailBody = 'Pris beregneren blev anvendt' + formIntroduktion.value + '\n\nHej, House of Code. Jeg har benyttet jeres pris-beregner, og vil gerne anmoder om et tilbud.';
+		var emailBody = 'Pris beregneren blev anvendt' + formIntroduktion.value + '\n\nHej House of Code. Jeg har benyttet jeres pris-beregner, og vil gerne anmode om et tilbud.';
 		/*if(app & hjemmeside){
 		sol = "app og hjemmeside"
 		} else if(app){*/
