@@ -50,8 +50,8 @@
 <br>
 
 <div class="knapper">
-  <button>tilbage</button>
-	<a href="#breadcrumbs" id="knap1"></a><button>fortsæt</button>
+	<button>tilbage</button>
+	<button id="knap1">fortsæt</button>
 </div>
 
 
@@ -59,14 +59,18 @@
 </html>
 
 <script>
-  function scroll_to(id) {
-      document.documentElement.style.scrollBehavior = 'smooth'
-      element = document.createElement('a');
-      element.setAttribute('href', id)
-      element.click();
-  }
+function scroll_to(id) {
+	document.documentElement.style.scrollBehavior = 'smooth'
+	element = document.createElement('a');
+	element.setAttribute('href', id)
+	element.click();
+}
 
-  document.getElementById("knap1").addEventListener('click', () => {
-  scroll_to('#7')
-  });
+document.getElementById("knap1").addEventListener('click', () => {
+    var section = document.getElementById('breadcrumbs');
+    section.scrollIntoView({
+		behavior: 'smooth'
+    });
+    //scroll_to('#7')  
+});
 </script>
