@@ -596,7 +596,7 @@ i {
 }
 
 .formWarningTxt{
-	color: #F00;
+	color: #d9aa63;
     font-weight: bold;
 }
 
@@ -608,21 +608,14 @@ i {
 }
 
 .InputWarning {
-	border-color: #ff8c00;
+	border-color: #d9aa63;
 	outline-style: solid;
 	outline-width: 1px;
-	outline-color: #ff8c00;
+	outline-color: #d9aa63;
 }
 
 .hidden{
 	display: none;
-}
-
-#Caps {
-	display:none;color:red;
-	height: 30px;
-	width: 300px;
-	padding-top: 300px; /*Skal ændres inden endelige prototype er oppe*/
 }
 
 .breadcrumbs {

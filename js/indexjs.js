@@ -1,10 +1,10 @@
 /*Js for scrollview*/ 
 function scroll_to(id) {
-      document.documentElement.style.scrollBehavior = 'smooth'
+      document.documentElement.style.scrollBehavior = 'smooth';
       element = document.createElement('a');
-      element.setAttribute('href', id)
+      element.setAttribute('href', id);
       element.click();
   }
   document.getElementById("tocontent").addEventListener('click', () => {
-  scroll_to('#7')
+  scroll_to('#7');
   });
