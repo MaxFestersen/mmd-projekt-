@@ -495,7 +495,7 @@ submitEmail.onclick = function(){
 			emailBody += login.name.trim() + ":\n" + login.value + "\n\n";
 		}
 		if(besked.value){
-			emailBody += 'Jeg har vedlagt denne besked:\n' + besked.value + '\n\n';
+			emailBody += besked.value + '\n\n';
 		}
 		emailBody += 'Mvh.\n' + navn.value + '\n';
 		if(tel.value){
