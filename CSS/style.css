@@ -330,7 +330,7 @@ i {
 }
 
 
-#next02alt{
+#next02alt,#next03alt{
     background-color: #A5B978;
     border: none;
     color: white;
@@ -577,7 +577,8 @@ i {
 }
 
 .formWarningTxt{
-	color: #ff8c00;
+	color: #F00;
+    font-weight: bold;
 }
 
 .InputError {
@@ -617,7 +618,6 @@ i {
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	margin-left: 150px;
 	float: left;
 }
 .breadcrumbs li {
@@ -645,7 +645,6 @@ i {
 
 .calctext{
     margin-top: 50px;
-    margin-left: 150px;
 }
 .stor_tekst{
     font-size: 15px;
