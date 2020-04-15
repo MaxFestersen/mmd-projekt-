@@ -15,7 +15,7 @@ function showHideSection(sectionToBeShown){
 			document.getElementById(ids[i]).classList.add("hidden");
 		}
 	}
-	document.getElementById(sectionToBeShown).scrollIntoView({
+	document.getElementById('breadcrumbs').scrollIntoView({
 	behavior: 'smooth'
 	});
 }
