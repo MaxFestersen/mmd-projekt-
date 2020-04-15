@@ -416,7 +416,7 @@ textarea{
 	display: none;
 }
 
-.api_1{
+.ikon1,.ikon{
     margin-top: 40px;
 }
 .spoergsmaal{
@@ -498,9 +498,10 @@ textarea{
     margin: 10px;
 }
 
-.designflex,.loginflex{
+.designflex,.loginflex,.buttonflex{
     display: flex;
 }
+
 
 .design1,.design2,.design3{
     padding: 30px;
@@ -517,6 +518,14 @@ textarea{
     margin: 10px;
 }
 
+#back03{
+    margin-right: 45px;
+}
+.sprogboks{
+    padding: 15px 100px 15px 15px;;
+    margin: 40px 0px 40px 0px;
+    border: 4px solid #A5B978;
+}
 
 .beskedsendt {
 	width: 300px;
